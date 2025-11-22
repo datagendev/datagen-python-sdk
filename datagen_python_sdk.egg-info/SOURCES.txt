@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+datagen_python_sdk.egg-info/PKG-INFO
+datagen_python_sdk.egg-info/SOURCES.txt
+datagen_python_sdk.egg-info/dependency_links.txt
+datagen_python_sdk.egg-info/requires.txt
+datagen_python_sdk.egg-info/top_level.txt
+datagen_sdk/__init__.py
+datagen_sdk/client.py
