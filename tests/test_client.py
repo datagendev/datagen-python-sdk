@@ -1,4 +1,3 @@
-import os
 import pytest
 import responses
 from datagen_sdk import (
@@ -17,7 +16,7 @@ class TestDatagenClient:
         """Test client initialization with API key provided."""
         client = DatagenClient(api_key="test_key")
         assert client.api_key == "test_key"
-        assert client.base_url == "http://localhost:3001"
+        assert client.base_url == "https://api.datagen.dev"
         assert client.timeout == 30
         assert client.retries == 0
         assert client.backoff_seconds == 0.5
@@ -52,9 +51,9 @@ class TestDatagenClient:
         """Test that trailing slash is removed from base_url."""
         client = DatagenClient(
             api_key="test_key",
-            base_url="http://localhost:3001/",
+            base_url="https://api.datagen.dev/",
         )
-        assert client.base_url == "http://localhost:3001"
+        assert client.base_url == "https://api.datagen.dev"
 
 
 class TestExecuteTool:
@@ -65,7 +64,7 @@ class TestExecuteTool:
         """Test successful tool execution."""
         responses.add(
             responses.POST,
-            "http://localhost:3001/api/tools/execute",
+            "https://api.datagen.dev/api/tools/execute",
             json={
                 "success": True,
                 "data": {
@@ -89,7 +88,7 @@ class TestExecuteTool:
         """Test tool execution with no parameters."""
         responses.add(
             responses.POST,
-            "http://localhost:3001/api/tools/execute",
+            "https://api.datagen.dev/api/tools/execute",
             json={"success": True, "data": {"success": True, "result": {"status": "ok"}}},
             status=200,
         )
@@ -110,7 +109,7 @@ class TestExecuteTool:
         """Test authentication error with 401 status."""
         responses.add(
             responses.POST,
-            "http://localhost:3001/api/tools/execute",
+            "https://api.datagen.dev/api/tools/execute",
             body="Unauthorized",
             status=401,
         )
@@ -124,7 +123,7 @@ class TestExecuteTool:
         """Test authentication error with 403 status."""
         responses.add(
             responses.POST,
-            "http://localhost:3001/api/tools/execute",
+            "https://api.datagen.dev/api/tools/execute",
             body="Forbidden",
             status=403,
         )
@@ -138,7 +137,7 @@ class TestExecuteTool:
         """Test HTTP error handling."""
         responses.add(
             responses.POST,
-            "http://localhost:3001/api/tools/execute",
+            "https://api.datagen.dev/api/tools/execute",
             body="Internal Server Error",
             status=500,
         )
@@ -152,7 +151,7 @@ class TestExecuteTool:
         """Test handling of unsuccessful API response."""
         responses.add(
             responses.POST,
-            "http://localhost:3001/api/tools/execute",
+            "https://api.datagen.dev/api/tools/execute",
             json={"success": False, "error": "Something went wrong"},
             status=200,
         )
@@ -166,7 +165,7 @@ class TestExecuteTool:
         """Test handling of tool execution failure."""
         responses.add(
             responses.POST,
-            "http://localhost:3001/api/tools/execute",
+            "https://api.datagen.dev/api/tools/execute",
             json={
                 "success": True,
                 "data": {
@@ -187,19 +186,19 @@ class TestExecuteTool:
         # First two calls fail, third succeeds
         responses.add(
             responses.POST,
-            "http://localhost:3001/api/tools/execute",
+            "https://api.datagen.dev/api/tools/execute",
             body="Server Error",
             status=500,
         )
         responses.add(
             responses.POST,
-            "http://localhost:3001/api/tools/execute",
+            "https://api.datagen.dev/api/tools/execute",
             body="Server Error",
             status=500,
         )
         responses.add(
             responses.POST,
-            "http://localhost:3001/api/tools/execute",
+            "https://api.datagen.dev/api/tools/execute",
             json={
                 "success": True,
                 "data": {"success": True, "result": {"status": "ok"}},
@@ -220,7 +219,7 @@ class TestExecuteTool:
         for _ in range(4):
             responses.add(
                 responses.POST,
-                "http://localhost:3001/api/tools/execute",
+                "https://api.datagen.dev/api/tools/execute",
                 body="Server Error",
                 status=500,
             )
