@@ -25,7 +25,7 @@ class DatagenClient:
     def __init__(
         self,
         api_key: Optional[str] = None,
-        base_url: str = "http://localhost:3001",
+        base_url: str = "https://api.datagen.dev",
         timeout: int = 30,
         retries: int = 0,
         backoff_seconds: float = 0.5,
