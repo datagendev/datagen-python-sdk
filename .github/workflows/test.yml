@@ -9,6 +9,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read   # Required to checkout repository
     strategy:
       fail-fast: false
       matrix:
@@ -40,6 +42,8 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read   # Required to checkout repository
 
     steps:
       - uses: actions/checkout@v4
