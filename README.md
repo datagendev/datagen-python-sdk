@@ -42,8 +42,8 @@ client = DatagenClient(api_key="your_api_key_here")
 ```python
 from datagen_sdk import DatagenClient
 
-# Initialize the client
-client = DatagenClient(base_url="http://localhost:3001")
+# Initialize the client (uses https://api.datagen.dev by default)
+client = DatagenClient()
 
 # Execute a tool
 result = client.execute_tool(
@@ -65,7 +65,7 @@ The main client class for interacting with the Datagen API.
 ```python
 DatagenClient(
     api_key: Optional[str] = None,
-    base_url: str = "http://localhost:3001",
+    base_url: str = "https://api.datagen.dev",
     timeout: int = 30,
     retries: int = 0,
     backoff_seconds: float = 0.5
@@ -74,7 +74,7 @@ DatagenClient(
 
 **Parameters:**
 - `api_key` (str, optional): Your Datagen API key. If not provided, reads from `DATAGEN_API_KEY` environment variable.
-- `base_url` (str, optional): The base URL of your Datagen API instance. Default: `http://localhost:3001`
+- `base_url` (str, optional): The base URL of your Datagen API instance. Default: `https://api.datagen.dev`
 - `timeout` (int, optional): Request timeout in seconds. Default: `30`
 - `retries` (int, optional): Number of retry attempts for failed requests. Default: `0`
 - `backoff_seconds` (float, optional): Base backoff time for exponential retry. Default: `0.5`
