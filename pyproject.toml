@@ -6,9 +6,33 @@ build-backend = "setuptools.build_meta"
 name = "datagen-python-sdk"
 version = "0.1.0"
 description = "Minimal Python client for Datagen tools API"
-authors = [{ name = "Datagen" }]
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Datagen", email = "support@datagen.dev" }]
 requires-python = ">=3.10"
 dependencies = ["requests>=2.31.0"]
+keywords = ["datagen", "mcp", "sdk", "api", "client", "model-context-protocol"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "responses>=0.23.0",
+]
 
 [project.urls]
 Homepage = "https://datagen.dev"
+Repository = "https://github.com/datagen/datagen-python-sdk"
+Issues = "https://github.com/datagen/datagen-python-sdk/issues"
