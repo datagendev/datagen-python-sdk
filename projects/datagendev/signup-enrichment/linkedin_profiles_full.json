@@ -1,0 +1,2234 @@
+{
+  "total_records": 10,
+  "profiles_fetched": 10,
+  "profiles_failed": 0,
+  "profiles": [
+    {
+      "crm_id": 26,
+      "email": "brandon@restartmarketing.com",
+      "linkedin_url": "https://www.linkedin.com/in/brandonpagan",
+      "enrich_source": null,
+      "crm_company": null,
+      "crm_title": "Marketing Executive",
+      "crm_location": "New York, New York, United States of America",
+      "profile": {
+        "publicIdentifier": "brandonpagan",
+        "memberIdentifier": "4413295",
+        "linkedInIdentifier": "ACoAAABDV28BEMrJ95WnhMFq66vU9mCqS2K2dvw",
+        "linkedInUrl": "https://www.linkedin.com/in/brandonpagan",
+        "firstName": "Brandon",
+        "lastName": "Pag\u00e1n",
+        "headline": "Marketing Executive",
+        "location": "New York, New York, United States of America",
+        "summary": "* Driven and experienced marketing executive with expert proficiency in providing unsurpassed leadership and growth in dynamic, fast paced, competitive environments. Experienced in developing and executing innovative and successful marketing strategies\n\n* Skilled in the successful application of digital marketing tactics that enable sustained growth, expand revenue, elevate brand awareness, and improve customer acquisition. Well versed in delivering results in digital marketing, SEO, paid advertising, digital strategy, analytics, and go-to-market tactics\n\n* Accomplished brand strategist with a history of leading initiatives that spark significant gains in efficiency, productivity, and operational effectiveness, positioning organizations and teams for growth",
+        "photoUrl": "https://media.licdn.com/dms/image/v2/D4E03AQEpBdS5zh8YoQ/profile-displayphoto-shrink_800_800/B4EZTN_ftvG0Ag-/0/1738622762195?e=1766016000&v=beta&t=RSB3bKTYkr_DKkd_iULk-Vtkr55eNyHtHiq64Wc00KE",
+        "backgroundUrl": "https://media.licdn.com/dms/image/v2/C4D16AQFgmZXw66WvJQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1535739980192?e=1766016000&v=beta&t=DCj_vZT0pl4iaqPLO_xyckqsKOigjJhe4vTSsGyO6f4",
+        "openToWork": false,
+        "premium": false,
+        "showVerificationBadge": true,
+        "creationDate": null,
+        "followerCount": 1597,
+        "positions": {
+          "positionsCount": 7,
+          "positionHistory": [
+            {
+              "title": "President",
+              "companyName": "Restart Marketing",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 12,
+                  "year": 2009
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQEAwcLsByeQ4g/company-logo_400_400/company-logo_400_400/0/1631382396467?e=1766016000&v=beta&t=uK5qn8eRsW7OcTuZYoTBgjZXoGeKppXolA6RwEMKFAM",
+              "linkedInUrl": "https://www.linkedin.com/company/kickstart-social-media/",
+              "linkedInId": "1760713"
+            },
+            {
+              "title": "President",
+              "companyName": "Restart Marketing",
+              "description": "Digital Marketing Strategist helping brands maximize digital marketing opportunities by developing results-based strategies to achieve quantifiable business results.",
+              "startEndDate": {
+                "start": {
+                  "month": 6,
+                  "year": 2014
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2015
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQEAwcLsByeQ4g/company-logo_400_400/company-logo_400_400/0/1631382396467?e=1766016000&v=beta&t=uK5qn8eRsW7OcTuZYoTBgjZXoGeKppXolA6RwEMKFAM",
+              "linkedInUrl": "https://www.linkedin.com/company/kickstart-social-media/",
+              "linkedInId": "1760713"
+            },
+            {
+              "title": "Regional Marketing Strategist",
+              "companyName": "FindLaw, part of Thomson Reuters",
+              "description": "Own digital marketing strategy for top advertisers and for northeast regional office.\n\nOptimize digital marketing campaigns to maximize results for Law Firms in the Northeast Region. Developing digital strategies that blend organic, social and paid tactics to create relevancy and build brand awareness.",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2015
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2019
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQHognWr9Eeolg/company-logo_400_400/B56ZWqTS0gHQAY-/0/1742318939689/findlaw_logo?e=1766016000&v=beta&t=o2JgKq5ySYeLvcPbhQWg5qoG3rIwNszMtXN8Q4cLm0w",
+              "linkedInUrl": "https://www.linkedin.com/company/findlaw/",
+              "linkedInId": "1158"
+            },
+            {
+              "title": "Director of Social Media",
+              "companyName": "Cablevision",
+              "description": "Develop communication processes and systems to increase subscriber engagement, inspire curiosity, increase customer adoption rates and improve subscriber retention rates\nResponsible for building social media marketing strategy, goals, tactics and metrics of success to support business goals and initiatives.\nOrganize information and resources from marketing teams and programming partners into an overarching strategy for customer engagement.\nOversee social media response messaging to improve customer experience.\nCreate engagement strategies and implement tactics to foster positive consumer brand experiences to inspire brand advocacy.\nCreate internal and external brand advocacy initiatives to empower employees and consumers to discover and share brand related content.\nBuild reporting models to highlight key performance indicators. \nInvestigate and develop concepts to socialize company products and services. \nManaged multiple social media monitoring, publishing and reporting tools.",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2011
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2014
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQH3SHjNo5vPEg/company-logo_400_400/company-logo_400_400/0/1631319178157?e=1766016000&v=beta&t=15JfbfX_Fe1nkzt9Ol9KYSrp02QClzba92obT2YGLkA",
+              "linkedInUrl": "https://www.linkedin.com/company/cablevision/",
+              "linkedInId": "4294"
+            },
+            {
+              "title": "Consultant",
+              "companyName": "Kickstart Social Media",
+              "description": "Social media marketing consultant working with brands and agencies to create scalable marketing programs that align with business goals and objectives.",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2009
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2011
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Account Manager",
+              "companyName": "Time Inc.",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2003
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2009
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQHS9RBJC60NaQ/company-logo_400_400/company-logo_400_400/0/1631319640644?e=1766016000&v=beta&t=1MmD-Ro7EKQoq2bGK54pBqIBKTLjAwScREno82kd-ew",
+              "linkedInUrl": "https://www.linkedin.com/company/time-inc-/",
+              "linkedInId": "1746"
+            },
+            {
+              "title": "Account Manager",
+              "companyName": "Captaris Medialinq",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 1998
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2002
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 1,
+          "educationHistory": [
+            {
+              "degreeName": "Bachelors",
+              "fieldOfStudy": "Education",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/university-at-albany/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQEc77zfPeV-wg/company-logo_200_200/company-logo_200_200/0/1663606626402/university_at_albany_logo?e=1766016000&v=beta&t=VI450XEiBuRvFUnaSSu46uzv_4u_8dFHTnqdHN4yfD8",
+              "schoolName": "University at Albany",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 1991
+                },
+                "end": {
+                  "month": 12,
+                  "year": 1995
+                }
+              }
+            }
+          ]
+        },
+        "skills": [
+          "Social Media Marketing",
+          "Digital Marketing",
+          "Search Marketing",
+          "Online Marketing",
+          "Social Media",
+          "Advertising",
+          "PPC",
+          "Online Advertising",
+          "Digital Media",
+          "SEO",
+          "Advertising Sales",
+          "Marketing Strategy",
+          "Strategic Planning",
+          "Marketing Communications",
+          "Digital Strategy",
+          "Marketing",
+          "Copywriting",
+          "SEM",
+          "Media Planning",
+          "Strategic Partnerships"
+        ],
+        "languages": [
+          "Spanish"
+        ],
+        "certifications": {
+          "certificationsCount": 0,
+          "certificationHistory": []
+        },
+        "company": null
+      }
+    },
+    {
+      "crm_id": 23,
+      "email": "gradow.v@gmail.com",
+      "linkedin_url": "https://www.linkedin.com/in/valentina-danelon-b67a1b64",
+      "enrich_source": null,
+      "crm_company": null,
+      "crm_title": "Violinista-Direttore artistico Festival Nei Suoni dei Luoghi - Docente di Violino Liceo \"XXV Aprile\"(Portogruaro)",
+      "crm_location": "Venice, Italy",
+      "profile": {
+        "publicIdentifier": "valentina-danelon-b67a1b64",
+        "memberIdentifier": "229464511",
+        "linkedInIdentifier": "ACoAAA2tWb8Bn813zn6Y7HLnSdlzYPkCors_-0s",
+        "linkedInUrl": "https://www.linkedin.com/in/valentina-danelon-b67a1b64",
+        "firstName": "Valentina",
+        "lastName": "Danelon",
+        "headline": "Violinista-Direttore artistico Festival Nei Suoni dei Luoghi - Docente di Violino Liceo \"XXV Aprile\"(Portogruaro)",
+        "location": "Venice, Italy",
+        "summary": "2005  Diploma di Violino Conservatorio Castelfranco Veneto (TV)\n2009  Diploma in Pedagogia Musicale-Violino Conservatorio della Svizzera Italiana \n2013  Diploma di Merito alla Scuola Superiore Internazionale di Musica da Camera del Trio di Trieste  (Duo Danelon - Orlandi, violino e pianoforte)",
+        "photoUrl": "https://media.licdn.com/dms/image/v2/C5603AQEVJEJZMQm_lQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1558197729576?e=1766016000&v=beta&t=ziJWNY2b1M4Ve8U7gP88-2sJ_uurokZYs47YrCO_FLI",
+        "backgroundUrl": null,
+        "openToWork": false,
+        "premium": false,
+        "showVerificationBadge": false,
+        "creationDate": null,
+        "followerCount": 446,
+        "positions": {
+          "positionsCount": 10,
+          "positionHistory": [
+            {
+              "title": "Direttore artistico",
+              "companyName": "Festival Nei Suoni dei Luoghi",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 11,
+                  "year": 2019
+                },
+                "end": null
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "docente",
+              "companyName": "Liceo XXV Aprile - Portogruaro",
+              "description": "Docente di violino",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2017
+                },
+                "end": null
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": "11126599"
+            },
+            {
+              "title": "Docente di violino",
+              "companyName": "fondazione musicale Santa Cecilia (Portogruaro), UWCAD (Duino-Trieste)",
+              "description": "Docente di Violino e di Musica d'Insieme per Archi",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2010
+                },
+                "end": null
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "ASSISTENZA",
+              "companyName": "ASSOCIAZIONE PROGETTO MUSICA",
+              "description": "Assistenza e direzione artistica",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2014
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2019
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Violinista",
+              "companyName": "Filarmonica del Teatro Comunale di Bologna",
+              "description": "Violino di Fila",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2013
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2017
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Violinista",
+              "companyName": "Fondazione Orchestra Haydn di Bolzano e Trento",
+              "description": "Violino di Fila",
+              "startEndDate": {
+                "start": {
+                  "month": 8,
+                  "year": 2011
+                },
+                "end": {
+                  "month": 9,
+                  "year": 2016
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "violino",
+              "companyName": "Orchestra RAI Torino",
+              "description": "violino di fila",
+              "startEndDate": {
+                "start": {
+                  "month": 3,
+                  "year": 2014
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2014
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Violinista",
+              "companyName": "FVG Mitteleuropa Orchestra",
+              "description": "Prima parte",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2011
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2013
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Insegnante di violino",
+              "companyName": "Scuola di musica del Conservatorio della Svizzera Italiana (Lugano)",
+              "description": "Docente di Violino e di Lezioni Collettive per Archi",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2009
+                },
+                "end": {
+                  "month": 5,
+                  "year": 2010
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "ensemble 900",
+              "companyName": "conservatorio svizzera italiana",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2008
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2008
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 3,
+          "educationHistory": [
+            {
+              "degreeName": "Diploma di Violino",
+              "fieldOfStudy": "Classe di Violino del M\u00b0 M. Lot",
+              "description": "",
+              "linkedInUrl": null,
+              "schoolLogo": null,
+              "schoolName": "Conservatorio di Castelfranco Veneto (TV)",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2004
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2005
+                }
+              }
+            },
+            {
+              "degreeName": "Diploma di Pedagogia Musicale",
+              "fieldOfStudy": "Classe di Violino del M\u00b0 V. Gradow",
+              "description": "Perfezionamento violinistico. Metodica del Violino (Prof. Anna Modesti). Pedagogia e psicologia (A. Maggetti-Jolidon). Tirocinio lezioni individuali e di gruppo. Orchestra. Musica da Camera (trio e quintetto). Musica del  ' 900.",
+              "linkedInUrl": null,
+              "schoolLogo": null,
+              "schoolName": "Conservatorio della Svizzera Italiana (Lugano)",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2007
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2009
+                }
+              }
+            },
+            {
+              "degreeName": "Diploma di Merito",
+              "fieldOfStudy": "Duo violino e pianoforte: Duo Danelon Orlandi- Maestri R. Zanettovich; D. De Rosa; M. Jones",
+              "description": "",
+              "linkedInUrl": null,
+              "schoolLogo": null,
+              "schoolName": "Scuola Superiore Internazionale di Musica da Camera del Trio di Trieste (Duino)",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2010
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2013
+                }
+              }
+            }
+          ]
+        },
+        "skills": [
+          "Duo violino e pianoforte: Duo Danelon-Orlandi",
+          "Insegnamento: lezioni individuali (IT/EN);musica d'insieme per archi dal I corso",
+          "Musica del '900",
+          "Orchestra",
+          "Music",
+          "Music Education",
+          "Classical",
+          "Music Theory",
+          "Chamber Music",
+          "Ensemble",
+          "Festival",
+          "Musica contemporanea",
+          "Musica da camera",
+          "Complesso musicale",
+          "Musica orchestrale",
+          "Teatro",
+          "Educazione musicale",
+          "Musica classica",
+          "Pedagogia",
+          "Composizione"
+        ],
+        "languages": [
+          "Inglese"
+        ],
+        "certifications": {
+          "certificationsCount": 0,
+          "certificationHistory": []
+        },
+        "company": null
+      }
+    },
+    {
+      "crm_id": 19,
+      "email": "markgrimes98@gmail.com",
+      "linkedin_url": "https://www.linkedin.com/in/markbgrimes/",
+      "enrich_source": "linkup_search",
+      "crm_company": null,
+      "crm_title": null,
+      "crm_location": null,
+      "profile": {
+        "publicIdentifier": "markbgrimes",
+        "memberIdentifier": "39461130",
+        "linkedInIdentifier": "ACoAAAJaIQoBztkg1RaklqyEAlp1oTO90d6-mv8",
+        "linkedInUrl": "https://www.linkedin.com/in/markbgrimes",
+        "firstName": "Mark",
+        "lastName": "Grimes",
+        "headline": "Azure Cloud & Identity Strategist | ex-Microsoft | Technical & Professional Global Community Builder, Leader & Advisor | Azure Certification Evangelist | Professional Speaker & Podcaster | Endurance Cyclist",
+        "location": "West Bloomfield Township, Michigan, United States of America",
+        "summary": "Principal Consultant - 19 years of infrastructure and architectural consulting experience with a current emphasis on Identity Strategies and Cloud Migration and Modernization. Incorporate presentation skills  (Microsoft Certified Trainer (MCT) since 1998) to CXO audiences, global events, and to internal Microsoft audiences. Passionate about learning, growth and development for Microsoft, our Customers and Partners. Enjoy identifying gaps or white spaces and creating/providing opportunities to fulfil those.\n\nPROGRAM MANAGEMENT & LEADERSHIP\n\u2022\tOrchestrate and Led the WW Identity Technical Community within Microsoft of nearly 2 dozens lead roles and over 3,500 members worldwide. Curated and Created content across multiple forms of community calls, technical podcasts and learning resource guides.\n\u2022\tEnvisioned and Co-Led an internal Microsoft Event called SPARK, which was a grassroots effort \"for the field, and by the field\" delivering level 3-400 technical sessions from real world experiences. The most recent event more than doubled the first event, yielding over 30,000 live attendees in a week with nearly 600 unique sessions delivered.\n\u2022\tCreated internal virtual event (and now on YouTube) to fill another white space of certification preparation readiness called Certification Exam Rapid Training (C.E.R.T) for sessions that used to exist at Microsoft internal and external conventions - https://aka.ms/YouTube/CERT \n\u2022\tMentored at scale by creating an internal group for Principal Consultants to bring top leaders to the conversation, alternating sessions with interviewing top leaders for their history and perspectives and also gaining advice from others' thought leadership principles.\n\u2022\tContributed innovative ideas as a committee advisory member for two other Microsoft internal Technical Leadership groups, shaping their future content and direction.",
+        "photoUrl": "https://media.licdn.com/dms/image/v2/C5603AQFHFcgeSoU3WA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654865482353?e=1766016000&v=beta&t=h2zvPaxYPybVwSpIquWgEOSOLkRvvcsW8KiJvtLfr9s",
+        "backgroundUrl": "https://media.licdn.com/dms/image/v2/D5616AQHX2nADIWo3BA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1729019578575?e=1766016000&v=beta&t=RitUTWmmQqgrzy60idvRtR11BUj388CKBOfMyLt23AY",
+        "openToWork": false,
+        "premium": false,
+        "showVerificationBadge": true,
+        "creationDate": null,
+        "followerCount": 4276,
+        "positions": {
+          "positionsCount": 9,
+          "positionHistory": [
+            {
+              "title": "Solutions Director Cloud Platform",
+              "companyName": "3Cloud",
+              "description": "Pre-sales solution architecture along with selling from within large accounts.  In addition to cloud adoption, my primary interest is in Identity thought leadership. This is an ever-growing landscape of possibilities to provide an \"identity fabric\", which is Microsoft's latest theme. Working with companies to reduce risks, add business value and keep all of their customers, internal and external, happy, is very rewarding from a career perspective and also to our customers.",
+              "startEndDate": {
+                "start": {
+                  "month": 10,
+                  "year": 2024
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQGzH07MwMQxDA/company-logo_400_400/company-logo_400_400/0/1630607255620/3cloudsolutions_logo?e=1766016000&v=beta&t=U7g9VMcAq88PqlrTND-pIu5gwuU1OZY6aGANjsFM1gY",
+              "linkedInUrl": "https://www.linkedin.com/company/3cloudsolutions/",
+              "linkedInId": "15210062"
+            },
+            {
+              "title": "Administrative",
+              "companyName": "PwC",
+              "description": "I worked as part of the PwC Talent Exchange as an Independent Contractor as Mark Grimes LLC. The engagement was focused on Identity and Access Management for a large Defense Industrial Base (DIB) customer.",
+              "startEndDate": {
+                "start": {
+                  "month": 5,
+                  "year": 2024
+                },
+                "end": {
+                  "month": 10,
+                  "year": 2024
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQFVfAbYbmcpvA/company-logo_400_400/B4EZaB6j58H0AY-/0/1745936334912/pwc_logo?e=1766016000&v=beta&t=CMTxD4xwHAC8GN6EvEDCCT8PKGR0eYCGrdfZ08yy-E0",
+              "linkedInUrl": "https://www.linkedin.com/company/pwc/",
+              "linkedInId": "1044"
+            },
+            {
+              "title": "Principal Azure Infrastructure Consultant",
+              "companyName": "Microsoft",
+              "description": "Architect Azure and Azure Stack Patterns and Practices. Guide corporations in hybrid Identity and governance strategies.",
+              "startEndDate": {
+                "start": {
+                  "month": 8,
+                  "year": 2010
+                },
+                "end": {
+                  "month": 4,
+                  "year": 2024
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQH32RJQCl3dDQ/company-logo_400_400/B56ZYQ0mrGGoAc-/0/1744038948046/microsoft_logo?e=1766016000&v=beta&t=k8BQRHx8SnQfofFH96QE1kPvwmp51N-Vwlc4LrYvKy0",
+              "linkedInUrl": "https://www.linkedin.com/company/microsoft/",
+              "linkedInId": "1035"
+            },
+            {
+              "title": "Azure and Azure Stack Architect",
+              "companyName": "Microsoft",
+              "description": "I focused on helping organizations to on-board workloads into Azure Commercial and Government.  I was part of the Azure Stack Early Adopters (EAI) team working with Cloud Solution Providers (CSP) around the world as they adopt Azure Stack and on-board customers. In my free time I created and delivered Azure Certification Preparation aka.ms/Azure/CERT .",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2010
+                },
+                "end": {
+                  "month": 4,
+                  "year": 2024
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQH32RJQCl3dDQ/company-logo_400_400/B56ZYQ0mrGGoAc-/0/1744038948046/microsoft_logo?e=1766016000&v=beta&t=k8BQRHx8SnQfofFH96QE1kPvwmp51N-Vwlc4LrYvKy0",
+              "linkedInUrl": "https://www.linkedin.com/company/microsoft/",
+              "linkedInId": "1035"
+            },
+            {
+              "title": "Principal Consultant",
+              "companyName": "Sogeti",
+              "description": "Principal Consultant crafting Microsoft Infrastructure solutions across the US.  Specialiteis include SharePoint Infrastructure, workflows and InfoParh forms, OCS migrations and architecture design, Active Directory design and troubleshooting, and WIndows 7 migrations and application readiness.",
+              "startEndDate": {
+                "start": {
+                  "month": 2,
+                  "year": 2007
+                },
+                "end": {
+                  "month": 8,
+                  "year": 2010
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQGlAxNv0QOauw/company-logo_400_400/company-logo_400_400/0/1672993124813/sogeti_logo?e=1766016000&v=beta&t=ELQQ2DrQLiS7YL774WXNM70UryBRHrZVZkaWWCyi5n0",
+              "linkedInUrl": "https://www.linkedin.com/company/sogeti/",
+              "linkedInId": "1956"
+            },
+            {
+              "title": "Comittee Member",
+              "companyName": "SEMSUG",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2007
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2010
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Adjunct Faculty",
+              "companyName": "University of Phoenix",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2003
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2009
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQEGQYvlDi-5OQ/company-logo_400_400/company-logo_400_400/0/1630646463815/university_of_phoenix_logo?e=1766016000&v=beta&t=J2BrZfaUpguRzirOQqnjTZL-IXkHi2vOqhOi2NtFjrQ",
+              "linkedInUrl": "https://www.linkedin.com/school/university-of-phoenix/",
+              "linkedInId": "3050"
+            },
+            {
+              "title": "Technical Instructor",
+              "companyName": "New Horizons CLC",
+              "description": "Trainer for PMP, ITIL, MCSE, Business Skills, Comptia classes, etc",
+              "startEndDate": {
+                "start": {
+                  "month": 10,
+                  "year": 1997
+                },
+                "end": {
+                  "month": 2,
+                  "year": 2007
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQGmBrbRWYwfYg/company-logo_400_400/company-logo_400_400/0/1675457532058/new_horizons_computer_learning_centers_logo?e=1766016000&v=beta&t=TKioEYugqOOJOoj7z1O-CVD1btQHWl_ZFUSu2VYQsmQ",
+              "linkedInUrl": "https://www.linkedin.com/company/new-horizons-training/",
+              "linkedInId": "61750"
+            },
+            {
+              "title": "Account Executive",
+              "companyName": "O/E Systems",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 1995
+                },
+                "end": {
+                  "month": 12,
+                  "year": 1997
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 3,
+          "educationHistory": [
+            {
+              "degreeName": "MBA",
+              "fieldOfStudy": "Business",
+              "description": "Completed two and a half year program in two years while working full time.",
+              "linkedInUrl": "https://www.linkedin.com/school/unc-charlotte/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/D560BAQFungcgjUTABw/company-logo_100_100/B56ZeEs4dcGoAQ-/0/1750278048123/unc_charlotte_logo?e=1766016000&v=beta&t=iUtgpiwqQhsoKOwrLE-OoKqXW8c-lfORl1UhvoDmZn8",
+              "schoolName": "University of North Carolina at Charlotte",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 1987
+                },
+                "end": {
+                  "month": 12,
+                  "year": 1989
+                }
+              }
+            },
+            {
+              "degreeName": "Post Bac Studies for MBA",
+              "fieldOfStudy": "Business Administration and Management,  General",
+              "description": "Took Business classes as prerequisites for MBA",
+              "linkedInUrl": "https://www.linkedin.com/school/piedmont-community-college/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQHbAvRkVLH0xg/company-logo_200_200/company-logo_200_200/0/1733256594023/piedmont_community_college_logo?e=1766016000&v=beta&t=pn0SKfUiq498Oy58zpG31W0PjqyNWAEDR5kvoTB6AK0",
+              "schoolName": "Piedmont Community College",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 1986
+                },
+                "end": {
+                  "month": 12,
+                  "year": 1987
+                }
+              }
+            },
+            {
+              "degreeName": "BA Chemistry",
+              "fieldOfStudy": "Chemistry",
+              "description": "One of the few in the world who has studied Chemistry while earning a Bachelor of Arts degree!",
+              "linkedInUrl": "https://www.linkedin.com/school/miami-university/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQHuMcdsr2R2Yg/company-logo_200_200/company-logo_200_200/0/1630577479053/miami_university_logo?e=1766016000&v=beta&t=UOI67UCnRbZEiabsYBiRBhT1wzdLCbDnLtq2BPR1ljk",
+              "schoolName": "Miami University",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 1980
+                },
+                "end": {
+                  "month": 12,
+                  "year": 1984
+                }
+              }
+            }
+          ]
+        },
+        "skills": [
+          "Strategic Planning",
+          "Architectural Design",
+          "Cloud adoption",
+          "Migration Projects",
+          "Technical Presentations",
+          "Agile Methodologies",
+          "Community Development",
+          "Community Organizing",
+          "Training",
+          "NIST 800-53",
+          "Public Sector",
+          "Federal Government",
+          "Jira",
+          "Azure DevOps Services",
+          "Confluence",
+          "Azure",
+          "Microsoft Office",
+          "Project Planning",
+          "Agile Project Management",
+          "Direct Sales"
+        ],
+        "languages": [
+          "French"
+        ],
+        "certifications": {
+          "certificationsCount": 2,
+          "certificationHistory": [
+            {
+              "name": "Build and Execute an Organisational AI Strategy",
+              "organizationName": "Coursera Instructor Network",
+              "organizationUrl": null,
+              "issuedDate": "2024-08"
+            },
+            {
+              "name": "Connected Communities - Lead 2024",
+              "organizationName": "Microsoft",
+              "organizationUrl": "https://linkedin.com/company/1035",
+              "issuedDate": "2024-04"
+            }
+          ]
+        },
+        "company": null
+      }
+    },
+    {
+      "crm_id": 13,
+      "email": "khalid@fastn.ai",
+      "linkedin_url": "https://www.linkedin.com/in/km2011",
+      "enrich_source": null,
+      "crm_company": "fastn",
+      "crm_title": "Founder @fastn | Tech Advisor & Investor | Ex-Amazon",
+      "crm_location": "Austin, Texas, United States of America",
+      "profile": {
+        "publicIdentifier": "km2011",
+        "memberIdentifier": "202566933",
+        "linkedInIdentifier": "ACoAAAwS7RUB4VdCDuCoDugn8F7Lz1Dc5oBXr2U",
+        "linkedInUrl": "https://www.linkedin.com/in/km2011",
+        "firstName": "Khalid",
+        "lastName": "M.",
+        "headline": "Founder @fastn | Tech Advisor & Investor | Ex-Amazon",
+        "location": "Austin, Texas, United States of America",
+        "summary": null,
+        "photoUrl": "https://media.licdn.com/dms/image/v2/D5603AQEygijHdXqRdw/profile-displayphoto-shrink_400_400/B56Zc7jphbHoAk-/0/1749050891087?e=1766016000&v=beta&t=laIS0ECscBlJw6TPhz6swJzIyJoWy7q8TxgDuCAqFWk",
+        "backgroundUrl": "https://media.licdn.com/dms/image/v2/D5616AQGG02Lg8KvXbQ/profile-displaybackgroundimage-shrink_350_1400/B56Zc7j9KmHUAk-/0/1749050971567?e=1766016000&v=beta&t=nFixCM78NA96sh1A_CHBSTg3c8-_E1PKxn2VVF5YLKE",
+        "openToWork": false,
+        "premium": true,
+        "showVerificationBadge": true,
+        "creationDate": null,
+        "followerCount": 6383,
+        "positions": {
+          "positionsCount": 7,
+          "positionHistory": [
+            {
+              "title": "Founder",
+              "companyName": "fastn",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 3,
+                  "year": 2023
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQFxky9JvAfpmw/company-logo_400_400/company-logo_400_400/0/1719256685031/fastnai_logo?e=1766016000&v=beta&t=UomMl_Kd8bYYU1dAJiWEKPGQIT2F5dMOdNb-Adr_SiA",
+              "linkedInUrl": "https://www.linkedin.com/company/fastnai/",
+              "linkedInId": "98307913"
+            },
+            {
+              "title": "VP of Engineering",
+              "companyName": "fabric",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2021
+                },
+                "end": {
+                  "month": 1,
+                  "year": 2023
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQFljpdWh4jZzA/company-logo_400_400/company-logo_400_400/0/1630469034031/teamfabric_logo?e=1766016000&v=beta&t=bqZ5pQWMtcEDNIugt4fZ6SH87nDRb1sFM4_ItRJZjbk",
+              "linkedInUrl": "https://www.linkedin.com/company/teamfabric/",
+              "linkedInId": "18479065"
+            },
+            {
+              "title": "Founding VP of Engineering",
+              "companyName": "Veeve",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 12,
+                  "year": 2019
+                },
+                "end": {
+                  "month": 6,
+                  "year": 2021
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQGQmhhmATdFrg/company-logo_400_400/company-logo_400_400/0/1680016409852/veeveai_logo?e=1766016000&v=beta&t=dHjFADRKwZKBh_yreN6xDWng-YkQphzYk87_DWjOu8s",
+              "linkedInUrl": "https://www.linkedin.com/company/veeveai/",
+              "linkedInId": "19170288"
+            },
+            {
+              "title": "Software Engineering Leader",
+              "companyName": "Amazon",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 6,
+                  "year": 2012
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2019
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQGDLy4STCnHbg/company-logo_400_400/B56ZnZxDipI0AY-/0/1760295142304/amazon_logo?e=1766016000&v=beta&t=naiPdBHJTXvY1UOFXFiTglMjuMD81-pDMsKqk-lOlCc",
+              "linkedInUrl": "https://www.linkedin.com/company/amazon/",
+              "linkedInId": "1586"
+            },
+            {
+              "title": "Technical Administrative Assistant",
+              "companyName": "Eastern Michigan University",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 4,
+                  "year": 2011
+                },
+                "end": {
+                  "month": 5,
+                  "year": 2012
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQFCHhk9OSglVg/company-logo_400_400/company-logo_400_400/0/1630590193065/eastern_michigan_university_logo?e=1766016000&v=beta&t=ECypJNoVEihEa-uftemsTx9itXAe5yOm4S62mmCaaag",
+              "linkedInUrl": "https://www.linkedin.com/school/eastern-michigan-university/",
+              "linkedInId": "9896"
+            },
+            {
+              "title": "Teacher Assistant",
+              "companyName": "Eastern Michigan University",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2011
+                },
+                "end": {
+                  "month": 4,
+                  "year": 2012
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQFCHhk9OSglVg/company-logo_400_400/company-logo_400_400/0/1630590193065/eastern_michigan_university_logo?e=1766016000&v=beta&t=ECypJNoVEihEa-uftemsTx9itXAe5yOm4S62mmCaaag",
+              "linkedInUrl": "https://www.linkedin.com/school/eastern-michigan-university/",
+              "linkedInId": "9896"
+            },
+            {
+              "title": "Lab Attendant",
+              "companyName": "Eastern Michigan University",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 12,
+                  "year": 2010
+                },
+                "end": {
+                  "month": 4,
+                  "year": 2012
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQFCHhk9OSglVg/company-logo_400_400/company-logo_400_400/0/1630590193065/eastern_michigan_university_logo?e=1766016000&v=beta&t=ECypJNoVEihEa-uftemsTx9itXAe5yOm4S62mmCaaag",
+              "linkedInUrl": "https://www.linkedin.com/school/eastern-michigan-university/",
+              "linkedInId": "9896"
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 2,
+          "educationHistory": [
+            {
+              "degreeName": "BS",
+              "fieldOfStudy": "Computer Science",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/eastern-michigan-university/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQFCHhk9OSglVg/company-logo_200_200/company-logo_200_200/0/1630590193065/eastern_michigan_university_logo?e=1766016000&v=beta&t=NqL17Z1MJfwALq0yKwU1cWrJHQm5oI7UNmLmjNaIll0",
+              "schoolName": "Eastern Michigan University",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2010
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2012
+                }
+              }
+            },
+            {
+              "degreeName": null,
+              "fieldOfStudy": null,
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/henry-ford-community-college/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQHYaDqKgI9cTQ/company-logo_200_200/company-logo_200_200/0/1631338877188?e=1766016000&v=beta&t=N2nUvZJxJTxoykIn5qn4YIGPiKBTTtiiB57BT9ED_Qs",
+              "schoolName": "Henry Ford College",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2009
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2010
+                }
+              }
+            }
+          ]
+        },
+        "skills": [
+          "Java",
+          "SQL",
+          "JavaScript",
+          "C++",
+          "HTML",
+          "Microsoft SQL Server",
+          "XML",
+          "MySQL",
+          "C",
+          "Linux",
+          "Software Development",
+          "PHP",
+          "CSS",
+          "Windows",
+          "Microsoft Office",
+          "Oracle",
+          "JSP development",
+          "AJAX",
+          "SDLC",
+          "Software Engineering"
+        ],
+        "languages": [],
+        "certifications": {
+          "certificationsCount": 0,
+          "certificationHistory": []
+        },
+        "company": null
+      }
+    },
+    {
+      "crm_id": 12,
+      "email": "shiladitya1601@gmail.com",
+      "linkedin_url": "https://www.linkedin.com/in/shiladitya-banerjee-7138426b",
+      "enrich_source": "direct_email",
+      "crm_company": "PhonePe",
+      "crm_title": "Data Scientist at PhonePe",
+      "crm_location": "Pune, Maharashtra, India",
+      "profile": {
+        "publicIdentifier": "shiladitya-banerjee-7138426b",
+        "memberIdentifier": "249914751",
+        "linkedInIdentifier": "ACoAAA7lZX8B7WnzTqkthjIJrAjGraTbZCGQcrM",
+        "linkedInUrl": "https://www.linkedin.com/in/shiladitya-banerjee-7138426b",
+        "firstName": "Shiladitya",
+        "lastName": "Banerjee",
+        "headline": "Data Scientist at PhonePe",
+        "location": "Pune, Maharashtra, India",
+        "summary": null,
+        "photoUrl": null,
+        "backgroundUrl": null,
+        "openToWork": false,
+        "premium": false,
+        "showVerificationBadge": false,
+        "creationDate": null,
+        "followerCount": 854,
+        "positions": {
+          "positionsCount": 4,
+          "positionHistory": [
+            {
+              "title": "Data Scientist",
+              "companyName": "PhonePe",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2019
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQHLOrShxWW33g/company-logo_400_400/company-logo_400_400/0/1732870614932/phonepe_internet_logo?e=1766016000&v=beta&t=VxXUlBfdxBW1ilWVinrqKeoiqJ3CuJxAPNpojuH0jMY",
+              "linkedInUrl": "https://www.linkedin.com/company/phonepe-internet/",
+              "linkedInId": "10479149"
+            },
+            {
+              "title": "Software Engineer, Data Science",
+              "companyName": "Walnut App (Thumbworks Technologies)",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 3,
+                  "year": 2016
+                },
+                "end": {
+                  "month": 9,
+                  "year": 2019
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Senior Software Engineer",
+              "companyName": "PubMatic",
+              "description": "Part of machine learning team analyzing big data and building predictive models",
+              "startEndDate": {
+                "start": {
+                  "month": 7,
+                  "year": 2015
+                },
+                "end": {
+                  "month": 2,
+                  "year": 2016
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQFzbRQTefiFaw/company-logo_400_400/company-logo_400_400/0/1631326637962?e=1766016000&v=beta&t=mczzZi_Z43kXo0bEJXFlTzcHtL2w_u63Xy_8BE8figQ",
+              "linkedInUrl": "https://www.linkedin.com/company/pubmatic/",
+              "linkedInId": "167624"
+            },
+            {
+              "title": "System Software Engineer",
+              "companyName": "NVIDIA",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 8,
+                  "year": 2013
+                },
+                "end": {
+                  "month": 7,
+                  "year": 2015
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQGV36q2EowSyw/company-logo_400_400/company-logo_400_400/0/1724881581208/nvidia_logo?e=1766016000&v=beta&t=pF9uxorl1jsUZssbdYBnXwNdDC7-gUP_A1WuWucmsiE",
+              "linkedInUrl": "https://www.linkedin.com/company/nvidia/",
+              "linkedInId": "3608"
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 4,
+          "educationHistory": [
+            {
+              "degreeName": "Master of Technology (MTech)",
+              "fieldOfStudy": "Computational Science",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/indian-institute-of-science/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C560BAQHlKBtJ82x7_Q/company-logo_200_200/company-logo_200_200/0/1630652697970/indian_institute_of_science_logo?e=1766016000&v=beta&t=OYZ0hhyyhkbb3te2GLt5afVX8gHd9D1EaKknjENYGG0",
+              "schoolName": "Indian Institute of Science (IISc)",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2011
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2013
+                }
+              }
+            },
+            {
+              "degreeName": "Bachelor of Engineering (BE)",
+              "fieldOfStudy": "Mechanical Engineering",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/vishwakarma-institute-of-technology-pune/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQGltV9wRWpIjg/company-logo_200_200/company-logo_200_200/0/1631347857194?e=1766016000&v=beta&t=7nSJXHUV-y3boDy7JJMKV86wGI3HWAPa_tpSwOw3Q3Y",
+              "schoolName": "Vishwakarma Institute Of Technology",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2006
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2010
+                }
+              }
+            },
+            {
+              "degreeName": null,
+              "fieldOfStudy": null,
+              "description": "",
+              "linkedInUrl": null,
+              "schoolLogo": null,
+              "schoolName": "Marathwada Mitra Mandal College, Pune",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2004
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2006
+                }
+              }
+            },
+            {
+              "degreeName": null,
+              "fieldOfStudy": null,
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/loyola-high-school-pune/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQGmhv3d8RkKNQ/company-logo_200_200/company-logo_200_200/0/1631356804491?e=1766016000&v=beta&t=z7ZE0uIGMGsGYAVEvh6GuBhxFfZS4HXNs-TFLeS6Mrk",
+              "schoolName": "Loyola High School & Junior College Pune",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 1994
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2004
+                }
+              }
+            }
+          ]
+        },
+        "skills": [
+          "Machine Learning",
+          "R",
+          "Applied Probability",
+          "Numerical Linear Algebra",
+          "High Performance Computing",
+          "MPI",
+          "CUDA",
+          "Hive",
+          "MySQL",
+          "Finite Element Analysis",
+          "C",
+          "SolidWorks",
+          "C++",
+          "Java",
+          "Algorithms",
+          "Distributed Systems",
+          "Programming",
+          "Python"
+        ],
+        "languages": [
+          "Bengali",
+          "English"
+        ],
+        "certifications": {
+          "certificationsCount": 0,
+          "certificationHistory": []
+        },
+        "company": null
+      }
+    },
+    {
+      "crm_id": 10,
+      "email": "jacob@jdietle.me",
+      "linkedin_url": "https://www.linkedin.com/in/jacob-dietle",
+      "enrich_source": null,
+      "crm_company": null,
+      "crm_title": null,
+      "crm_location": null,
+      "profile": {
+        "publicIdentifier": "jacob-dietle",
+        "memberIdentifier": "637241084",
+        "linkedInIdentifier": "ACoAACX7hvwBpoTbThdnLIwUeRJUsURVqFQsNQ8",
+        "linkedInUrl": "https://www.linkedin.com/in/jacob-dietle",
+        "firstName": "Jacob",
+        "lastName": "Dietle",
+        "headline": "\ud83d\udfe0  Context Operating Systems for GTM | Amplify Your Taste & Scale Expertise ",
+        "location": "New York, New York, United States of America",
+        "summary": "Taste is the last moat. Context is king. \n\nI build GTM operating systems that make AI create like you do.\n\nThese systems amplify your taste and expertise so you can make decisions faster with better intelligence that compounds over time. \n\nYou never have to solve the same problem twice and it gets smarter the more you use it.\n\nWe take your call transcripts, internal docs, and more and transform it into a knowledge base which acts the back bone of your operating system using an our proprietary multi-agent approach and schema. \n\nCheck my out my recent content to learn more and feel free to dm me with questions :) ",
+        "photoUrl": "https://media.licdn.com/dms/image/v2/C5603AQECViIOjysUfg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1657122893758?e=1766016000&v=beta&t=nF1jFIs-p8dFyjdT7pQxTvDvrFz2q6Sqv0gNC16jtCs",
+        "backgroundUrl": "https://media.licdn.com/dms/image/v2/D5616AQEN0bRKa8n54g/profile-displaybackgroundimage-shrink_350_1400/B56ZljB8HgI4AY-/0/1758303078938?e=1766016000&v=beta&t=GPiT39GyC1uwck1Z1k95CdTH9HwCns3pWBxXpUyM1IQ",
+        "openToWork": false,
+        "premium": false,
+        "showVerificationBadge": true,
+        "creationDate": null,
+        "followerCount": 2287,
+        "positions": {
+          "positionsCount": 9,
+          "positionHistory": [
+            {
+              "title": "Founder",
+              "companyName": "Taste Systems",
+              "description": "Building the Bell Labs of technical GTM. \n\nThe intersection of GTM, Software Engineering, AI Agents, MCP, Context Engineering and Growth/Growth Engineering\n\n\nAnd helping my friends go from GTM Vibe coding to Systems Architects as we go :)",
+              "startEndDate": {
+                "start": {
+                  "month": 8,
+                  "year": 2025
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQHceAk8TPbHtg/company-logo_400_400/B56ZiKwWP2G0Bo-/0/1754674587244?e=1766016000&v=beta&t=lUV3psj_GfYc0dcF2TurrSUn0e4ofSpTSnqJZiF2Djc",
+              "linkedInUrl": "https://www.linkedin.com/company/taste-systems/",
+              "linkedInId": "108142110"
+            },
+            {
+              "title": "Founder",
+              "companyName": "Digital Leverage ",
+              "description": "GTM Engineering solutions and products developed leveraging over a year of Gen AI implementation and growth automation freelancing.",
+              "startEndDate": {
+                "start": {
+                  "month": 2,
+                  "year": 2024
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQEAmpov2YY04g/company-logo_400_400/company-logo_400_400/0/1709233467922/digital_leverage_consulting_logo?e=1766016000&v=beta&t=TTNzyau4z23f_Nw8mLiUDheSdV9GlV-mLgL33vtAme0",
+              "linkedInUrl": "https://www.linkedin.com/company/generate-leverage/",
+              "linkedInId": "89643390"
+            },
+            {
+              "title": "Growth Automation & Generative AI Developer (freelanced before starting own co)",
+              "companyName": "Digital Leverage ",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 10,
+                  "year": 2022
+                },
+                "end": {
+                  "month": 2,
+                  "year": 2024
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQEAmpov2YY04g/company-logo_400_400/company-logo_400_400/0/1709233467922/digital_leverage_consulting_logo?e=1766016000&v=beta&t=TTNzyau4z23f_Nw8mLiUDheSdV9GlV-mLgL33vtAme0",
+              "linkedInUrl": "https://www.linkedin.com/company/generate-leverage/",
+              "linkedInId": "89643390"
+            },
+            {
+              "title": "Web Design & Ecommerce Freelance",
+              "companyName": "",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 6,
+                  "year": 2021
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2022
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Project Analyst",
+              "companyName": "doorkee",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 11,
+                  "year": 2021
+                },
+                "end": {
+                  "month": 4,
+                  "year": 2022
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQHhY_13fwp7yQ/company-logo_400_400/company-logo_400_400/0/1630565571422/doorkee_logo?e=1766016000&v=beta&t=VajSDaouU1OxFwJRr6jkWHuOa549asy0nEApatxgMc4",
+              "linkedInUrl": "https://www.linkedin.com/company/doorkee/",
+              "linkedInId": "35603153"
+            },
+            {
+              "title": "SICTECH Student Product Manager",
+              "companyName": "Fordham Social Innovation Collaboratory",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 8,
+                  "year": 2020
+                },
+                "end": {
+                  "month": 5,
+                  "year": 2021
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQHIaV6p2M9uwQ/company-logo_400_400/company-logo_400_400/0/1630564840826/fordhamsocialinnovationcollaboratory_logo?e=1766016000&v=beta&t=9Zzu-pwIRkh3FKsqHztP26eurHE5-1eZTS0Tqt_gYJM",
+              "linkedInUrl": "https://www.linkedin.com/company/fordhamsocialinnovationcollaboratory/",
+              "linkedInId": "11137413"
+            },
+            {
+              "title": "Venmo/Fordham Fintech Society: Venmo Campus Challenge - First Place Winners: Team Product Lead",
+              "companyName": "Fordham FinTech Network",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 2,
+                  "year": 2020
+                },
+                "end": {
+                  "month": 2,
+                  "year": 2020
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQH0u2aYRucopA/company-logo_400_400/company-logo_400_400/0/1631316441189?e=1766016000&v=beta&t=NdK6n136P_AksQ1wjTebzhHRhe_tuM3_YTkZxHeyM5Q",
+              "linkedInUrl": "https://www.linkedin.com/company/fordhamfintechnetwork/",
+              "linkedInId": "11123932"
+            },
+            {
+              "title": "Financial Research Intern",
+              "companyName": "Catalina Structured Funding",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 5,
+                  "year": 2018
+                },
+                "end": {
+                  "month": 8,
+                  "year": 2018
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Legal Intern",
+              "companyName": "Law Offices of Michael Montgomery",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2017
+                },
+                "end": {
+                  "month": 1,
+                  "year": 2018
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 2,
+          "educationHistory": [
+            {
+              "degreeName": "Bachelor of Science - BS",
+              "fieldOfStudy": "Primary Concentration in Information Systems & Secondary Concentration in Entrepreneurship",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/fordham-gabelli-school-of-business/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQGOeLUAEpR5CQ/company-logo_400_400/B4EZh78aWRGUAY-/0/1754426091159/fordham_gabelli_school_of_business_logo?e=1766016000&v=beta&t=NtaBpQyz1ffyGMMyluV7_M97WZ2AdzPAhZe_HwWxeeo",
+              "schoolName": "Fordham Gabelli School of Business",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2018
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2021
+                }
+              }
+            },
+            {
+              "degreeName": null,
+              "fieldOfStudy": null,
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/st-francis-high-school/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C560BAQG_9zSTXDzqeg/company-logo_200_200/company-logo_200_200/0/1630620619933/st_francis_high_school_logo?e=1766016000&v=beta&t=fYqR-LjKzN8u10LsGkAMKE2yzQaFIyH9nwHx0fR8ybQ",
+              "schoolName": "St. Francis High School, La Canada, CA",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2013
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2017
+                }
+              }
+            }
+          ]
+        },
+        "skills": [
+          "Data Scraping",
+          "growth engineering",
+          "Software Development",
+          "Python (Programming Language)",
+          "Generative AI Implementation",
+          "Sales Automation",
+          "Lead Generation Automation",
+          "Large Language Models (LLM)",
+          "REST APIs",
+          "Web Development",
+          "Data Analysis",
+          "Product Management",
+          "Visual Identity Design",
+          "Workflow Automation",
+          "E-Commerce",
+          "Market Sizing",
+          "Product Strategy",
+          "SQL",
+          "Copper CRM",
+          "Product Development"
+        ],
+        "languages": [],
+        "certifications": {
+          "certificationsCount": 2,
+          "certificationHistory": [
+            {
+              "name": "Technology Business Strategy and Development Certificate",
+              "organizationName": "School16",
+              "organizationUrl": "https://linkedin.com/company/64998183",
+              "issuedDate": "2022-07"
+            },
+            {
+              "name": "Bloomberg Market Concepts ",
+              "organizationName": "Bloomberg",
+              "organizationUrl": "https://linkedin.com/company/2494",
+              "issuedDate": "2019-12"
+            }
+          ]
+        },
+        "company": null
+      }
+    },
+    {
+      "crm_id": 7,
+      "email": "miska@swiftdial.ai",
+      "linkedin_url": "https://www.linkedin.com/in/miskakaskinen",
+      "enrich_source": null,
+      "crm_company": null,
+      "crm_title": null,
+      "crm_location": null,
+      "profile": {
+        "publicIdentifier": "miskakaskinen",
+        "memberIdentifier": "682587370",
+        "linkedInIdentifier": "ACoAACivdOoB12VIn_ad8C2p5SGWzTM7pFy-HVI",
+        "linkedInUrl": "https://www.linkedin.com/in/miskakaskinen",
+        "firstName": "Miska",
+        "lastName": "Kaskinen",
+        "headline": "Co-Founder @ SwiftDial.ai | The AI Growth Studio | Building AI workflows that elevate your team | M.Sc. (Econ.)",
+        "location": "Finland",
+        "summary": "I spent 5+ years building international markets from \u20ac3B corporations to startups, then watched teams waste 80% of their time on manual busywork while revenue targets got missed. So I decided to solve it.\n\nTHE BREAKING POINT\n\nAt Huhtam\u00e4ki (\u20ac3B publicly listed), I was managing Nordic accounts while coordinating with supply chain teams across Europe. At Nature Line Cutlery, I built markets from scratch in UK, Germany, Spain, Italy, France. But the one thing I always thought about is that the processes seemed broken.\n\nEvery day, high-performing sales professionals spend hours on manual data gathering, jumping between disconnected systems, and struggling with unclear targeting while the actual relationship building and deal closing\u2014the work that drive revenue\u2014get squeezed into whatever time was left.\n\nMY HYPOTHESIS\n\nI believe there is a better way. That AI and agentic workflows can eliminate the busywork entirely, letting sales teams focus on what they do best: building relationships and closing deals.\n\nMY BACKGROUND\n\nMasters degree in economics, majoring in strategic business development (4.0 GPA), with 5+ years international B2B sales experience from \u20ac3B corporations to startups.\n\nWHAT I BUILD FOR COMPANIES\n\n\u2192  Foundational datasets that allow you to build world-class sales and marketing functions by focusing on what matters most - high-leverage tasks that create value\n\n\u2192  Agentic systems that track every signal and engagement across your entire target market so it's crystal clear where prospects are in the customer journey and who the high-priority customers are - without jumping between 10 different tools (think: 1 dynamically updated list to call)\n\n\u2192 Automations that keep your CRM clean and up-to-date with correct data - your sales and marketing team should never spend time cleaning your CRM\n\n\u2192  Secure MCP servers that allow executive teams to connect with different tools and layers of context to start generating real insights\n\nThe three problems killing your sales performance:\n\n\u2192 You don't know who to target, where to find them, or what to say\n\u2192 Sales and marketing operate in disconnected silos\n\u2192 You're flying blind without integrated tracking systems\n\nIf you want to transform your sales operations from manual chaos to automated intelligence, let's talk.",
+        "photoUrl": "https://media.licdn.com/dms/image/v2/D4D03AQFnwy6ts3zuSA/profile-displayphoto-shrink_800_800/B4DZWGcpXBG4Ag-/0/1741717412483?e=1766016000&v=beta&t=4UKkAXdkShGYT6C26pWA_BiE0pVHFn1nTNbYZH7esMQ",
+        "backgroundUrl": "https://media.licdn.com/dms/image/v2/D4D16AQGH5QHXNNA1CA/profile-displaybackgroundimage-shrink_350_1400/B4DZl7yMd5JUAc-/0/1758718380794?e=1766016000&v=beta&t=gSM4b8YDCTa4yggzju6sYpjzNzlabqoVsRh0Sxvn_BY",
+        "openToWork": false,
+        "premium": false,
+        "showVerificationBadge": false,
+        "creationDate": null,
+        "followerCount": 1792,
+        "positions": {
+          "positionsCount": 7,
+          "positionHistory": [
+            {
+              "title": "Clay Creator",
+              "companyName": "Clay",
+              "description": "Sharing my knowledge and insights on how to implement Clay for mid-market to enterprise companies",
+              "startEndDate": {
+                "start": {
+                  "month": 4,
+                  "year": 2025
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQF0p3ccgnHKdg/company-logo_400_400/B4EZpKiSF6IIAY-/0/1762187092795/grow_with_clay_logo?e=1766016000&v=beta&t=2QsAdObbZof9VAMMaGsUEyGW5pMJei1XoiKQ8nT43xg",
+              "linkedInUrl": "https://www.linkedin.com/company/grow-with-clay/",
+              "linkedInId": "13018048"
+            },
+            {
+              "title": "Co-Founder",
+              "companyName": "SwiftDial.ai",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2025
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4D0BAQEbdZaDvbdFsw/company-logo_400_400/company-logo_400_400/0/1737574246373/swiftdial_ai_logo?e=1766016000&v=beta&t=H2HLTKOoveGTJeMy6esrxKYtLMyv3FnnDyvrA11LhcI",
+              "linkedInUrl": "https://www.linkedin.com/company/swiftdial-ai/",
+              "linkedInId": "106163760"
+            },
+            {
+              "title": "Sales Manager",
+              "companyName": "Nature Line Cutlery Oy",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2022
+                },
+                "end": {
+                  "month": 10,
+                  "year": 2024
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQF4DugoeaPMng/company-logo_400_400/company-logo_400_400/0/1630518657618/akvila_oy_logo?e=1766016000&v=beta&t=qBVAuQILi3ohTyodYRsiBEgsNIysiNIhcCYtvdTvSc4",
+              "linkedInUrl": "https://www.linkedin.com/company/naturelinecutlery/",
+              "linkedInId": "11861289"
+            },
+            {
+              "title": "Account Manager",
+              "companyName": "Huhtamaki",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 3,
+                  "year": 2020
+                },
+                "end": {
+                  "month": 9,
+                  "year": 2022
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQElhf5ywzYAmA/company-logo_400_400/company-logo_400_400/0/1719905644066/huhtamaki_logo?e=1766016000&v=beta&t=qy7MQxi5ehZWqMvnEeWjpOZRVoykq7veiTVIYlhJFaQ",
+              "linkedInUrl": "https://www.linkedin.com/company/huhtamaki/",
+              "linkedInId": "8596"
+            },
+            {
+              "title": "B2B sales representative",
+              "companyName": "Pinpops",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 10,
+                  "year": 2019
+                },
+                "end": {
+                  "month": 1,
+                  "year": 2020
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Foreign Exchange Trader",
+              "companyName": "FOREX Bank",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 6,
+                  "year": 2019
+                },
+                "end": {
+                  "month": 10,
+                  "year": 2019
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQH9oJszCwuofg/company-logo_400_400/company-logo_400_400/0/1630634760562/forex_bank_logo?e=1766016000&v=beta&t=-Iy6Hj_-MSiFnZzF6I289Jud9uJY0fCAoKeuqjofayI",
+              "linkedInUrl": "https://www.linkedin.com/company/forex-ab/",
+              "linkedInId": "496677"
+            },
+            {
+              "title": "B2B Sales Intern",
+              "companyName": "Mediamyynti Jyrki Ehnqvist Oy",
+              "description": "Job description consisted of drafting ad confirmations and offers, in addition to B2B sales calls.",
+              "startEndDate": {
+                "start": {
+                  "month": 2,
+                  "year": 2011
+                },
+                "end": {
+                  "month": 4,
+                  "year": 2011
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 3,
+          "educationHistory": [
+            {
+              "degreeName": "Master's degree",
+              "fieldOfStudy": "Strategic business development",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/univaasa/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQG_JFPUMFJ75g/company-logo_200_200/company-logo_200_200/0/1630495252608/univaasa_logo?e=1766016000&v=beta&t=4mA9Y9BF_Nczo-TZIKyifA0Pu5sh3o42M0xoXKzYXXY",
+              "schoolName": "University of Vaasa",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2020
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2024
+                }
+              }
+            },
+            {
+              "degreeName": "Bachelor's degree",
+              "fieldOfStudy": "Marketing",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/bond-university/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQG4_SGGLF87WA/company-logo_100_100/B4EZg57U4VHgAQ-/0/1753318510829/bond_university_logo?e=1766016000&v=beta&t=s3310bK_4mSgGYdXW_Ss2XZTmb9uB-wf5K1GcjKXD9M",
+              "schoolName": "Bond University",
+              "startEndDate": {
+                "start": null,
+                "end": null
+              }
+            },
+            {
+              "degreeName": "Level 5 Higher National Diploma",
+              "fieldOfStudy": "Business Administration and Management,  General",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/helbus/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/D4D0BAQHFJSyk6pcp9g/company-logo_200_200/B4DZXxHgWvHAAM-/0/1743507032058/helbus_logo?e=1766016000&v=beta&t=tflDmOBPIc5EyG0uj4QnCDN9KFMiI_vXm07sGF-SJYQ",
+              "schoolName": "HELBUS Helsinki School of Business",
+              "startEndDate": {
+                "start": null,
+                "end": null
+              }
+            }
+          ]
+        },
+        "skills": [
+          "Sales Processes",
+          "Cold Calling",
+          "Distribution Channel Management",
+          "Communication",
+          "Market Analysis",
+          "Relationship Development",
+          "Social Media Marketing",
+          "Search Engine Marketing (SEM)",
+          "Search Engine Optimization (SEO)",
+          "Customer Service",
+          "Teamwork",
+          "Microsoft Office",
+          "Marketing",
+          "Digital Marketing",
+          "English",
+          "Analytical Skills",
+          "Social Media",
+          "Business-to-Business (B2B)",
+          "Sales",
+          "Microsoft Excel"
+        ],
+        "languages": [
+          "English",
+          "Finnish"
+        ],
+        "certifications": {
+          "certificationsCount": 0,
+          "certificationHistory": []
+        },
+        "company": null
+      }
+    },
+    {
+      "crm_id": 6,
+      "email": "mariani2367@gmail.com",
+      "linkedin_url": "https://www.linkedin.com/in/matt-mariani-6765871b",
+      "enrich_source": null,
+      "crm_company": "340 On The Park, Lakeshore East",
+      "crm_title": "STORE/NIGHT DEPT LEADER",
+      "crm_location": null,
+      "profile": {
+        "publicIdentifier": "matt-mariani-6765871b",
+        "memberIdentifier": "70100730",
+        "linkedInIdentifier": "ACoAAAQtpvoByb6ecIxeWDp7Qau-UBrbv8fqYOc",
+        "linkedInUrl": "https://www.linkedin.com/in/matt-mariani-6765871b",
+        "firstName": "Matt",
+        "lastName": "Mariani",
+        "headline": "--",
+        "location": "Bath, Pennsylvania, United States of America",
+        "summary": null,
+        "photoUrl": null,
+        "backgroundUrl": null,
+        "openToWork": false,
+        "premium": false,
+        "showVerificationBadge": false,
+        "creationDate": null,
+        "followerCount": 9,
+        "positions": {
+          "positionsCount": 0,
+          "positionHistory": []
+        },
+        "schools": {
+          "educationsCount": 0,
+          "educationHistory": []
+        },
+        "skills": [],
+        "languages": [],
+        "certifications": {
+          "certificationsCount": 0,
+          "certificationHistory": []
+        },
+        "company": null
+      }
+    },
+    {
+      "crm_id": 4,
+      "email": "mustafa@harochi.io",
+      "linkedin_url": "https://www.linkedin.com/in/mustafa-elseidy",
+      "enrich_source": null,
+      "crm_company": null,
+      "crm_title": null,
+      "crm_location": null,
+      "profile": {
+        "publicIdentifier": "mustafa-elseidy",
+        "memberIdentifier": "668033152",
+        "linkedInIdentifier": "ACoAACfRYIABE67wWgtn0sVX5FA4cwPYe0RBgoE",
+        "linkedInUrl": "https://www.linkedin.com/in/mustafa-elseidy",
+        "firstName": "Mustafa",
+        "lastName": "El-Seidy",
+        "headline": "GTM Engineer",
+        "location": "Egypt",
+        "summary": null,
+        "photoUrl": "https://media.licdn.com/dms/image/v2/D4D03AQGcjswChCgrMA/profile-displayphoto-shrink_800_800/B4DZVSoi2JHAAc-/0/1740848118087?e=1766016000&v=beta&t=f2RcP2tsCbsvLdv69NLT4kF4hSI69m49PYM7m_nynfM",
+        "backgroundUrl": "https://media.licdn.com/dms/image/v2/D4D16AQGkVUhbPuElUQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725904541951?e=1766016000&v=beta&t=u3pe9kHwuxQvo3hd107XclADsHGWX2yYqxriBAflMtY",
+        "openToWork": false,
+        "premium": true,
+        "showVerificationBadge": false,
+        "creationDate": null,
+        "followerCount": 1323,
+        "positions": {
+          "positionsCount": 9,
+          "positionHistory": [
+            {
+              "title": "GTM Engineer",
+              "companyName": "harochi",
+              "description": "Building GTM engines that run like a Porsche",
+              "startEndDate": {
+                "start": {
+                  "month": 3,
+                  "year": 2025
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQG9U9V-IUFD-Q/company-logo_400_400/B4EZWB5CUOHMAc-/0/1741640968122/harochi_io_logo?e=1766016000&v=beta&t=hWOT6NJATUTbr_NR_-2b2HxLfvr_KNg_cgqnu3pUA5E",
+              "linkedInUrl": "https://www.linkedin.com/company/harochi-io/",
+              "linkedInId": "93092132"
+            },
+            {
+              "title": "GTM Engineer",
+              "companyName": "SBJ Consulting",
+              "description": "Designing and Implementing AI-driven GTM workflows",
+              "startEndDate": {
+                "start": {
+                  "month": 6,
+                  "year": 2024
+                },
+                "end": {
+                  "month": 3,
+                  "year": 2025
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQGag0TKaumXNg/company-logo_400_400/company-logo_400_400/0/1708012686924/sbj_consulting_ireland_logo?e=1766016000&v=beta&t=w2jJt1f8BUsUwbRD44DIdYU66_eN6FP2H3_VD_sBPW8",
+              "linkedInUrl": "https://www.linkedin.com/company/sbj-consulting-ireland/",
+              "linkedInId": "99535857"
+            },
+            {
+              "title": "Founder",
+              "companyName": "Bousla",
+              "description": "A side hustle scaled to $150K GMV  | Helping talents secure remote jobs on Upwork\n\nSupporting professionals in launching and growing their Upwork careers with a hands-on, results-driven approach. Our services include:\n\n\u2705 Profile creation & optimisation\n\u2705 Skill & experience assessment\n\u2705 Job sourcing & applications\n\u2705 Interview preparation\n\u2705 Bi-weekly mentoring to secure 5-star reviews\n\n\ud83d\udd39 Top 3% on Upwork\n\ud83d\udd39 100% Job Success Score\n\ud83d\udd39 5/5 stars across 18+ jobs",
+              "startEndDate": {
+                "start": {
+                  "month": 5,
+                  "year": 2022
+                },
+                "end": {
+                  "month": 7,
+                  "year": 2024
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4D0BAQFDk4CPbOtCAQ/company-logo_400_400/company-logo_400_400/0/1710525368536/bouslaco_logo?e=1766016000&v=beta&t=1J6RYQc3mY5Q6-7LdpArb1IsFpkue5JqfB-bDJpL49Y",
+              "linkedInUrl": "https://www.linkedin.com/company/bouslaco/",
+              "linkedInId": "101952589"
+            },
+            {
+              "title": "Business Development & Operations Manager",
+              "companyName": "Interview Query",
+              "description": "- 3x'd partnerships with top U.S data science & business analytics master\u2019s programs",
+              "startEndDate": {
+                "start": {
+                  "month": 10,
+                  "year": 2022
+                },
+                "end": {
+                  "month": 11,
+                  "year": 2023
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQFU4N93Pz9FeA/company-logo_400_400/company-logo_400_400/0/1694102199435/interview_query_logo?e=1766016000&v=beta&t=TgRmuqGiaYGYqTvkDXX7ttcP40-hKyKtMVLongFjxxs",
+              "linkedInUrl": "https://www.linkedin.com/company/interview-query/",
+              "linkedInId": "55043590"
+            },
+            {
+              "title": "Operations Manager",
+              "companyName": "Sanit\u00e4r Schweiz GmbH",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 5,
+                  "year": 2022
+                },
+                "end": {
+                  "month": 11,
+                  "year": 2022
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQGQtjjP_9OVOA/company-logo_400_400/company-logo_400_400/0/1714036485570/sanitaer_schweiz_logo?e=1766016000&v=beta&t=PzHJbaBwLcE-AXJkh431RG8eE3lbSJvZNi7wBIxdOpI",
+              "linkedInUrl": "https://www.linkedin.com/company/sanitaer-schweiz/",
+              "linkedInId": "35617066"
+            },
+            {
+              "title": "Operations Project Manager",
+              "companyName": "Bened Life",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2021
+                },
+                "end": {
+                  "month": 11,
+                  "year": 2022
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQH8dMtnpV4WfQ/company-logo_400_400/company-logo_400_400/0/1658254617342?e=1766016000&v=beta&t=mLSQ10RRCaRhKUzfw_LZHtV_ReuG3PwEiI1nO6abg5I",
+              "linkedInUrl": "https://www.linkedin.com/company/bened-life/",
+              "linkedInId": "82359191"
+            },
+            {
+              "title": "Educational Content Creator",
+              "companyName": "TikTok",
+              "description": "9M+ views - 50 videos\n\n- Educational content about remote work and financial planning\n- Partnerships: Thndr, Studypool",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2022
+                },
+                "end": {
+                  "month": 7,
+                  "year": 2022
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQHYzDOZhwEZ7Q/company-logo_400_400/B56Zl_CaXSIAAc-/0/1758772964879/tiktok_logo?e=1766016000&v=beta&t=b_8l-wa4TQ7B-AoX9oqZ5g9_HdlnJ8Z_Bjd3fYXt2wE",
+              "linkedInUrl": "https://www.linkedin.com/company/tiktok/",
+              "linkedInId": "33246798"
+            },
+            {
+              "title": "Customer Happiness Specialist",
+              "companyName": "WoodWatch",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 8,
+                  "year": 2020
+                },
+                "end": {
+                  "month": 3,
+                  "year": 2022
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQGIauNGoMX3wQ/company-logo_400_400/company-logo_400_400/0/1631373471695?e=1766016000&v=beta&t=SNwYfLyzp79_UbqVOZkrS3McDzBMnsHYhaIdTHuk14k",
+              "linkedInUrl": "https://www.linkedin.com/company/woodwatch/",
+              "linkedInId": "3222697"
+            },
+            {
+              "title": "Safety Specialist",
+              "companyName": "Yubo",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 6,
+                  "year": 2020
+                },
+                "end": {
+                  "month": 10,
+                  "year": 2021
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQGFAyzRpH3u5A/company-logo_400_400/company-logo_400_400/0/1636111229395/yubo_app_logo?e=1766016000&v=beta&t=xlyYM4y0vTyolLH2n8Zlxm30D-9wJkr-jz4YetOlseA",
+              "linkedInUrl": "https://www.linkedin.com/company/yubo-app/",
+              "linkedInId": "11409581"
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 1,
+          "educationHistory": [
+            {
+              "degreeName": "Bachelor's degree",
+              "fieldOfStudy": "BA - Finance and Investment",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/alexandria-university/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQEERLbGevtwNw/company-logo_200_200/company-logo_200_200/0/1630455874440/alexandria_university_logo?e=1766016000&v=beta&t=nMwf1R-Pjp8W-GIJVktz-b7w9bG3aZGRSKigq71tHn4",
+              "schoolName": "Alexandria University",
+              "startEndDate": {
+                "start": null,
+                "end": null
+              }
+            }
+          ]
+        },
+        "skills": [
+          "RevOps",
+          "AI Workflows",
+          "Go-to-Market Strategy",
+          "Systems Thinking",
+          "Workflow Diagrams",
+          "Systems Integration",
+          "Viral Video",
+          "Video content",
+          "Business Ownership",
+          "Start-up Leadership",
+          "Global Recruiting",
+          "HR Consulting",
+          "Training and Development (HR)",
+          "Human Resources (HR)",
+          "International Business Development",
+          "Process Automation",
+          "Lean Startup",
+          "Communication",
+          "Business Process",
+          "Start-ups"
+        ],
+        "languages": [],
+        "certifications": {
+          "certificationsCount": 0,
+          "certificationHistory": []
+        },
+        "company": null
+      }
+    },
+    {
+      "crm_id": 3,
+      "email": "fabio@predict-ability.com",
+      "linkedin_url": "https://www.linkedin.com/in/fabio-debus",
+      "enrich_source": null,
+      "crm_company": "IEEE Quantum Week 2025",
+      "crm_title": "All Days",
+      "crm_location": null,
+      "profile": {
+        "publicIdentifier": "fabio-debus",
+        "memberIdentifier": "515102130",
+        "linkedInIdentifier": "ACoAAB6z1bIBfT1qmQy8b9BGMo4SdLqQjZw1jZg",
+        "linkedInUrl": "https://www.linkedin.com/in/fabio-debus",
+        "firstName": "Fabio",
+        "lastName": "Debus",
+        "headline": "Building PREDICT | The OS for predictable new business sales.",
+        "location": "Berlin, Berlin, Germany",
+        "summary": "Die erfolgreichsten B2B Unternehmen wachsen hocheffizient und profitabel, weil sie vorhersehbar qualifizierte Leads generieren und in der Lage sind, diese innerhalb von Wochen statt Monaten in Neukunden zu verwandeln.\n\nHier ist die Wahrheit\u2026 \n\nIn den letzten 4 Jahren haben wir die Vertriebsprozesse von \u00fcber 432 DACH B2B Unternehmen mit erkl\u00e4rungsbed\u00fcrftigen L\u00f6sungen digitalisiert & optimiert und herausgefunden, dass die erfolgreichsten alle die folgenden Gemeinsamkeiten haben:\n\n1. Niedrige CAC\n2. Signalbasierte Leadgenerierung\n3. Kurzer Sales Cycle und hohe LTV\n\nHier kommen wir ins Spiel:\n\nIch bin Fabio \u2013 CEO und Co-Founder von PREDICT. \n\nWir nutzen Signale der Zielgruppe in Kombination mit KI, um die Kalender von \u00fcber 52 B2B Unternehmen mit qualifizierten Meetings zu f\u00fcllen und ihre Sales Cycles auf Wochen zu verk\u00fcrzen.\n\nOHNE Cold Calling oder einen einzigen Cent in Werbung zu investieren.\n\nF\u00fcr wen ist das also gedacht?\n\nDas hier ist f\u00fcr B2B Unternehmen mit erkl\u00e4rungsbed\u00fcrftigen L\u00f6sungen, die folgende Probleme kennen:\n\n\u2192 zu wenig qualifizierte Meetings\n\n\u2192 keine Kontrolle \u00fcber den Sales Zyklus\n\n\u2192 von Cold Calling \u00fcber Events und Online Werbung, alles schon erfolglos probiert\n\n\u2192 sie leben von Bestandskunden oder Empfehlungen\n\n\u2192 gef\u00fchlt jeder Deal wird von Budgetk\u00fcrzungen geblockt\n\n\u2192 Ums\u00e4tze schwanken stark von Monat zu Monat\n\n\u2192 Vertrieb ist mehr Gl\u00fcck und Bauchgef\u00fchl als ein vorhersehbarer Prozess\n\n\u2192 Moral im Vertriebsteam nimmt st\u00e4ndig ab\n\nWenn du dich hier wiederfindest - schick mir eine DM, und wir machen eine kostenlose Pipeline Analyse, um die wichtigsten Hebel zur Optimierung zu identifizieren.\n\nCase Studies und Testimonials findest du auf unserer Website: www.predict-ability.com",
+        "photoUrl": "https://media.licdn.com/dms/image/v2/D4D03AQH8wlpBEntQNg/profile-displayphoto-crop_800_800/B4DZhhDw7mHAAI-/0/1753975039226?e=1766016000&v=beta&t=XlbIttaRbseTOP5Oe9cUyteSoX64tEwAEJrvfLV0PZc",
+        "backgroundUrl": "https://media.licdn.com/dms/image/v2/D4D16AQFiRA3IrrhDLA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1730099814286?e=1766016000&v=beta&t=hmn4ZH1Y8SBasED4hHaKpDEdt-QXh-ea99qWF9SIBJA",
+        "openToWork": false,
+        "premium": true,
+        "showVerificationBadge": true,
+        "creationDate": null,
+        "followerCount": 5604,
+        "positions": {
+          "positionsCount": 9,
+          "positionHistory": [
+            {
+              "title": "CEO & Founder",
+              "companyName": "PREDICT",
+              "description": "Als CEO leite ich ein 8-k\u00f6pfiges Team und helfe B2B-Unternehmen, durch signalbasierten Vertrieb und optimierte Sales-Prozesse vorhersehbares Wachstum zu erzielen.\n\nMeine Kernverantwortlichkeiten umfassen:\n\n\u2192 Aufbau profitabler GTM-Motions f\u00fcr Kunden\n\u2192 Implementierung von KI & Daten in Vertriebsstrategien\n\u2192 Verantwortung f\u00fcr Sales, Marketing, Business Development und Finanzen\n\nWenn du mehr dar\u00fcber erfahren m\u00f6chtest, was wir bei PREDICT tun, oder ein Teil davon werden m\u00f6chtest, sende mir eine Nachricht.",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2024
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4D0BAQHJbqPJuIknvQ/company-logo_400_400/company-logo_400_400/0/1705311393066?e=1766016000&v=beta&t=iDMG-40sLWM-8PomN53d6lSGW4v2v7qcJ-vQ1dRictI",
+              "linkedInUrl": "https://www.linkedin.com/company/predict-ability/",
+              "linkedInId": "101489462"
+            },
+            {
+              "title": "Member",
+              "companyName": "HYPCCCYCL",
+              "description": "HYPCCCYCL ist eine invite-only Community, in der f\u00fchrende B2B Leader mit Umsatzverantwortung ihre GTM-F\u00e4higkeiten mit VCs trainieren.",
+              "startEndDate": {
+                "start": {
+                  "month": 8,
+                  "year": 2022
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4D0BAQHsPFkAETT5ig/company-logo_400_400/B4DZpkEWhoHsAY-/0/1762615455293/hard_skill_exchange_logo?e=1766016000&v=beta&t=D1ALtwUjzJCau8FpC-EGXzjmS9leqyQcq04XulAb7KE",
+              "linkedInUrl": "https://www.linkedin.com/company/hard-skill-exchange/",
+              "linkedInId": "88691659"
+            },
+            {
+              "title": "Enterprise Account Executive DACH",
+              "companyName": "Zeotap",
+              "description": "Multi-6-stelligen Deal (\u00fcber 250.000\u20ac ACV) geclosed, umfangreiche Workshops gehalten und erreichte einen Verkaufszyklus von nur 5 Monaten.\n\n\u2192 Akquise und Betreuung von Enterprise-Kunden, um ma\u00dfgeschneiderte L\u00f6sungen zu implementieren und langfristige Beziehungen aufzubauen\n\u2192 Durchf\u00fchrung pers\u00f6nlicher Treffen und Workshops, um Kundenbed\u00fcrfnisse zu verstehen und effektive Strategien zu entwickeln\n\u2192 Zusammenarbeit mit C-Level-Entscheidern, um strategische Partnerschaften zu f\u00f6rdern und umzusetzen",
+              "startEndDate": {
+                "start": {
+                  "month": 7,
+                  "year": 2023
+                },
+                "end": {
+                  "month": 2,
+                  "year": 2024
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4D0BAQFtgBMyrBBJxQ/company-logo_400_400/B4DZalpxleG0AY-/0/1746535914440/zeotap_logo?e=1766016000&v=beta&t=JjnXI-SOkQyHWixHXBhd8oDtTuxzjx2Qiydiv6Zhji8",
+              "linkedInUrl": "https://www.linkedin.com/company/zeotap/",
+              "linkedInId": "5360261"
+            },
+            {
+              "title": "Account Executive",
+              "companyName": "Braze",
+              "description": "2 End-Stage Opportunities innerhalb der ersten 4 Monate die durch eigenes Prospecting ge\u00f6ffnet wurden. Beide wurden 3-4 Wochen nach meinem Ende bei Braze erfolgreich abgeschlossen. \n\n\u2192 Akquise und Beratung von SMB & MidMarket-Kunden, in Zentral-Europa\n\u2192 Aufbau eigener Pipeline durch Kaltakquise, Office Drop-ins und mehr\n\u2192 Top 3 in Pipeline Activity im Europa Team in meinem ersten Quartal (trotz einem Monat Onboarding)",
+              "startEndDate": {
+                "start": {
+                  "month": 2,
+                  "year": 2023
+                },
+                "end": {
+                  "month": 5,
+                  "year": 2023
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQHm8zx58eJrcg/company-logo_400_400/company-logo_400_400/0/1720024715139/braze_logo?e=1766016000&v=beta&t=gTguBoX3KzzkmaCnLSoNsBExljx9OY8un3KVlSocgEc",
+              "linkedInUrl": "https://www.linkedin.com/company/braze/",
+              "linkedInId": "792882"
+            },
+            {
+              "title": "Team Lead Account-Management",
+              "companyName": "ComX.io AI for Sales",
+              "description": "Betreute und beriet als Team Lead Customer Success  \u00fcber 155 Accounts und generierte innerhalb von 11 Monaten >3M\u20ac (cash collected).\n\n\u2192 Beratung von \u00fcber 155 B2B-CEOs und Vertriebsleitern, um Multi-Millionen-Pipelines aufzubauen und den Sales Cycles zu verk\u00fcrzen\n\u2192 Aufbau interner Prozesse, um Churn zu reduzieren und die Kommunikation mit dem Vertrieb zu verbessern\n\u2192 Leitung, Schulung und Aufbau des Support Teams mit 5 Mitarbeitern und 2 zus\u00e4tzlichen Customer Success Managern",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2021
+                },
+                "end": {
+                  "month": 1,
+                  "year": 2023
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQHkZMYroySkXw/company-logo_400_400/company-logo_400_400/0/1656666058653/comx_io_logo?e=1766016000&v=beta&t=4mKwjYtdTPea0ZhaUC7zhW0Zh_jjSEgD4mLVCXacslk",
+              "linkedInUrl": "https://www.linkedin.com/company/comx-io/",
+              "linkedInId": "18278436"
+            },
+            {
+              "title": "Growth Consultant",
+              "companyName": "ComX.io AI for Sales",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 3,
+                  "year": 2021
+                },
+                "end": {
+                  "month": 8,
+                  "year": 2021
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQHkZMYroySkXw/company-logo_400_400/company-logo_400_400/0/1656666058653/comx_io_logo?e=1766016000&v=beta&t=4mKwjYtdTPea0ZhaUC7zhW0Zh_jjSEgD4mLVCXacslk",
+              "linkedInUrl": "https://www.linkedin.com/company/comx-io/",
+              "linkedInId": "18278436"
+            },
+            {
+              "title": "Online Business Manager",
+              "companyName": "Branddesign SA",
+              "description": "BrandDesign SA is a private label company based in Lugano, Switzerland. We are one of the leading businesses within the licensing design in European fashion.\nWe translate the magic of our awesome brands and famous characters to create your products, firmly focusing on design. Always guarding the balance between high quality and commercial success.",
+              "startEndDate": {
+                "start": {
+                  "month": 4,
+                  "year": 2020
+                },
+                "end": {
+                  "month": 2,
+                  "year": 2021
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQFScTZhLQB_2g/company-logo_400_400/company-logo_400_400/0/1630544139533/branddesign_sa_logo?e=1766016000&v=beta&t=q9bL_O6V2XgLInvV3jsIuRxGJ7GZNZcMPYTQc-JNtf0",
+              "linkedInUrl": "https://www.linkedin.com/company/branddesign-sa/",
+              "linkedInId": "34679951"
+            },
+            {
+              "title": "Gr\u00fcnder",
+              "companyName": "Refascent",
+              "description": "Kommunikationsplattform zur Unterst\u00fctzung der Integration von Gefl\u00fcchteten, und erzielte innerhalb von 12 Monaten bedeutende Anerkennung und Unterst\u00fctzung.\n\n\u2192 Entwicklung einer Software mit automatischer \u00dcbersetzungsfunktion, um Sprachbarrieren zu \u00fcberwinden und die Integration zu erleichtern\n\u2192 Zusammenarbeit mit Fl\u00fcchtlingsheimen und lokalen Beh\u00f6rden, um die Software kostenfrei zur Verf\u00fcgung zu stellen\n\u2192 Gewinn des StartUp Teens Wettbewerbs mit Unterst\u00fctzung von Frank Thelen",
+              "startEndDate": {
+                "start": {
+                  "month": 2,
+                  "year": 2016
+                },
+                "end": {
+                  "month": 10,
+                  "year": 2020
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Speaker",
+              "companyName": "TEDxFreiburg",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 11,
+                  "year": 2017
+                },
+                "end": {
+                  "month": 11,
+                  "year": 2017
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQGPWJ5MSbYCdg/company-logo_400_400/company-logo_400_400/0/1631378951056?e=1766016000&v=beta&t=rBumqmotaR4KGfcCjR6Y9mg4qgeWldLdVyJJ0k-cbLU",
+              "linkedInUrl": "https://www.linkedin.com/company/tedxfreiburg/",
+              "linkedInId": "10618217"
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 1,
+          "educationHistory": [
+            {
+              "degreeName": "Bachelor of Science - BS",
+              "fieldOfStudy": "Economics and Business Administration",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/eberhard-karls-universit-t-t-bingen/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQGgvkDljso6sg/company-logo_200_200/company-logo_200_200/0/1631301665257?e=1766016000&v=beta&t=dLUcyoR0cXVTQy4rUZPt-Vrw_b8wI-uS5SrrEt4iQUQ",
+              "schoolName": "University of T\u00fcbingen",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2019
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2022
+                }
+              }
+            }
+          ]
+        },
+        "skills": [
+          "B2B Sales",
+          "Signal Based Sales",
+          "Sales Prozesse",
+          "Go-to-Market Strategy",
+          "Customer Success Management",
+          "Leadership"
+        ],
+        "languages": [],
+        "certifications": {
+          "certificationsCount": 0,
+          "certificationHistory": []
+        },
+        "company": null
+      }
+    }
+  ]
+}

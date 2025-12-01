@@ -1,0 +1,826 @@
+{
+  "batch_date": "2025-11-29T13:07:05.270452",
+  "total_in_batch": 4,
+  "profiles_fetched": 3,
+  "profiles_failed": 1,
+  "profiles": [
+    {
+      "crm_id": 23,
+      "email": "gradow.v@gmail.com",
+      "linkedin_url": "https://www.linkedin.com/in/valentina-danelon-b67a1b64",
+      "enrich_source": null,
+      "crm_company": null,
+      "crm_title": "Violinista-Direttore artistico Festival Nei Suoni dei Luoghi - Docente di Violino Liceo \"XXV Aprile\"(Portogruaro)",
+      "crm_location": "Venice, Italy",
+      "profile": {
+        "publicIdentifier": "valentina-danelon-b67a1b64",
+        "memberIdentifier": "229464511",
+        "linkedInIdentifier": "ACoAAA2tWb8Bn813zn6Y7HLnSdlzYPkCors_-0s",
+        "linkedInUrl": "https://www.linkedin.com/in/valentina-danelon-b67a1b64",
+        "firstName": "Valentina",
+        "lastName": "Danelon",
+        "headline": "Violinista-Direttore artistico Festival Nei Suoni dei Luoghi - Docente di Violino Liceo \"XXV Aprile\"(Portogruaro)",
+        "location": "Venice, Italy",
+        "summary": "2005  Diploma di Violino Conservatorio Castelfranco Veneto (TV)\n2009  Diploma in Pedagogia Musicale-Violino Conservatorio della Svizzera Italiana \n2013  Diploma di Merito alla Scuola Superiore Internazionale di Musica da Camera del Trio di Trieste  (Duo Danelon - Orlandi, violino e pianoforte)",
+        "photoUrl": "https://media.licdn.com/dms/image/v2/C5603AQEVJEJZMQm_lQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1558197729576?e=1766016000&v=beta&t=ziJWNY2b1M4Ve8U7gP88-2sJ_uurokZYs47YrCO_FLI",
+        "backgroundUrl": null,
+        "openToWork": false,
+        "premium": false,
+        "showVerificationBadge": false,
+        "creationDate": null,
+        "followerCount": 446,
+        "positions": {
+          "positionsCount": 10,
+          "positionHistory": [
+            {
+              "title": "Direttore artistico",
+              "companyName": "Festival Nei Suoni dei Luoghi",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 11,
+                  "year": 2019
+                },
+                "end": null
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "docente",
+              "companyName": "Liceo XXV Aprile - Portogruaro",
+              "description": "Docente di violino",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2017
+                },
+                "end": null
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": "11126599"
+            },
+            {
+              "title": "Docente di violino",
+              "companyName": "fondazione musicale Santa Cecilia (Portogruaro), UWCAD (Duino-Trieste)",
+              "description": "Docente di Violino e di Musica d'Insieme per Archi",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2010
+                },
+                "end": null
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "ASSISTENZA",
+              "companyName": "ASSOCIAZIONE PROGETTO MUSICA",
+              "description": "Assistenza e direzione artistica",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2014
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2019
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Violinista",
+              "companyName": "Filarmonica del Teatro Comunale di Bologna",
+              "description": "Violino di Fila",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2013
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2017
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Violinista",
+              "companyName": "Fondazione Orchestra Haydn di Bolzano e Trento",
+              "description": "Violino di Fila",
+              "startEndDate": {
+                "start": {
+                  "month": 8,
+                  "year": 2011
+                },
+                "end": {
+                  "month": 9,
+                  "year": 2016
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "violino",
+              "companyName": "Orchestra RAI Torino",
+              "description": "violino di fila",
+              "startEndDate": {
+                "start": {
+                  "month": 3,
+                  "year": 2014
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2014
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Violinista",
+              "companyName": "FVG Mitteleuropa Orchestra",
+              "description": "Prima parte",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2011
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2013
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Insegnante di violino",
+              "companyName": "Scuola di musica del Conservatorio della Svizzera Italiana (Lugano)",
+              "description": "Docente di Violino e di Lezioni Collettive per Archi",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2009
+                },
+                "end": {
+                  "month": 5,
+                  "year": 2010
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "ensemble 900",
+              "companyName": "conservatorio svizzera italiana",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2008
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2008
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 3,
+          "educationHistory": [
+            {
+              "degreeName": "Diploma di Violino",
+              "fieldOfStudy": "Classe di Violino del M\u00b0 M. Lot",
+              "description": "",
+              "linkedInUrl": null,
+              "schoolLogo": null,
+              "schoolName": "Conservatorio di Castelfranco Veneto (TV)",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2004
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2005
+                }
+              }
+            },
+            {
+              "degreeName": "Diploma di Pedagogia Musicale",
+              "fieldOfStudy": "Classe di Violino del M\u00b0 V. Gradow",
+              "description": "Perfezionamento violinistico. Metodica del Violino (Prof. Anna Modesti). Pedagogia e psicologia (A. Maggetti-Jolidon). Tirocinio lezioni individuali e di gruppo. Orchestra. Musica da Camera (trio e quintetto). Musica del  ' 900.",
+              "linkedInUrl": null,
+              "schoolLogo": null,
+              "schoolName": "Conservatorio della Svizzera Italiana (Lugano)",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2007
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2009
+                }
+              }
+            },
+            {
+              "degreeName": "Diploma di Merito",
+              "fieldOfStudy": "Duo violino e pianoforte: Duo Danelon Orlandi- Maestri R. Zanettovich; D. De Rosa; M. Jones",
+              "description": "",
+              "linkedInUrl": null,
+              "schoolLogo": null,
+              "schoolName": "Scuola Superiore Internazionale di Musica da Camera del Trio di Trieste (Duino)",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2010
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2013
+                }
+              }
+            }
+          ]
+        },
+        "skills": [
+          "Duo violino e pianoforte: Duo Danelon-Orlandi",
+          "Insegnamento: lezioni individuali (IT/EN);musica d'insieme per archi dal I corso",
+          "Musica del '900",
+          "Orchestra",
+          "Music",
+          "Music Education",
+          "Classical",
+          "Music Theory",
+          "Chamber Music",
+          "Ensemble",
+          "Festival",
+          "Musica contemporanea",
+          "Musica da camera",
+          "Complesso musicale",
+          "Musica orchestrale",
+          "Teatro",
+          "Educazione musicale",
+          "Musica classica",
+          "Pedagogia",
+          "Composizione"
+        ],
+        "languages": [
+          "Inglese"
+        ],
+        "certifications": {
+          "certificationsCount": 0,
+          "certificationHistory": []
+        },
+        "company": null
+      },
+      "fetched_at": "2025-11-29T13:07:05.269081"
+    },
+    {
+      "crm_id": 4,
+      "email": "mustafa@harochi.io",
+      "linkedin_url": "https://www.linkedin.com/in/mustafa-elseidy",
+      "enrich_source": null,
+      "crm_company": null,
+      "crm_title": null,
+      "crm_location": null,
+      "profile": {
+        "publicIdentifier": "mustafa-elseidy",
+        "memberIdentifier": "668033152",
+        "linkedInIdentifier": "ACoAACfRYIABE67wWgtn0sVX5FA4cwPYe0RBgoE",
+        "linkedInUrl": "https://www.linkedin.com/in/mustafa-elseidy",
+        "firstName": "Mustafa",
+        "lastName": "El-Seidy",
+        "headline": "GTM Engineer",
+        "location": "Egypt",
+        "summary": null,
+        "photoUrl": "https://media.licdn.com/dms/image/v2/D4D03AQGcjswChCgrMA/profile-displayphoto-shrink_800_800/B4DZVSoi2JHAAc-/0/1740848118087?e=1766016000&v=beta&t=f2RcP2tsCbsvLdv69NLT4kF4hSI69m49PYM7m_nynfM",
+        "backgroundUrl": "https://media.licdn.com/dms/image/v2/D4D16AQGkVUhbPuElUQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1725904541951?e=1766016000&v=beta&t=u3pe9kHwuxQvo3hd107XclADsHGWX2yYqxriBAflMtY",
+        "openToWork": false,
+        "premium": true,
+        "showVerificationBadge": false,
+        "creationDate": null,
+        "followerCount": 1324,
+        "positions": {
+          "positionsCount": 9,
+          "positionHistory": [
+            {
+              "title": "GTM Engineer",
+              "companyName": "harochi",
+              "description": "Building GTM engines that run like a Porsche",
+              "startEndDate": {
+                "start": {
+                  "month": 3,
+                  "year": 2025
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQG9U9V-IUFD-Q/company-logo_400_400/B4EZWB5CUOHMAc-/0/1741640968122/harochi_io_logo?e=1766016000&v=beta&t=hWOT6NJATUTbr_NR_-2b2HxLfvr_KNg_cgqnu3pUA5E",
+              "linkedInUrl": "https://www.linkedin.com/company/harochi-io/",
+              "linkedInId": "93092132"
+            },
+            {
+              "title": "GTM Engineer",
+              "companyName": "SBJ Consulting",
+              "description": "Designing and Implementing AI-driven GTM workflows",
+              "startEndDate": {
+                "start": {
+                  "month": 6,
+                  "year": 2024
+                },
+                "end": {
+                  "month": 3,
+                  "year": 2025
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQGag0TKaumXNg/company-logo_400_400/company-logo_400_400/0/1708012686924/sbj_consulting_ireland_logo?e=1766016000&v=beta&t=w2jJt1f8BUsUwbRD44DIdYU66_eN6FP2H3_VD_sBPW8",
+              "linkedInUrl": "https://www.linkedin.com/company/sbj-consulting-ireland/",
+              "linkedInId": "99535857"
+            },
+            {
+              "title": "Founder",
+              "companyName": "Bousla",
+              "description": "A side hustle scaled to $150K GMV  | Helping talents secure remote jobs on Upwork\n\nSupporting professionals in launching and growing their Upwork careers with a hands-on, results-driven approach. Our services include:\n\n\u2705 Profile creation & optimisation\n\u2705 Skill & experience assessment\n\u2705 Job sourcing & applications\n\u2705 Interview preparation\n\u2705 Bi-weekly mentoring to secure 5-star reviews\n\n\ud83d\udd39 Top 3% on Upwork\n\ud83d\udd39 100% Job Success Score\n\ud83d\udd39 5/5 stars across 18+ jobs",
+              "startEndDate": {
+                "start": {
+                  "month": 5,
+                  "year": 2022
+                },
+                "end": {
+                  "month": 7,
+                  "year": 2024
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4D0BAQFDk4CPbOtCAQ/company-logo_400_400/company-logo_400_400/0/1710525368536/bouslaco_logo?e=1766016000&v=beta&t=1J6RYQc3mY5Q6-7LdpArb1IsFpkue5JqfB-bDJpL49Y",
+              "linkedInUrl": "https://www.linkedin.com/company/bouslaco/",
+              "linkedInId": "101952589"
+            },
+            {
+              "title": "Business Development & Operations Manager",
+              "companyName": "Interview Query",
+              "description": "- 3x'd partnerships with top U.S data science & business analytics master\u2019s programs",
+              "startEndDate": {
+                "start": {
+                  "month": 10,
+                  "year": 2022
+                },
+                "end": {
+                  "month": 11,
+                  "year": 2023
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQFU4N93Pz9FeA/company-logo_400_400/company-logo_400_400/0/1694102199435/interview_query_logo?e=1766016000&v=beta&t=TgRmuqGiaYGYqTvkDXX7ttcP40-hKyKtMVLongFjxxs",
+              "linkedInUrl": "https://www.linkedin.com/company/interview-query/",
+              "linkedInId": "55043590"
+            },
+            {
+              "title": "Operations Manager",
+              "companyName": "Sanit\u00e4r Schweiz GmbH",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 5,
+                  "year": 2022
+                },
+                "end": {
+                  "month": 11,
+                  "year": 2022
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D4E0BAQGQtjjP_9OVOA/company-logo_400_400/company-logo_400_400/0/1714036485570/sanitaer_schweiz_logo?e=1766016000&v=beta&t=PzHJbaBwLcE-AXJkh431RG8eE3lbSJvZNi7wBIxdOpI",
+              "linkedInUrl": "https://www.linkedin.com/company/sanitaer-schweiz/",
+              "linkedInId": "35617066"
+            },
+            {
+              "title": "Operations Project Manager",
+              "companyName": "Bened Life",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2021
+                },
+                "end": {
+                  "month": 11,
+                  "year": 2022
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQH8dMtnpV4WfQ/company-logo_400_400/company-logo_400_400/0/1658254617342?e=1766016000&v=beta&t=mLSQ10RRCaRhKUzfw_LZHtV_ReuG3PwEiI1nO6abg5I",
+              "linkedInUrl": "https://www.linkedin.com/company/bened-life/",
+              "linkedInId": "82359191"
+            },
+            {
+              "title": "Educational Content Creator",
+              "companyName": "TikTok",
+              "description": "9M+ views - 50 videos\n\n- Educational content about remote work and financial planning\n- Partnerships: Thndr, Studypool",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2022
+                },
+                "end": {
+                  "month": 7,
+                  "year": 2022
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQHYzDOZhwEZ7Q/company-logo_400_400/B56Zl_CaXSIAAc-/0/1758772964879/tiktok_logo?e=1766016000&v=beta&t=b_8l-wa4TQ7B-AoX9oqZ5g9_HdlnJ8Z_Bjd3fYXt2wE",
+              "linkedInUrl": "https://www.linkedin.com/company/tiktok/",
+              "linkedInId": "33246798"
+            },
+            {
+              "title": "Customer Happiness Specialist",
+              "companyName": "WoodWatch",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 8,
+                  "year": 2020
+                },
+                "end": {
+                  "month": 3,
+                  "year": 2022
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQGIauNGoMX3wQ/company-logo_400_400/company-logo_400_400/0/1631373471695?e=1766016000&v=beta&t=SNwYfLyzp79_UbqVOZkrS3McDzBMnsHYhaIdTHuk14k",
+              "linkedInUrl": "https://www.linkedin.com/company/woodwatch/",
+              "linkedInId": "3222697"
+            },
+            {
+              "title": "Safety Specialist",
+              "companyName": "Yubo",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 6,
+                  "year": 2020
+                },
+                "end": {
+                  "month": 10,
+                  "year": 2021
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQGFAyzRpH3u5A/company-logo_400_400/company-logo_400_400/0/1636111229395/yubo_app_logo?e=1766016000&v=beta&t=xlyYM4y0vTyolLH2n8Zlxm30D-9wJkr-jz4YetOlseA",
+              "linkedInUrl": "https://www.linkedin.com/company/yubo-app/",
+              "linkedInId": "11409581"
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 1,
+          "educationHistory": [
+            {
+              "degreeName": "Bachelor's degree",
+              "fieldOfStudy": "BA - Finance and Investment",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/alexandria-university/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQEERLbGevtwNw/company-logo_200_200/company-logo_200_200/0/1630455874440/alexandria_university_logo?e=1766016000&v=beta&t=nMwf1R-Pjp8W-GIJVktz-b7w9bG3aZGRSKigq71tHn4",
+              "schoolName": "Alexandria University",
+              "startEndDate": {
+                "start": null,
+                "end": null
+              }
+            }
+          ]
+        },
+        "skills": [
+          "RevOps",
+          "AI Workflows",
+          "Go-to-Market Strategy",
+          "Systems Thinking",
+          "Workflow Diagrams",
+          "Systems Integration",
+          "Viral Video",
+          "Video content",
+          "Business Ownership",
+          "Start-up Leadership",
+          "Global Recruiting",
+          "HR Consulting",
+          "Training and Development (HR)",
+          "Human Resources (HR)",
+          "International Business Development",
+          "Process Automation",
+          "Lean Startup",
+          "Communication",
+          "Business Process",
+          "Start-ups"
+        ],
+        "languages": [],
+        "certifications": {
+          "certificationsCount": 0,
+          "certificationHistory": []
+        },
+        "company": null
+      },
+      "fetched_at": "2025-11-29T13:07:04.291463"
+    },
+    {
+      "crm_id": 2,
+      "email": "joetepe@gmail.com",
+      "linkedin_url": "https://www.linkedin.com/in/joetepe",
+      "enrich_source": null,
+      "crm_company": "Novum Partners",
+      "crm_title": "Developing Leaders | Org | Department | Personal",
+      "crm_location": "Boerne, Texas, United States of America",
+      "profile": {
+        "publicIdentifier": "joetepe",
+        "memberIdentifier": "167206012",
+        "linkedInIdentifier": "ACoAAAn3XHwBjLXqjkPhR9p_5FP1JfHSwB06ydE",
+        "linkedInUrl": "https://www.linkedin.com/in/joetepe",
+        "firstName": "Joe",
+        "lastName": "Tepe",
+        "headline": "Developing Leaders | Org | Department | Personal",
+        "location": "Boerne, Texas, United States of America",
+        "summary": "As an Executive Pastor of Leadership and Ministry Development at Cibolo Creek Community Church, I have over 15 years of experience in pastoral ministry, teaching, and coaching. I am passionate about equipping and empowering God's people to fulfill their calling and serve their community.",
+        "photoUrl": "https://media.licdn.com/dms/image/v2/C5603AQEAN-QW8nFgcA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1612981601439?e=1766016000&v=beta&t=XeCfnJ4yToWNh-82gVuXlHxD2tov-QPnQc3cZ32HraQ",
+        "backgroundUrl": null,
+        "openToWork": false,
+        "premium": false,
+        "showVerificationBadge": true,
+        "creationDate": null,
+        "followerCount": 643,
+        "positions": {
+          "positionsCount": 10,
+          "positionHistory": [
+            {
+              "title": "Director of Engagement",
+              "companyName": "Novum Partners",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 4,
+                  "year": 2024
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/D560BAQGqtre5_I2UVQ/company-logo_400_400/company-logo_400_400/0/1710166152489/novum_partnersllc_logo?e=1766016000&v=beta&t=43xDoZdIP4Pu3K86W8qVqC5RZbwStwP0td2dhgQn9i0",
+              "linkedInUrl": "https://www.linkedin.com/company/novum-partnersllc/",
+              "linkedInId": "90498155"
+            },
+            {
+              "title": "Leadership Pipeline Consultant",
+              "companyName": "Multiply Group",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 11,
+                  "year": 2022
+                },
+                "end": null
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            },
+            {
+              "title": "Adjunct Professor",
+              "companyName": "Bushnell University",
+              "description": "\u2022\tChristian Ministry 360: Principles for Youth Ministry - A capstone class designed to help students develop and implement their philosophy of ministry",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2016
+                },
+                "end": null
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4E0BAQHy5FgF_rFBYw/company-logo_400_400/company-logo_400_400/0/1630617101754?e=1766016000&v=beta&t=Azr8sBAoHw_x4HgSW3KIEeLgtfm8qLxaZj0Mp7JO18Y",
+              "linkedInUrl": "https://www.linkedin.com/school/bushnell-university/",
+              "linkedInId": "68240916"
+            },
+            {
+              "title": "Executive Pastor of Leadership and Ministry Development ",
+              "companyName": "Cibolo Creek Community Church",
+              "description": "",
+              "startEndDate": {
+                "start": {
+                  "month": 12,
+                  "year": 2021
+                },
+                "end": {
+                  "month": 1,
+                  "year": 2024
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C560BAQHnRC_7sNd5QA/company-logo_400_400/company-logo_400_400/0/1649547762184?e=1766016000&v=beta&t=zxyG_alAGXDKY9aiNZ6tjOPq5qJjXaaaBp6_XMeaF98",
+              "linkedInUrl": "https://www.linkedin.com/company/cibolo-creek-community-church/",
+              "linkedInId": "4030379"
+            },
+            {
+              "title": "Pastor of Adult Ministries",
+              "companyName": "NORTHWEST CHRISTIAN CHURCH INC",
+              "description": "\u2022\tLed the Adult Ministry Team of 8 paid staff and managed a $65,000 budget\n\u2022\tDesigned, Developed and Implemented a Leadership Pipeline with 88 leaders \n\u2022\tIncreased Life Group Involvement from 194 to 414 Households in 8 months \n\u2022\tPersonally led 2 Life Groups, Coached 4 Head Coaches and provided direct congregational care \n\u2022\tDeveloped and implemented a direct engagement strategy by recruiting 180 volunteers to weekly deliver 1,000+ care packages to every Church Family Household\n\u2022\tCreated effective PCO databases to track and improve ministry engagement.  Achieved and sustained 90% Congregant engagement \n\u2022\tFacilitated several community response initiatives including an Emergency Wildfire Evacuation Site, Pandemic Food Distribution and low-income food distribution \n\u2022\tUtilized primary, secondary and tertiary big data to facilitate effective ministry initiatives such as launching Financial Peace University with 90+ people",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2020
+                },
+                "end": {
+                  "month": 2,
+                  "year": 2021
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": "https://www.linkedin.com/company/northwest-christian-church-inc/",
+              "linkedInId": "15435256"
+            },
+            {
+              "title": "College Pastor",
+              "companyName": "First Baptist Church of Eugene",
+              "description": "\u2022\tAnnually recruited, discipled, trained and shepherd 13 staff members and 45+ student leaders\n\u2022\tMobilized college congregation to annually share the gospel with 700-1000 students and give 800-1200 hours of community service \n\u2022\tOversaw 12-15 College Life Groups annually with ~150 active weekly members, \n\u2022\tTaught 35-40 Biblical messages yearly for CCF, FBC, Camp and other venues. \n\u2022\tLed the Alpha Omega House and Trinity House\u2019s Oversight Committee\n\u2022\tManaged 60 House Residents and their contracts   \n\u2022\tDeveloped, planned and managed an annual budget of ~$500,000\n\u2022\tServed for 2 years as the Religious Director President at the University of Oregon with 45+ groups \n\u2022\tServed as a 19st Board Member (Eugene Chinese Church, City Salt Foursquare Church, Emerald Community Fellowship and First Baptist Church)",
+              "startEndDate": {
+                "start": {
+                  "month": 5,
+                  "year": 2013
+                },
+                "end": {
+                  "month": 6,
+                  "year": 2019
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQFGJ4VBs-u3fg/company-logo_400_400/company-logo_400_400/0/1631332796742?e=1766016000&v=beta&t=n-XqVVcU-6Exz6sWUzJtoo7UIf5XltMdVM_MciquVCI",
+              "linkedInUrl": "https://www.linkedin.com/company/first-baptist-church-of-eugene/",
+              "linkedInId": "635167"
+            },
+            {
+              "title": "College Ministry Director",
+              "companyName": "First Baptist Church of Eugene",
+              "description": "\u2022\tRecruited, discipled, trained, shepherd 40+ student leaders and 4 male staff \n\u2022\tRecruited, developed and shepherded 13 small groups which had 150+ members \n\u2022\tPreached/Taught at CCF and at FBC\n\u2022\tOversaw 3 retreats including teaching at Fall Leadership Getaway \n\u2022\tTaught class on Hermeneutics for 40 students \n\u2022\tSuccessfully initiated a Men\u2019s Ministry with 40+ College Aged Men actively participating",
+              "startEndDate": {
+                "start": {
+                  "month": 7,
+                  "year": 2011
+                },
+                "end": {
+                  "month": 4,
+                  "year": 2013
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQFGJ4VBs-u3fg/company-logo_400_400/company-logo_400_400/0/1631332796742?e=1766016000&v=beta&t=n-XqVVcU-6Exz6sWUzJtoo7UIf5XltMdVM_MciquVCI",
+              "linkedInUrl": "https://www.linkedin.com/company/first-baptist-church-of-eugene/",
+              "linkedInId": "635167"
+            },
+            {
+              "title": "Service Producer and Volunteer Coordinator  ",
+              "companyName": "First Baptist Church of Eugene",
+              "description": "\u2022\tCoordinated and Directed Sunday Night Worship Services \n\u2022\tResponsible for building and maintaining ministry with Landlord Emerald Baptist\n\u2022\tRecruited and Lead 6 Sunday Night Teams including: Set Up- Clean Up Team, Greeters, Information Team, Kitchen Team, Coffee Cart and Tech Team. \n\u2022\tIdentified and Discipled a small group of future leaders\n\u2022\tTaught a New Believers Class",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2009
+                },
+                "end": {
+                  "month": 8,
+                  "year": 2011
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQFGJ4VBs-u3fg/company-logo_400_400/company-logo_400_400/0/1631332796742?e=1766016000&v=beta&t=n-XqVVcU-6Exz6sWUzJtoo7UIf5XltMdVM_MciquVCI",
+              "linkedInUrl": "https://www.linkedin.com/company/first-baptist-church-of-eugene/",
+              "linkedInId": "635167"
+            },
+            {
+              "title": "Children's Ministry 1st -3rd Grade Intern",
+              "companyName": "First Baptist Church of Eugene",
+              "description": "\u2022\tRecruited 15+ year long volunteers \n\u2022\tLed Worship Team and Developed Drama Team \n\u2022\tPlanned and Taught Teaching Series",
+              "startEndDate": {
+                "start": {
+                  "month": 9,
+                  "year": 2009
+                },
+                "end": {
+                  "month": 8,
+                  "year": 2010
+                }
+              },
+              "companyLogo": "https://media.licdn.com/dms/image/v2/C4D0BAQFGJ4VBs-u3fg/company-logo_400_400/company-logo_400_400/0/1631332796742?e=1766016000&v=beta&t=n-XqVVcU-6Exz6sWUzJtoo7UIf5XltMdVM_MciquVCI",
+              "linkedInUrl": "https://www.linkedin.com/company/first-baptist-church-of-eugene/",
+              "linkedInId": "635167"
+            },
+            {
+              "title": "International Volunteer",
+              "companyName": "Various Non-Profit",
+              "description": "\u2022\tChiang Kham, Thailand- Taught Bible and English at the Home of Blessing\n\u2022\tHoi An, Vietnam- Served disabled children affected by Agent Orange at the Kianh Foundation orphanage \n\u2022\tGuangxi, China- Taught English for a local government tutoring agency \n\u2022\tLhasa, Tibet, China- Served in a local orphanage\n\u2022\tCampinas & Victoria, Brazil- Taught English, Computers, designed and established a clothing store for Hope Unlimited  \n\u2022\tPucallpa, Peru- Taught English and constructed buildings at the Refuge of Hope School \n\u2022\tManagua, Nicaragua- Assisted in the construction of a new community basketball gym\n\u2022\tAddis Ababa, Ethiopia- Spent three months teaching English and Math to 50+ third grade students, participated in street evangelism seeing over 300 accept Christ\n\u2022\tMexicali, Mexico- English Teaching and construction",
+              "startEndDate": {
+                "start": {
+                  "month": 7,
+                  "year": 2008
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2008
+                }
+              },
+              "companyLogo": null,
+              "linkedInUrl": null,
+              "linkedInId": null
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 2,
+          "educationHistory": [
+            {
+              "degreeName": "Master of Divinity (M.Div.)",
+              "fieldOfStudy": null,
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/western-seminary/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/C560BAQHdFPUSmN6uKQ/company-logo_200_200/company-logo_200_200/0/1643740919944/western_seminary_logo?e=1766016000&v=beta&t=9MwKfKNKSDgFNF5DNI4fvxg4K0b-LDrDhNI1pe4BMso",
+              "schoolName": "Western Seminary",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2009
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2013
+                }
+              }
+            },
+            {
+              "degreeName": "Bachelor of Science (BS)",
+              "fieldOfStudy": "Psychology",
+              "description": "",
+              "linkedInUrl": "https://www.linkedin.com/school/university-of-oregon/",
+              "schoolLogo": "https://media.licdn.com/dms/image/v2/D560BAQF_qTf273giiQ/company-logo_200_200/B56ZojWW8VIsAM-/0/1761529655420/university_of_oregon_logo?e=1766016000&v=beta&t=Cl-iNndCxz1PGJFbw1HCsxiCWAGcGcUMScKD8s_xSx0",
+              "schoolName": "University of Oregon",
+              "startEndDate": {
+                "start": {
+                  "month": 1,
+                  "year": 2004
+                },
+                "end": {
+                  "month": 12,
+                  "year": 2008
+                }
+              }
+            }
+          ]
+        },
+        "skills": [
+          "Conflict Resolution",
+          "Onboarding",
+          "Scalability",
+          "Performance Motivation",
+          "Employee Turnover",
+          "Employee Engagement",
+          "Consulting",
+          "Analytics",
+          "Emotional Intelligence",
+          "Apologetics",
+          "Interpersonal Skills",
+          "Budgeting",
+          "Organizational Effectiveness",
+          "Data Analysis",
+          "Shepherding",
+          "Communication",
+          "Skill Development",
+          "Scripture",
+          "Problem Solving",
+          "Building Performance"
+        ],
+        "languages": [
+          "English",
+          "Spanish"
+        ],
+        "certifications": {
+          "certificationsCount": 0,
+          "certificationHistory": []
+        },
+        "company": null
+      },
+      "fetched_at": "2025-11-29T13:07:04.757546"
+    },
+    {
+      "crm_id": 1,
+      "email": "josh@get310.com",
+      "linkedin_url": "https://www.linkedin.com/in/joshcorbelli",
+      "enrich_source": null,
+      "crm_company": null,
+      "crm_title": null,
+      "crm_location": null,
+      "profile": null,
+      "error": "Failed to fetch profile data",
+      "fetched_at": "2025-11-29T13:07:03.289473"
+    }
+  ]
+}

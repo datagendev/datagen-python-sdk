@@ -1,0 +1,111 @@
+{
+  "profiles": [
+    {
+      "email": "shiladitya1601@gmail.com",
+      "enrich_source": "direct_email",
+      "linkedin_url": "https://www.linkedin.com/in/shiladitya-banerjee-7138426b",
+      "profile": {
+        "publicIdentifier": "shiladitya-banerjee-7138426b",
+        "firstName": "Shiladitya",
+        "lastName": "Banerjee",
+        "headline": "Data Scientist at PhonePe",
+        "location": "Pune, Maharashtra, India",
+        "followerCount": 854,
+        "positions": {
+          "positionsCount": 4,
+          "positionHistory": [
+            {
+              "title": "Data Scientist",
+              "companyName": "PhonePe",
+              "startEndDate": {
+                "start": {"month": 9, "year": 2019},
+                "end": null
+              }
+            },
+            {
+              "title": "Software Engineer, Data Science",
+              "companyName": "Walnut App (Thumbworks Technologies)",
+              "startEndDate": {
+                "start": {"month": 3, "year": 2016},
+                "end": {"month": 9, "year": 2019}
+              }
+            },
+            {
+              "title": "Senior Software Engineer",
+              "companyName": "PubMatic",
+              "description": "Part of machine learning team analyzing big data and building predictive models",
+              "startEndDate": {
+                "start": {"month": 7, "year": 2015},
+                "end": {"month": 2, "year": 2016}
+              }
+            },
+            {
+              "title": "System Software Engineer",
+              "companyName": "NVIDIA",
+              "startEndDate": {
+                "start": {"month": 8, "year": 2013},
+                "end": {"month": 7, "year": 2015}
+              }
+            }
+          ]
+        },
+        "schools": {
+          "educationsCount": 4,
+          "educationHistory": [
+            {
+              "degreeName": "Master of Technology (MTech)",
+              "fieldOfStudy": "Computational Science",
+              "schoolName": "Indian Institute of Science (IISc)",
+              "startEndDate": {
+                "start": {"month": 1, "year": 2011},
+                "end": {"month": 12, "year": 2013}
+              }
+            },
+            {
+              "degreeName": "Bachelor of Engineering (BE)",
+              "fieldOfStudy": "Mechanical Engineering",
+              "schoolName": "Vishwakarma Institute Of Technology",
+              "startEndDate": {
+                "start": {"month": 1, "year": 2006},
+                "end": {"month": 12, "year": 2010}
+              }
+            }
+          ]
+        },
+        "skills": [
+          "Machine Learning",
+          "R",
+          "Applied Probability",
+          "Numerical Linear Algebra",
+          "High Performance Computing",
+          "MPI",
+          "CUDA",
+          "Hive",
+          "MySQL",
+          "Finite Element Analysis",
+          "C",
+          "SolidWorks",
+          "C++",
+          "Java",
+          "Algorithms",
+          "Distributed Systems",
+          "Programming",
+          "Python"
+        ],
+        "languages": ["Bengali", "English"]
+      }
+    },
+    {
+      "email": "markgrimes98@gmail.com",
+      "enrich_source": "linkup_search",
+      "linkedin_url": "https://www.linkedin.com/in/markbgrimes/",
+      "profile": null,
+      "note": "Profile URL found via web search but detailed profile data not available via LinkedIn API"
+    }
+  ],
+  "summary": {
+    "total_enriched": 2,
+    "profiles_fetched": 1,
+    "profiles_partial": 1
+  }
+}
