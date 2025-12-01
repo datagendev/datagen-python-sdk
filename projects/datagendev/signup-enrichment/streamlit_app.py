@@ -76,10 +76,29 @@ def get_top_priority_contacts(limit=10):
                             linkedin_url,
                             priority_score,
                             created_at,
-                            user_signup_date
+                            user_signup_date,
+                            email_status,
+                            last_email_sent_at,
+                            last_email_received_at,
+                            emails_sent_count,
+                            emails_received_count,
+                            needs_followup,
+                            email_tracking_last_synced_at
                         FROM crm
                         WHERE priority_score > 0
-                        ORDER BY priority_score DESC, user_signup_date DESC
+                        ORDER BY
+                            CASE
+                                WHEN email_status = 'not_contacted' THEN 1
+                                WHEN email_status = 'needs_followup' THEN 2
+                                WHEN email_status IN ('contacted', 'replied') THEN 3
+                                ELSE 4
+                            END,
+                            CASE
+                                WHEN email_status = 'not_contacted' THEN priority_score
+                                WHEN email_status = 'needs_followup' THEN EXTRACT(EPOCH FROM (NOW() - last_email_sent_at))
+                                ELSE priority_score
+                            END DESC,
+                            user_signup_date DESC
                         LIMIT {limit}
                     """,
                     "projectId": "rough-base-02149126",
@@ -231,6 +250,61 @@ def save_email_draft(contact_id, subject, body, client_instance=None):
         return False
 
 
+# Email tracking formatter functions
+def format_email_status(row):
+    """Format email status with icons"""
+    status = row.get('email_status', 'not_contacted')
+    if status == 'not_contacted':
+        return "❌ Not Contacted"
+    elif status == 'replied':
+        return "✓ Replied"
+    elif status == 'needs_followup':
+        last_sent = row.get('last_email_sent_at')
+        if last_sent and pd.notna(last_sent):
+            days_waiting = (pd.Timestamp.now(tz='UTC') - pd.to_datetime(last_sent)).days
+            return f"⏳ Needs Follow-up ({days_waiting}d)"
+        return "⏳ Needs Follow-up"
+    elif status == 'contacted':
+        return "📤 Contacted"
+    return "❓ Unknown"
+
+
+def format_email_exchange(row):
+    """Format email exchange counts"""
+    sent = row.get('emails_sent_count', 0) or 0
+    received = row.get('emails_received_count', 0) or 0
+    if (sent + received) > 0:
+        return f"{sent}→ {received}←"
+    return "—"
+
+
+def format_last_contact(row):
+    """Format last contact date"""
+    last_sent = row.get('last_email_sent_at')
+    last_received = row.get('last_email_received_at')
+
+    dates = []
+    if last_sent and pd.notna(last_sent):
+        dates.append(pd.to_datetime(last_sent))
+    if last_received and pd.notna(last_received):
+        dates.append(pd.to_datetime(last_received))
+
+    if not dates:
+        return "Never"
+
+    last_date = max(dates)
+    days_ago = (pd.Timestamp.now(tz='UTC') - last_date).days
+
+    if days_ago == 0:
+        return "Today"
+    elif days_ago == 1:
+        return "Yesterday"
+    elif days_ago < 7:
+        return f"{days_ago} days ago"
+    else:
+        return last_date.strftime('%Y-%m-%d')
+
+
 if st.button("Refresh Data"):
     st.session_state['crm_df'] = get_crm_data()
     st.session_state['priority_df'] = get_top_priority_contacts()
@@ -241,8 +315,25 @@ if 'crm_df' not in st.session_state:
 
 # Priority Contacts Section
 st.write("---")
-st.write("### 🔥 Top Priority Contacts Today")
-st.markdown("*Prioritized by recency - run `python calculate_priority.py` daily to update*")
+
+# Add sync button
+col_sync, col_title = st.columns([1, 4])
+with col_sync:
+    if st.button("🔄 Sync Email Status"):
+        with st.spinner("Syncing email tracking..."):
+            import subprocess
+            subprocess.run(
+                ["python", "sync_email_tracking.py", "--limit", "20"],
+                capture_output=True
+            )
+            st.success("Synced!")
+            st.session_state['priority_df'] = get_top_priority_contacts()
+            st.rerun()
+
+with col_title:
+    st.write("### 🔥 Top Priority Contacts Today")
+
+st.markdown("*Prioritized by contact status: Not contacted → Needs follow-up → Contacted*")
 
 if 'priority_df' in st.session_state and not st.session_state['priority_df'].empty:
     priority_df = st.session_state['priority_df'].copy()
@@ -254,19 +345,26 @@ if 'priority_df' in st.session_state and not st.session_state['priority_df'].emp
     )
     priority_df['Score'] = priority_df['priority_score'].apply(lambda x: f"🔥 {x}" if x >= 90 else f"⭐ {x}" if x >= 75 else f"✓ {x}")
 
+    # Add email tracking columns
+    priority_df['Email Status'] = priority_df.apply(format_email_status, axis=1)
+    priority_df['Emails'] = priority_df.apply(format_email_exchange, axis=1)
+    priority_df['Last Contact'] = priority_df.apply(format_last_contact, axis=1)
+
     # Display columns
-    display_cols = ['Score', 'Name', 'email', 'company', 'title', 'linkedin_url']
+    display_cols = ['Email Status', 'Score', 'Name', 'email', 'company', 'title', 'Emails', 'Last Contact']
     display_df = priority_df[[col for col in display_cols if col in priority_df.columns]]
 
     priority_event = st.dataframe(
         display_df,
         column_config={
+            "Email Status": st.column_config.TextColumn("Status", width="medium"),
             "Score": st.column_config.TextColumn("Priority", width="small"),
             "Name": st.column_config.TextColumn("Name", width="medium"),
             "email": st.column_config.TextColumn("Email", width="medium"),
             "company": st.column_config.TextColumn("Company", width="medium"),
-            "title": st.column_config.TextColumn("Title", width="large"),
-            "linkedin_url": st.column_config.LinkColumn("LinkedIn", width="small")
+            "title": st.column_config.TextColumn("Title", width="medium"),
+            "Emails": st.column_config.TextColumn("📧", width="small"),
+            "Last Contact": st.column_config.TextColumn("Last", width="small")
         },
         hide_index=True,
         use_container_width=True,
@@ -381,6 +479,15 @@ if 'priority_df' in st.session_state and not st.session_state['priority_df'].emp
                                         }
                                     )
                                     st.success("Email sent successfully!")
+
+                                    # Update email tracking immediately
+                                    from email_tracking import EmailTrackingService
+                                    service = EmailTrackingService(client)
+                                    service.update_after_send(contact_id, email_address)
+
+                                    # Refresh contact list
+                                    st.session_state['priority_df'] = get_top_priority_contacts()
+
                                     st.balloons()
                                 except Exception as e:
                                     st.error(f"Error sending email: {e}")
@@ -401,6 +508,18 @@ if 'priority_df' in st.session_state and not st.session_state['priority_df'].emp
     with col_c:
         avg_score = int(priority_df['priority_score'].mean())
         st.metric("📊 Avg Score", avg_score)
+
+    # Email tracking stats
+    col_d, col_e, col_f = st.columns(3)
+    with col_d:
+        not_contacted = len(priority_df[priority_df['email_status'] == 'not_contacted'])
+        st.metric("❌ Not Contacted", not_contacted)
+    with col_e:
+        needs_followup = len(priority_df[priority_df.get('needs_followup', False) == True])
+        st.metric("⏳ Needs Follow-up", needs_followup)
+    with col_f:
+        replied = len(priority_df[priority_df['email_status'] == 'replied'])
+        st.metric("✓ Replied", replied)
 else:
     st.info("No priority contacts found. Run `python calculate_priority.py` to calculate scores.")
 
@@ -521,6 +640,15 @@ if not st.session_state['crm_df'].empty:
                                         }
                                     )
                                     st.success("Email sent successfully!")
+
+                                    # Update email tracking immediately
+                                    from email_tracking import EmailTrackingService
+                                    service = EmailTrackingService(client)
+                                    service.update_after_send(contact_id, email_address)
+
+                                    # Refresh contact list
+                                    st.session_state['priority_df'] = get_top_priority_contacts()
+
                                     st.balloons()
                                 except Exception as e:
                                     st.error(f"Error sending email: {e}")
