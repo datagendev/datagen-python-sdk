@@ -23,14 +23,23 @@ pip install datagen-python-sdk
 
 ### 1. Set up your API key
 
-You can provide your API key in two ways:
+First, get your API key from: https://datagen.dev/account?tab=api
 
-**Option A: Environment variable (recommended)**
+You can authenticate using the CLI, environment variables, or direct passing.
+
+**Option A: CLI Login (Recommended)**
+Run the following command in your terminal and follow the prompts:
+```bash
+datagen login
+```
+This will securely save your credentials so you don't need to manage environment variables manually.
+
+**Option B: Environment variable**
 ```bash
 export DATAGEN_API_KEY=your_api_key_here
 ```
 
-**Option B: Pass directly to the client**
+**Option C: Pass directly to the client**
 ```python
 from datagen_sdk import DatagenClient
 
