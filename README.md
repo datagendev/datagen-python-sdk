@@ -12,6 +12,9 @@ For human developers: write `client.execute_tool()` instead of wrestling with se
 - **MCP Gateway**: Unified authentication for all connected MCP servers. You don't need to handle auth during the code generation process.
 - **MCP Middleware**: Built-in retry logic and rate-limit handling across all your API calls 
 
+![DataGen Workflow Diagram](datagen_workflow_flowchart.png)
+*DataGen's MCP Gateway architecture - one client handles auth and routing to Gmail, Neon, LinkedIn. Write simple execute_tool() calls, skip all SDK setup*
+
 ## AI Agent-First Design
 
 DataGen is built for AI coding assistants (Claude, Cursor, Copilot, etc.) to discover and use tools without hardcoded knowledge.
