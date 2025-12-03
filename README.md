@@ -364,7 +364,7 @@ if st.button("Send Follow-up"):
 **Key Benefits:** No database connection setup, no Gmail OAuth, no SDK installation. Same `execute_tool()` pattern for all services.
 
 
-### Requirements
+## Requirements
 
 - Python >= 3.10
 - requests >= 2.31.0
