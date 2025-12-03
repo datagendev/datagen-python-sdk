@@ -191,7 +191,8 @@ The `${DATAGEN_API_KEY}` syntax allows the client to read from your environment 
 
 ### Client-Specific Setup
 
-#### Claude Desktop
+<details>
+ <summary>Claude Desktop</summary>
 
 **Config File Location:**
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
@@ -200,17 +201,20 @@ The `${DATAGEN_API_KEY}` syntax allows the client to read from your environment 
 
 Add the standard configuration above to your config file, then restart Claude Desktop.
 
-#### Claude Code
+</details>
 
-Use the CLI command:
+<details>
+ <summary>Claude Code</summary>
+
+Use the CLI command with HTTP transport:
 ```bash
-claude mcp add --transport sse datagen https://mcp.datagen.dev/mcp --header "x-api-key: YOUR_API_KEY"
+claude mcp add --transport http datagen https://mcp.datagen.dev/mcp --header "x-api-key: YOUR_API_KEY"
 ```
 
 Or use environment variable:
 ```bash
 export DATAGEN_API_KEY=your_api_key_here
-claude mcp add --transport sse datagen https://mcp.datagen.dev/mcp --header "x-api-key: ${DATAGEN_API_KEY}"
+claude mcp add --transport http datagen https://mcp.datagen.dev/mcp --header "x-api-key: ${DATAGEN_API_KEY}"
 ```
 
 Verify with:
@@ -218,7 +222,10 @@ Verify with:
 claude mcp list
 ```
 
-#### Cline (VS Code Extension)
+</details>
+
+<details>
+ <summary>Cline (VS Code Extension)</summary>
 
 1. Open VS Code Settings
 2. Search for "Cline MCP"
@@ -226,7 +233,18 @@ claude mcp list
 4. Add the standard configuration above
 5. Restart VS Code
 
-#### Cursor
+</details>
+
+<details>
+ <summary>Cursor</summary>
+
+**One-Click Install:**
+
+Click this link to install DataGen MCP in Cursor:
+
+[Install DataGen MCP in Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=datagen&config=eyJ0eXBlIjoic3NlIiwidXJsIjoiaHR0cHM6Ly9tY3AuZGF0YWdlbi5kZXYvbWNwIiwiYXV0aCI6Im9hdXRoIn0%3D)
+
+**Manual Setup:**
 
 1. Open Settings (Cmd/Ctrl + ,)
 2. Navigate to **Settings → MCP → New MCP Server**
@@ -234,16 +252,24 @@ claude mcp list
    - **Name**: `datagen`
    - **Type**: `sse`
    - **URL**: `https://mcp.datagen.dev/mcp`
-   - **Headers**: `{"x-api-key": "your_api_key_here"}`
+   - **Auth**: `oauth`
 4. Save and restart Cursor
 
-#### VS Code Copilot
+Cursor will handle OAuth authentication automatically when you first use DataGen tools.
+
+</details>
+
+<details>
+ <summary>VS Code Copilot</summary>
 
 **Config File Location:** `~/.vscode/mcp_config.json` (or workspace `.vscode/mcp_config.json`)
 
 Add the standard configuration, then reload VS Code.
 
-#### JetBrains AI Assistant (IntelliJ, PyCharm, etc.)
+</details>
+
+<details>
+ <summary>JetBrains AI Assistant (IntelliJ, PyCharm, etc.)</summary>
 
 1. Open **Settings → Tools → AI Assistant**
 2. Navigate to **Model Context Protocol (MCP)**
@@ -251,17 +277,64 @@ Add the standard configuration, then reload VS Code.
 4. Enter the standard configuration
 5. Apply and restart the IDE
 
-#### Gemini CLI
+</details>
 
-**Project-wide installation:**
-```bash
-gemini mcp add datagen --type sse --url https://mcp.datagen.dev/mcp --header "x-api-key: ${DATAGEN_API_KEY}"
+<details>
+ <summary>Gemini CLI</summary>
+
+**Config File Location:** `~/.gemini/settings.json`
+
+Add this configuration for HTTP Streaming:
+
+```json
+{
+  "mcpServers": {
+    "datagen": {
+      "httpUrl": "https://mcp.datagen.dev/mcp",
+      "headers": {
+        "x-api-key": "$DATAGEN_API_KEY"
+      },
+      "timeout": 5000
+    }
+  }
+}
 ```
 
-**Global installation:**
+Then set your environment variable:
 ```bash
-gemini mcp add -s user datagen --type sse --url https://mcp.datagen.dev/mcp --header "x-api-key: ${DATAGEN_API_KEY}"
+export DATAGEN_API_KEY=your_api_key_here
 ```
+
+Note: Gemini CLI uses `$VAR_NAME` syntax for environment variables in headers.
+
+</details>
+
+<details>
+ <summary>Codex (OpenAI)</summary>
+
+**Config File Location:** `~/.codex/config.toml`
+
+Add this configuration for Streamable HTTP:
+
+```toml
+[mcp_servers.datagen]
+url = "https://mcp.datagen.dev/mcp"
+env_http_headers = { "x-api-key" = "DATAGEN_API_KEY" }
+```
+
+Then set your environment variable:
+```bash
+export DATAGEN_API_KEY=your_api_key_here
+```
+
+Or use static headers directly:
+```toml
+[mcp_servers.datagen]
+url = "https://mcp.datagen.dev/mcp"
+http_headers = { "x-api-key" = "your_api_key_here" }
+```
+
+</details>
 
 ### Verifying the Connection
 
