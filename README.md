@@ -219,6 +219,8 @@ Your AI will use `searchTools` and `getToolDetails` MCP tools to discover and ex
 
 Connect the MCP servers you want to use (Gmail, Linear, Supabase, Slack, etc.):
 
+![Add MCP Server](add-mcp.png)
+
 1. Go to https://datagen.dev
 2. Navigate to **MCP Servers** section
 3. Click **Add MCP Server**
