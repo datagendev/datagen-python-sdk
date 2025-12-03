@@ -1,8 +1,8 @@
 # datagen-python-sdk
 
-A minimal Python SDK for interacting with DataGen MCP (Model Context Protocol) APIs. Skip the SDK hell, OAuth nightmares, and API integration boilerplate - DataGen's MCP Gateway lets you access Gmail, Linear, Neon, and dozens of other services through one simple client with unified authentication.
+Built for AI coding assistants and developers. DataGen's MCP server lets AI agents discover and understand how to use any integrated tool - Gmail, Linear, Neon, Slack - without hardcoded integration knowledge. Agents use `searchTools` and `getToolDetails` to self-guide, writing clean `execute_tool()` code that skips SDK hell, OAuth nightmares, and API integration boilerplate.
 
-Write `client.execute_tool()` instead of wrestling with service-specific SDKs, authentication flows, and API documentation. DataGen makes external services feel like native Python functions.
+For human developers: write `client.execute_tool()` instead of wrestling with service-specific SDKs and authentication flows. For AI agents: discover tools via MCP, learn their schemas automatically, and write simple execution code.
 
 ## Features
 
@@ -14,7 +14,61 @@ Write `client.execute_tool()` instead of wrestling with service-specific SDKs, a
 - **Type Hints**: Better IDE support and code intelligence
 - **Zero Dependencies**: Only requires `requests` library
 
-## Why DataGen?
+## AI Agent-First Design
+
+DataGen is built for AI coding assistants (Claude, Cursor, Copilot, etc.) to discover and use tools without hardcoded knowledge. When you ask an AI agent to "send an email via Gmail," here's what happens:
+
+### The Agent Discovery Workflow
+
+**Step 1: Agent discovers available tools**
+```
+Agent calls searchTools MCP tool:
+Input: "send email"
+Output: ['mcp_Gmail_gmail_send_email', 'mcp_Resend_send_email', ...]
+```
+
+**Step 2: Agent learns tool schema**
+```
+Agent calls getToolDetails MCP tool:
+Input: "mcp_Gmail_gmail_send_email"
+Output: {
+  "name": "mcp_Gmail_gmail_send_email",
+  "inputSchema": {
+    "properties": {
+      "to": {"type": "string"},
+      "subject": {"type": "string"},
+      "body": {"type": "string"}
+    }
+  }
+}
+```
+
+**Step 3: Agent writes clean code**
+```python
+client.execute_tool(
+    "mcp_Gmail_gmail_send_email",
+    {
+        "to": user.email,
+        "subject": "Welcome!",
+        "body": f"Hi {user.name}, thanks for signing up!"
+    }
+)
+```
+
+### Key Benefits for AI-Assisted Development
+
+- **No hardcoded integrations**: Agents discover tools dynamically via MCP
+- **Schema-aware code generation**: Agents understand tool parameters automatically
+- **Human developers never write discovery code**: Agents handle tool search and learning
+- **Clean execution layer**: Your codebase only contains `execute_tool()` calls
+- **Swap services easily**: Add new MCP servers → agents discover them automatically
+
+**Traditional approach:** Agent needs hardcoded knowledge of Gmail SDK, OAuth flows, API structure
+**DataGen approach:** Agent uses `searchTools` and `getToolDetails` to learn on-demand
+
+## Why DataGen? Built for AI Agents
+
+DataGen is designed for AI-assisted development. AI coding assistants use DataGen's MCP server to discover and understand tools automatically, without hardcoded integration knowledge. This means agents can write correct code for services they've never seen before.
 
 ### The Problem: Authentication Hell & SDK Complexity
 
@@ -342,12 +396,22 @@ http_headers = { "x-api-key" = "your_api_key_here" }
 
 ### Verifying the Connection
 
-Once configured, your AI assistant can discover and execute DataGen tools. Try asking:
-- "What tools are available through DataGen?"
-- "List my Linear projects using DataGen"
-- "Send an email via Gmail through DataGen"
+Once configured, your AI assistant can discover and execute DataGen tools automatically. The AI uses two key MCP tools:
 
-The AI will use DataGen's `searchTools` and `getToolDetails` MCP tools to discover available integrations and their schemas, then execute them via the Python SDK.
+1. **`searchTools`**: Discovers available tools by searching connected MCP servers
+2. **`getToolDetails`**: Retrieves tool schemas to understand parameters and usage
+
+Try asking your AI assistant:
+- "What tools are available through DataGen?" → AI calls `searchTools` to discover
+- "Show me how to send an email via Gmail" → AI calls `getToolDetails` to learn schema
+- "List my Linear projects using DataGen" → AI writes `execute_tool()` code
+- "Send an email via Gmail through DataGen" → AI executes the discovered tool
+
+**How it works behind the scenes:**
+1. Your AI assistant calls DataGen's `searchTools` MCP tool to find relevant tools
+2. AI calls `getToolDetails` to understand the tool's input schema
+3. AI writes clean Python code using `client.execute_tool()` with correct parameters
+4. Your codebase stays clean - no Gmail SDK imports, no OAuth flows, no API wrappers
 
 ## API Reference
 
@@ -524,6 +588,16 @@ if st.button("Check Linear Projects"):
 - ✅ **No Linear SDK installation** - No API wrapper imports or configuration
 - ✅ **Same code pattern for any tool** - `execute_tool()` works for all services
 - ✅ **Easy to swap services** - Change Neon → Supabase without rewriting integration code
+
+### How AI Agents Build This
+
+When an AI assistant helps you build this dashboard:
+1. You describe the requirement: "Build a CRM dashboard that queries Neon and sends Gmail emails"
+2. AI calls `searchTools` MCP tool to find "mcp_Neon_run_sql" and "mcp_Gmail_gmail_send_email"
+3. AI calls `getToolDetails` to learn the exact parameter schemas
+4. AI writes the clean code above - no Gmail SDK research, no Neon driver docs, no OAuth configuration
+
+**Result:** The AI writes correct integration code without needing to be trained on every API. DataGen's MCP tools let agents discover and learn on-demand.
 
 ### Adaptation for Your Use Case
 
