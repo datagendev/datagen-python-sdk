@@ -1,27 +1,21 @@
 # datagen-python-sdk
 
-Built for AI coding assistants and developers. DataGen's MCP server lets AI agents discover and understand how to use any integrated tool - Gmail, Linear, Neon, Slack - without hardcoded integration knowledge. Agents use `searchTools` and `getToolDetails` to self-guide, writing clean `execute_tool()` code that skips SDK hell, OAuth nightmares, and API integration boilerplate.
-
-For human developers: write `client.execute_tool()` instead of wrestling with service-specific SDKs and authentication flows. For AI agents: discover tools via MCP, learn their schemas automatically, and write simple execution code.
+Built for AI coding assistants and developers. DataGen's MCP server lets AI agents discover and understand how to use any integrated tool - Gmail, Linear, Supabase, Slack - without hardcoded integration knowledge. Agents use `searchTools` and `getToolDetails` to self-guide, writing clean `client.execute_tool()` code that skips SDK hell, OAuth nightmares, and API integration boilerplate.
 
 ## Key Features
 
 - **MCP Tools as Code**: Turn any MCP tool into executable code - no SDK installation, no API wrappers
 - **Skip Integration Hell**: No Gmail SDK, no LinkedIn API wrappers, no OAuth configuration code
-- **One Client for Everything**: Access Gmail, Linear, Neon, Slack - same simple pattern
+- **One Client for Everything**: Access Gmail, Linear, Supabase, Slack - same simple pattern
 - **MCP Gateway**: Unified authentication for all connected MCP servers. You don't need to handle auth during the code generation process.
 - **MCP Middleware**: Built-in retry logic and rate-limit handling across all your API calls 
-
-![DataGen Workflow Diagram](datagen_workflow_flowchart.png)
-*DataGen's MCP Gateway architecture - one client handles auth and routing to Gmail, Neon, LinkedIn. Write simple execute_tool() calls, skip all SDK setup*
 
 ## AI Agent-First Design
 
 DataGen is built for AI coding assistants (Claude, Cursor, Copilot, etc.) to discover and use tools without hardcoded knowledge.
 
-**Prerequisites**: Connect MCP servers (Gmail, Neon, Linear, etc.) in the [DataGen Dashboard](https://datagen.dev/signalgen/mcp-servers). Once connected, AI agents can discover and use all their tools automatically. Either in code or context
-
-When you ask an AI agent to "send an email via Gmail," here's what happens:
+![DataGen Workflow Diagram](datagen_workflow_flowchart.png)
+*DataGen's MCP Gateway architecture - one client handles auth and routing to Gmail, Supabase, LinkedIn. Write simple execute_tool() calls, skip all SDK setup*
 
 ### The Agent Discovery Workflow
 
@@ -69,7 +63,7 @@ DataGen's MCP + SDK combo dramatically improves agent-assisted coding by elimina
 Just tell your AI agent: *"Send an email to new signups from the database"*
 
 The agent instantly:
-1. **Self-discovers tools** via MCP (`searchTools` finds `mcp_Neon_run_sql`, `mcp_Gmail_gmail_send_email`)
+1. **Self-discovers tools** via MCP (`searchTools` finds `mcp_Supabase_run_sql`, `mcp_Gmail_gmail_send_email`)
 2. **Learns schemas** via MCP (`getToolDetails` gets exact parameters needed)
 3. **Writes clean code** using the SDK (`client.execute_tool()` calls)
 4. **Executes immediately** - no OAuth, no API key setup, no SDK installation, no API docs hunting
@@ -88,27 +82,11 @@ The agent instantly:
 
 **The Result:** Go from idea → working integration in one prompt instead of one hour.
 
-## Installation
-
-Install from PyPI:
-
-```bash
-pip install datagen-python-sdk
-```
-
 ## Quick Start
 
-### 1. Add DataGen MCP Server to Your AI Coding Assistant
+### 1. Add DataGen MCP to Your Coding Agent
 
-Connect DataGen as an MCP server to your AI coding assistant to enable tool discovery and execution directly from your editor.
-
-**Prerequisites:** Get your API key [here](https://datagen.dev/account?tab=api)
-
-**Set up your API key in environments**
-
-```bash
-export DATAGEN_API_KEY=your_api_key_here
-```
+Connect DataGen as an MCP server to your AI coding assistant (Cursor, Claude Code, etc.) to enable tool discovery and execution directly from your editor.
 
 **Standard Configuration:**
 
@@ -130,11 +108,35 @@ export DATAGEN_API_KEY=your_api_key_here
 <details>
  <summary>Cursor</summary>
 
-**One-Click Install:**
+**Quick Setup:**
 
-[Click to add](cursor://anysphere.cursor-deeplink/mcp/install?name=datagen&config=eyJ0eXBlIjoic3NlIiwidXJsIjoiaHR0cHM6Ly9tY3AuZGF0YWdlbi5kZXYvbWNwIiwiYXV0aCI6Im9hdXRoIn0%3D)
+1. Open Cursor Settings → Features → Beta → Model Context Protocol
+2. Click "Add MCP Server"
+3. Configure with OAuth:
+   - **Name:** `datagen`
+   - **Transport:** `SSE`
+   - **URL:** `https://mcp.datagen.dev/mcp`
+   - **Auth:** Select `OAuth`
 
 Cursor will handle OAuth authentication automatically when you first use DataGen tools.
+
+**Alternative - Manual Config:**
+
+Add to your Cursor MCP config file (`~/.cursor/config.json` or via Settings):
+
+```json
+{
+  "mcpServers": {
+    "datagen": {
+      "type": "sse",
+      "url": "https://mcp.datagen.dev/mcp",
+      "auth": "oauth"
+    }
+  }
+}
+```
+
+> **Note:** If you're viewing this in Cursor, you can use this deep link: `cursor://anysphere.cursor-deeplink/mcp/install?name=datagen&config=eyJ0eXBlIjoic3NlIiwidXJsIjoiaHR0cHM6Ly9tY3AuZGF0YWdlbi5kZXYvbWNwIiwiYXV0aCI6Im9hdXRoIn0%3D`
 
 </details>
 
@@ -212,55 +214,84 @@ Once configured, try asking your AI assistant:
 
 Your AI will use `searchTools` and `getToolDetails` MCP tools to discover and execute DataGen tools automatically.
 
-### 2. Connect MCP servers in DataGen
+### 2. Add Desired MCP Servers to DataGen
 
-Before you can use tools like Gmail or Neon, you need to connect their MCP servers through the DataGen dashboard:
+Connect the MCP servers you want to use (Gmail, Linear, Supabase, Slack, etc.):
 
 1. Go to https://datagen.dev
 2. Navigate to **MCP Servers** section
 3. Click **Add MCP Server**
-4. Choose from available MCP servers:
+4. Choose from available MCP servers (examples include):
    - **Gmail MCP**: Connect your Gmail account via OAuth
-   - **Neon MCP**: Connect your Neon PostgreSQL database
+   - **Supabase MCP**: Connect your Supabase database
    - **Linear MCP**: Connect your Linear workspace
    - **Slack MCP**: Connect your Slack workspace
-   - And many more...
+   - **And many more** - you can add any MCP server you need
 5. Complete the authentication flow for each service
 
 **Once connected**, all tools from these MCP servers become available through the DataGen SDK. You never touch credentials in your code - DataGen's MCP Gateway handles all authentication.
 
-### 3. Start Building
+### 3. Install the Python SDK
 
-**Option A: AI-Assisted Way (Recommended)**
+```bash
+pip install datagen-python-sdk
+```
 
-Just ask your AI coding assistant (Claude Code, Cursor, etc.) to build with DataGen:
+### 4. Get Your DataGen API Key
 
+1. Go to https://datagen.dev/account?tab=api
+2. Generate your API key
+3. Set it as an environment variable:
+
+```bash
+export DATAGEN_API_KEY=your_api_key_here
+```
+
+### 5. Let Your AI Agent Write Integrations
+
+Now you're ready! Just ask your AI coding assistant to build with DataGen:
+
+**Example prompt:**
 *"Build a script that sends an email to new signups from the database using DataGen SDK"*
 
 Your AI will:
-- Self-discover the right tools (`searchTools` finds `mcp_Neon_run_sql`, `mcp_Gmail_gmail_send_email`)
-- Learn the schemas (`getToolDetails` gets parameters)
-- Write clean code using `client.execute_tool()`
-- Generate working code in one shot
+1. Self-discover the right tools using `searchTools` (finds `mcp_Supabase_run_sql`, `mcp_Gmail_gmail_send_email`)
+2. Learn the schemas using `getToolDetails` (gets exact parameters)
+3. Write clean code using `client.execute_tool()`
+4. Generate working code in one shot
 
-**Option B: Traditional Developer Way**
-
-Write code directly using the DataGen SDK:
+**The generated code will look like:**
 
 ```python
 from datagen_sdk import DatagenClient
 
-# Initialize the client (uses https://api.datagen.dev by default)
 client = DatagenClient()
 
-# Execute tools from any connected MCP server
-# Example: List Linear projects
-projects = client.execute_tool(
-    "mcp_Linear_list_projects",
-    {"limit": 20}
+# Query database for new signups
+new_users = client.execute_tool(
+    "mcp_Supabase_run_sql",
+    {
+        "params": {
+            "sql": "SELECT email, name FROM users WHERE created_at > NOW() - INTERVAL '1 day'",
+            "projectId": "your-project-id",
+            "databaseName": "your-db"
+        }
+    }
 )
-print(f"Found {len(projects[0]['content'])} projects")
+
+# Send welcome email via Gmail
+for user in new_users:
+    client.execute_tool(
+        "mcp_Gmail_gmail_send_email",
+        {
+            "to": user["email"],
+            "subject": "Welcome!",
+            "body": f"Hi {user['name']}, thanks for signing up!"
+        }
+    )
 ```
+
+**That's it!** No OAuth setup, no SDK installation, no API docs hunting. Just working code.
 
 ## Examples
 
@@ -273,9 +304,9 @@ from datagen_sdk import DatagenClient
 
 client = DatagenClient()
 
-# Query Neon database for new signups
+# Query Supabase database for new signups
 new_users = client.execute_tool(
-    "mcp_Neon_run_sql",
+    "mcp_Supabase_run_sql",
     {
         "params": {
             "sql": "SELECT email, name FROM users WHERE created_at > NOW() - INTERVAL '1 day'",
@@ -310,7 +341,7 @@ client = DatagenClient()
 
 # Load high-priority contacts from database
 if st.button("Load Contacts"):
-    contacts = client.execute_tool("mcp_Neon_run_sql", {
+    contacts = client.execute_tool("mcp_Supabase_run_sql", {
         "params": {
             "sql": "SELECT * FROM crm WHERE priority_score > 75",
             "projectId": "your-project-id",
