@@ -87,6 +87,7 @@ The agent instantly:
 ### 1. Add DataGen MCP to Your Coding Agent
 
 Connect DataGen as an MCP server to your AI coding assistant (Cursor, Claude Code, etc.) to enable tool discovery and execution directly from your editor.
+(Go to https://datagen.dev/account?tab=api for api key)
 
 **Standard Configuration:**
 
@@ -237,11 +238,7 @@ Connect the MCP servers you want to use (Gmail, Linear, Supabase, Slack, etc.):
 pip install datagen-python-sdk
 ```
 
-### 4. Get Your DataGen API Key
-
-1. Go to https://datagen.dev/account?tab=api
-2. Generate your API key
-3. Set it as an environment variable:
+### 4. Set Your DataGen API Key
 
 ```bash
 export DATAGEN_API_KEY=your_api_key_here
