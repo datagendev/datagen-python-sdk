@@ -19,7 +19,7 @@ For human developers: write `client.execute_tool()` instead of wrestling with se
 
 DataGen is built for AI coding assistants (Claude, Cursor, Copilot, etc.) to discover and use tools without hardcoded knowledge.
 
-**Prerequisites**: Connect MCP servers (Gmail, Neon, Linear, etc.) in the [DataGen Dashboard](https://datagen.dev/signalgen/mcp-servers). Once connected, AI agents can discover and use all their tools automatically. Either in code or context
+**Prerequisites**: Connect MCP servers (Gmail, Neon, Linear, etc.) in the [DataGen Dashboard](https://datagen.dev/signalgen/mcp-servers). Once connected, AI agents can discover and use all their tools automatically. Either in code or context.
 
 When you ask an AI agent to "send an email via Gmail," here's what happens:
 
@@ -333,7 +333,7 @@ if st.button("Send Follow-up"):
 **Key Benefits:** No database connection setup, no Gmail OAuth, no SDK installation. Same `execute_tool()` pattern for all services.
 
 
-### Requirements
+## Requirements
 
 - Python >= 3.10
 - requests >= 2.31.0
