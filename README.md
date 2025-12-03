@@ -240,7 +240,7 @@ Connect the MCP servers you want to use (Gmail, Linear, Supabase, Slack, etc.):
 pip install datagen-python-sdk
 ```
 
-### 4. Set Your DataGen API Key
+### 4. Configure Your DataGen API Key
 
 ```bash
 export DATAGEN_API_KEY=your_api_key_here
