@@ -1,8 +1,8 @@
 # datagen-python-sdk
 
-A minimal Python SDK for interacting with DataGen MCP (Model Context Protocol) APIs. Skip the SDK hell, OAuth nightmares, and API integration boilerplate - DataGen's MCP Gateway lets you access Gmail, Linear, Neon, and dozens of other services through one simple client with unified authentication.
+Built for AI coding assistants and developers. DataGen's MCP server lets AI agents discover and understand how to use any integrated tool - Gmail, Linear, Neon, Slack - without hardcoded integration knowledge. Agents use `searchTools` and `getToolDetails` to self-guide, writing clean `execute_tool()` code that skips SDK hell, OAuth nightmares, and API integration boilerplate.
 
-Write `client.execute_tool()` instead of wrestling with service-specific SDKs, authentication flows, and API documentation. DataGen makes external services feel like native Python functions.
+For human developers: write `client.execute_tool()` instead of wrestling with service-specific SDKs and authentication flows. For AI agents: discover tools via MCP, learn their schemas automatically, and write simple execution code.
 
 ## Features
 
@@ -14,67 +14,82 @@ Write `client.execute_tool()` instead of wrestling with service-specific SDKs, a
 - **Type Hints**: Better IDE support and code intelligence
 - **Zero Dependencies**: Only requires `requests` library
 
+## AI Agent-First Design
+
+DataGen is built for AI coding assistants (Claude, Cursor, Copilot, etc.) to discover and use tools without hardcoded knowledge.
+
+**Prerequisites**: First, connect MCP servers (Gmail, Neon, Linear, etc.) in the DataGen UI at https://datagen.dev. Once connected, AI agents can discover and use all their tools automatically.
+
+When you ask an AI agent to "send an email via Gmail," here's what happens:
+
+### The Agent Discovery Workflow
+
+**Step 1: Agent discovers available tools**
+```
+Agent calls searchTools MCP tool:
+Input: "send email"
+Output: ['mcp_Gmail_gmail_send_email', 'mcp_Resend_send_email', ...]
+```
+
+**Step 2: Agent learns tool schema**
+```
+Agent calls getToolDetails MCP tool:
+Input: "mcp_Gmail_gmail_send_email"
+Output: {
+  "name": "mcp_Gmail_gmail_send_email",
+  "inputSchema": {
+    "properties": {
+      "to": {"type": "string"},
+      "subject": {"type": "string"},
+      "body": {"type": "string"}
+    }
+  }
+}
+```
+
+**Step 3: Agent writes clean code**
+```python
+client.execute_tool(
+    "mcp_Gmail_gmail_send_email",
+    {
+        "to": user.email,
+        "subject": "Welcome!",
+        "body": f"Hi {user.name}, thanks for signing up!"
+    }
+)
+```
+
+### Key Benefits for AI-Assisted Development
+
+- **No hardcoded integrations**: Agents discover tools dynamically via MCP
+- **Schema-aware code generation**: Agents understand tool parameters automatically
+- **Human developers never write discovery code**: Agents handle tool search and learning
+- **Clean execution layer**: Your codebase only contains `execute_tool()` calls
+- **Swap services easily**: Add new MCP servers → agents discover them automatically
+
+**Traditional approach:** Agent needs hardcoded knowledge of Gmail SDK, OAuth flows, API structure
+**DataGen approach:** Agent uses `searchTools` and `getToolDetails` to learn on-demand
+
 ## Why DataGen?
 
-### The Problem: Authentication Hell & SDK Complexity
+Traditional development means OAuth nightmares, SDK sprawl, and pages of integration boilerplate. DataGen's MCP Gateway handles authentication for ALL connected services - connect once at https://datagen.dev, never touch credentials in code.
 
-Building data-rich applications traditionally means:
-- **OAuth Nightmares**: Setting up OAuth flows, managing tokens, handling refreshes for every service
-- **SDK Sprawl**: Installing and learning different SDKs for Gmail, Linear, Neon, Slack, etc.
-- **Integration Boilerplate**: Pages of authentication and configuration code cluttering your codebase
-
-### The Solution: MCP Gateway with Unified Auth
-
-DataGen acts as an MCP Gateway that handles authentication for ALL connected MCP servers. Connect Gmail, Linear, Neon, or any MCP server once through DataGen's UI, and all their tools become available through one authenticated client.
-
-**Traditional Way** (what you avoid):
+**Traditional Way:**
 ```python
-# Without DataGen - lots of integration code
-from google.oauth2.credentials import Credentials
-from googleapiclient.discovery import build
-import psycopg2
-
-# Gmail setup
+# 20+ lines of OAuth, credentials, API setup per service
 creds = Credentials.from_authorized_user_file('token.json', SCOPES)
 gmail_service = build('gmail', 'v1', credentials=creds)
-message = MIMEText('email body')
-# ... 20+ more lines of Gmail API code
-
-# Database setup
-conn = psycopg2.connect(
-    host="your-host",
-    database="your-db",
-    user="your-user",
-    password="your-password"
-)
-# ... more connection management code
+# ... more boilerplate ...
 ```
 
-**DataGen Way** (what you write):
+**DataGen Way:**
 ```python
-# With DataGen - just execution
-from datagen_sdk import DatagenClient
-
 client = DatagenClient()
-
-# Send email - that's all the code you need
-client.execute_tool("mcp_Gmail_gmail_send_email", {
-    "to": "user@example.com",
-    "subject": "Welcome!",
-    "body": "Thanks for signing up"
-})
-
-# Query database - same simple pattern
-contacts = client.execute_tool("mcp_Neon_run_sql", {
-    "params": {
-        "sql": "SELECT * FROM users WHERE active = true",
-        "projectId": "your-project-id",
-        "databaseName": "your-db"
-    }
-})
+client.execute_tool("mcp_Gmail_gmail_send_email", {...})
+client.execute_tool("mcp_Neon_run_sql", {...})
 ```
 
-**Key Benefits:**
+**Benefits:**
 - ✅ No SDK installation per service
 - ✅ No OAuth configuration in code
 - ✅ Same pattern for any tool
@@ -90,9 +105,26 @@ pip install datagen-python-sdk
 
 ## Quick Start
 
-### 1. Set up your API key
+### 1. Connect MCP servers in DataGen UI
 
-First, get your API key from: https://datagen.dev/account?tab=api
+Before you can use tools like Gmail or Neon, you need to connect their MCP servers through the DataGen dashboard:
+
+1. Go to https://datagen.dev
+2. Navigate to **MCP Servers** section
+3. Click **Add MCP Server**
+4. Choose from available MCP servers:
+   - **Gmail MCP**: Connect your Gmail account via OAuth
+   - **Neon MCP**: Connect your Neon PostgreSQL database
+   - **Linear MCP**: Connect your Linear workspace
+   - **Slack MCP**: Connect your Slack workspace
+   - And many more...
+5. Complete the authentication flow for each service
+
+**Once connected**, all tools from these MCP servers become available through the DataGen SDK. You never touch credentials in your code - DataGen's MCP Gateway handles all authentication.
+
+### 2. Set up your API key
+
+Get your API key from: https://datagen.dev/account?tab=api
 
 You can authenticate using the CLI, environment variables, or direct passing.
 
@@ -115,7 +147,7 @@ from datagen_sdk import DatagenClient
 client = DatagenClient(api_key="your_api_key_here")
 ```
 
-### 2. Create a client and execute tools
+### 3. Create a client and execute tools
 
 ```python
 from datagen_sdk import DatagenClient
@@ -240,7 +272,13 @@ claude mcp list
 
 **One-Click Install:**
 
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=datagen&config=eyJ0eXBlIjoic3NlIiwidXJsIjoiaHR0cHM6Ly9tY3AuZGF0YWdlbi5kZXYvbWNwIiwiYXV0aCI6Im9hdXRoIn0%3D)
+Click this button to install DataGen MCP in Cursor:
+
+```
+cursor://anysphere.cursor-deeplink/mcp/install?name=datagen&config=eyJ0eXBlIjoic3NlIiwidXJsIjoiaHR0cHM6Ly9tY3AuZGF0YWdlbi5kZXYvbWNwIiwiYXV0aCI6Im9hdXRoIn0%3D
+```
+
+Copy and paste the URL above into your browser's address bar, or click [here](cursor://anysphere.cursor-deeplink/mcp/install?name=datagen&config=eyJ0eXBlIjoic3NlIiwidXJsIjoiaHR0cHM6Ly9tY3AuZGF0YWdlbi5kZXYvbWNwIiwiYXV0aCI6Im9hdXRoIn0%3D) if your browser supports custom protocol handlers.
 
 **Manual Setup:**
 
@@ -336,12 +374,12 @@ http_headers = { "x-api-key" = "your_api_key_here" }
 
 ### Verifying the Connection
 
-Once configured, your AI assistant can discover and execute DataGen tools. Try asking:
+Once configured, try asking your AI assistant:
 - "What tools are available through DataGen?"
 - "List my Linear projects using DataGen"
 - "Send an email via Gmail through DataGen"
 
-The AI will use DataGen's `searchTools` and `getToolDetails` MCP tools to discover available integrations and their schemas, then execute them via the Python SDK.
+Your AI will use `searchTools` and `getToolDetails` MCP tools to discover and execute DataGen tools automatically.
 
 ## API Reference
 
@@ -468,47 +506,28 @@ from datagen_sdk import DatagenClient
 st.title("CRM Dashboard")
 client = DatagenClient()
 
-# Get high-priority contacts from your database
-if st.button("Load High-Priority Contacts"):
-    contacts = client.execute_tool(
-        "mcp_Neon_run_sql",
-        {
-            "params": {
-                "sql": "SELECT * FROM crm WHERE priority_score > 75 ORDER BY priority_score DESC",
-                "projectId": "your-project-id",
-                "databaseName": "your-db"
-            }
+# Query database
+if st.button("Load Contacts"):
+    contacts = client.execute_tool("mcp_Neon_run_sql", {
+        "params": {
+            "sql": "SELECT * FROM crm WHERE priority_score > 75",
+            "projectId": "your-project-id",
+            "databaseName": "your-db"
         }
-    )
-
-    # Display contacts in a table
+    })
     st.dataframe(contacts)
 
-# Send follow-up emails
-st.subheader("Send Follow-up Email")
-selected_email = st.selectbox("Select contact", ["user@example.com"])  # Populate from contacts
-message = st.text_area("Compose email")
+# Send emails
+selected_email = st.selectbox("Select contact", ["user@example.com"])
+message = st.text_area("Message")
 
-if st.button("Send Email"):
-    client.execute_tool(
-        "mcp_Gmail_gmail_send_email",
-        {
-            "to": selected_email,
-            "subject": "Follow-up",
-            "body": message
-        }
-    )
-    st.success("Email sent!")
-
-# Track project status
-if st.button("Check Linear Projects"):
-    projects = client.execute_tool(
-        "mcp_Linear_list_projects",
-        {"limit": 10}
-    )
-
-    for proj in projects[0]["content"]:
-        st.write(f"📊 {proj.get('name')} - {proj.get('state')}")
+if st.button("Send"):
+    client.execute_tool("mcp_Gmail_gmail_send_email", {
+        "to": selected_email,
+        "subject": "Follow-up",
+        "body": message
+    })
+    st.success("Sent!")
 ```
 
 ### Key Benefits of This Approach
@@ -519,58 +538,9 @@ if st.button("Check Linear Projects"):
 - ✅ **Same code pattern for any tool** - `execute_tool()` works for all services
 - ✅ **Easy to swap services** - Change Neon → Supabase without rewriting integration code
 
-### Adaptation for Your Use Case
-
-This pattern works for any scenario:
-- **E-commerce analytics**: Combine Shopify data with email notifications
-- **Customer support dashboards**: Integrate Zendesk with Slack and databases
-- **Data pipelines**: Connect multiple data sources with simple execution calls
-- **Marketing automation**: Link CRM data with email and social media tools
-
-Just swap in different tools and queries for your specific needs - the pattern stays the same.
+This pattern works for any scenario - e-commerce analytics, customer support dashboards, data pipelines, marketing automation. Just swap in different tools for your needs.
 
 ## Examples
-
-### List Linear Projects
-
-```python
-from datagen_sdk import DatagenClient
-
-# Initialize with production API (default)
-client = DatagenClient()
-
-# Fetch projects from Linear via DataGen
-projects = client.execute_tool("mcp_Linear_list_projects", {"limit": 20})
-
-print(f"Projects returned: {len(projects[0]['content']) if projects else 0}")
-for proj in projects[0]["content"]:
-    print(f"- {proj.get('name')} (id: {proj.get('id')})")
-```
-
-### List Linear Issues
-
-```python
-from datagen_sdk import DatagenClient
-
-client = DatagenClient()
-
-# Fetch recent issues from Linear
-issues = client.execute_tool(
-    "mcp_Linear_list_issues",
-    {
-        "limit": 10,
-        "order_by": "createdAt",
-        "order_direction": "DESC",
-    }
-)
-
-issue_block = issues[0] if issues else []
-print(f"Issues returned: {len(issue_block)}")
-for issue in issue_block:
-    ident = issue.get("identifier", "?")
-    title = issue.get("title", "(no title)")
-    print(f"- {ident}: {title}")
-```
 
 ### Cross-Service Workflow: Database + Email
 
@@ -609,25 +579,6 @@ print(f"Processed {len(new_users)} new users")
 ```
 
 Notice how you're using both Neon and Gmail with the same client - no separate SDKs, no separate auth flows.
-
-### Error Handling with Retries
-
-```python
-from datagen_sdk import DatagenClient, DatagenHttpError, DatagenToolError
-
-client = DatagenClient(
-    retries=3,
-    backoff_seconds=0.5
-)
-
-try:
-    result = client.execute_tool("mcp_Linear_list_projects", {"limit": 10})
-    print("Success:", result)
-except DatagenToolError as e:
-    print(f"Tool execution failed: {e}")
-except DatagenHttpError as e:
-    print(f"HTTP error after retries: {e}")
-```
 
 ## Development
 
