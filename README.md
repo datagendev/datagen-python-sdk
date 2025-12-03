@@ -16,7 +16,11 @@ For human developers: write `client.execute_tool()` instead of wrestling with se
 
 ## AI Agent-First Design
 
-DataGen is built for AI coding assistants (Claude, Cursor, Copilot, etc.) to discover and use tools without hardcoded knowledge. When you ask an AI agent to "send an email via Gmail," here's what happens:
+DataGen is built for AI coding assistants (Claude, Cursor, Copilot, etc.) to discover and use tools without hardcoded knowledge.
+
+**Prerequisites**: First, connect MCP servers (Gmail, Neon, Linear, etc.) in the DataGen UI at https://datagen.dev. Once connected, AI agents can discover and use all their tools automatically.
+
+When you ask an AI agent to "send an email via Gmail," here's what happens:
 
 ### The Agent Discovery Workflow
 
@@ -79,7 +83,7 @@ Building data-rich applications traditionally means:
 
 ### The Solution: MCP Gateway with Unified Auth
 
-DataGen acts as an MCP Gateway that handles authentication for ALL connected MCP servers. Connect Gmail, Linear, Neon, or any MCP server once through DataGen's UI, and all their tools become available through one authenticated client.
+DataGen acts as an MCP Gateway that handles authentication for ALL connected MCP servers. Connect Gmail, Linear, Neon, or any MCP server once through DataGen's UI at https://datagen.dev, and all their tools become available through one authenticated client. You authenticate once per service in the UI, and never touch credentials in your code.
 
 **Traditional Way** (what you avoid):
 ```python
@@ -144,9 +148,26 @@ pip install datagen-python-sdk
 
 ## Quick Start
 
-### 1. Set up your API key
+### 1. Connect MCP servers in DataGen UI
 
-First, get your API key from: https://datagen.dev/account?tab=api
+Before you can use tools like Gmail or Neon, you need to connect their MCP servers through the DataGen dashboard:
+
+1. Go to https://datagen.dev
+2. Navigate to **MCP Servers** section
+3. Click **Add MCP Server**
+4. Choose from available MCP servers:
+   - **Gmail MCP**: Connect your Gmail account via OAuth
+   - **Neon MCP**: Connect your Neon PostgreSQL database
+   - **Linear MCP**: Connect your Linear workspace
+   - **Slack MCP**: Connect your Slack workspace
+   - And many more...
+5. Complete the authentication flow for each service
+
+**Once connected**, all tools from these MCP servers become available through the DataGen SDK. You never touch credentials in your code - DataGen's MCP Gateway handles all authentication.
+
+### 2. Set up your API key
+
+Get your API key from: https://datagen.dev/account?tab=api
 
 You can authenticate using the CLI, environment variables, or direct passing.
 
@@ -169,7 +190,7 @@ from datagen_sdk import DatagenClient
 client = DatagenClient(api_key="your_api_key_here")
 ```
 
-### 2. Create a client and execute tools
+### 3. Create a client and execute tools
 
 ```python
 from datagen_sdk import DatagenClient
