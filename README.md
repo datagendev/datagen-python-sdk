@@ -86,7 +86,7 @@ The agent instantly:
 
 **Task:** Send welcome emails and Slack notifications for new database signups
 
-**Without DataGen (~25 lines):**
+**Without DataGen - Multiple packages, credential management, service-specific boilerplate:**
 ```python
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
@@ -112,7 +112,7 @@ for email, name in cursor.fetchall():
 cursor.close(); conn.close()
 ```
 
-**With DataGen (~10 lines):**
+**With DataGen - Single client, managed authentication, clean code:**
 ```python
 from datagen_sdk import DatagenClient
 
@@ -124,10 +124,10 @@ for user in users:
     client.execute_tool("mcp_Slack_chat_postMessage", {"channel": "#signups", "text": f"New: {user['name']}"})
 ```
 
-**What You Skip:**
-- **3 SDK installs** (`google-api-python-client`, `psycopg2`, `slack-sdk`) → **1 SDK**
-- **OAuth token files & credential management** → **MCP Gateway handles it**
-- **MIME encoding, base64, service-specific patterns** → **uniform `execute_tool()`**
+**The Difference:**
+- **Package Management:** Installing & managing `google-api-python-client`, `psycopg2`, `slack-sdk` → **One `datagen-python-sdk`**
+- **Authentication:** OAuth token files, database credentials, API keys scattered across your codebase → **MCP Gateway handles all auth**
+- **Boilerplate Code:** Service-specific patterns (MIME encoding, base64, connection pooling) → **Clean `execute_tool()` for everything**
 
 ## Quick Start
 
