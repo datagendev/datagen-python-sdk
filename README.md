@@ -82,6 +82,53 @@ The agent instantly:
 
 **The Result:** Go from idea → working integration in one prompt instead of one hour.
 
+### Real-World Integration Comparison
+
+**Task:** Send welcome emails and Slack notifications for new database signups
+
+**Without DataGen (~25 lines):**
+```python
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
+from email.mime.text import MIMEText
+import base64, psycopg2, os
+from slack_sdk import WebClient
+
+# OAuth & service setup
+creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+gmail = build('gmail', 'v1', credentials=creds)
+slack = WebClient(token=os.getenv("SLACK_TOKEN"))
+
+# Database connection & query
+conn = psycopg2.connect(host="...", user=os.getenv("DB_USER"), password=os.getenv("DB_PASS"))
+cursor = conn.cursor()
+cursor.execute("SELECT email, name FROM users WHERE created_at > NOW() - INTERVAL '1 day'")
+
+# Send emails with MIME encoding
+for email, name in cursor.fetchall():
+    msg = MIMEText(f"Hi {name}!"); msg['to'] = email; msg['subject'] = "Welcome"
+    gmail.users().messages().send(userId='me', body={'raw': base64.urlsafe_b64encode(msg.as_bytes()).decode()}).execute()
+    slack.chat_postMessage(channel="#signups", text=f"New: {name}")
+cursor.close(); conn.close()
+```
+
+**With DataGen (~10 lines):**
+```python
+from datagen_sdk import DatagenClient
+
+client = DatagenClient()
+users = client.execute_tool("mcp_Supabase_run_sql", {"params": {"sql": "SELECT email, name FROM users WHERE created_at > NOW() - INTERVAL '1 day'"}})
+
+for user in users:
+    client.execute_tool("mcp_Gmail_gmail_send_email", {"to": user["email"], "subject": "Welcome", "body": f"Hi {user['name']}!"})
+    client.execute_tool("mcp_Slack_chat_postMessage", {"channel": "#signups", "text": f"New: {user['name']}"})
+```
+
+**What You Skip:**
+- **3 SDK installs** (`google-api-python-client`, `psycopg2`, `slack-sdk`) → **1 SDK**
+- **OAuth token files & credential management** → **MCP Gateway handles it**
+- **MIME encoding, base64, service-specific patterns** → **uniform `execute_tool()`**
+
 ## Quick Start
 
 ### 1. Add DataGen MCP to Your Coding Agent
