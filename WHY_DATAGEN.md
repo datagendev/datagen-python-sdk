@@ -10,7 +10,7 @@ For teams building AI-powered automation that touches multiple APIs (Gmail, Slac
 | **Credential Management** | Scattered across apps/envs | Single dashboard, zero code changes |
 | **Parameter Discovery** | Web search, hallucination | getToolDetails returns exact schema |
 | **Rate Limits/Retry** | Custom logic per service | Built-in exponential backoff |
-| **Direct vs Code Execution** | 50+ tool calls = 200K tokens, hallucination | Code mode: 98% token savings, parallel ops |
+| **Unified Tool Access** | 2 integrations: SDK code + MCP setup | 1 integration: same tools for code AND agents |
 | **Client Delivery** | Multiple MCPs, multiple auths | One MCP, UI-managed tools |
 | **Agent SDK DevOps** | Custom tools: in-memory only, separate test env | MCP tools: test in Claude Code, deploy with one config |
 
@@ -547,236 +547,199 @@ client.execute_tool("mcp_Linear_create_issue", {...})        # Same config
 
 ---
 
-## 5. Direct Tool Calling vs Code Execution: Choose the Right Mode
+## 5. Unified Tool Access: Same Tools for Agents AND Code
 
 ### The Problem
 
-AI agents interact with tools in two fundamentally different ways:
+With direct APIs, you need **two separate integrations**:
 
-1. **Direct Tool Calling**: Agent calls MCP tools one at a time, results flow through context window
-2. **Code Execution**: Agent writes code that uses tools, executes in sandbox, data stays local
+1. **For programmatic use**: Install SDK, write integration code, handle auth
+2. **For AI agents**: Set up MCP server, configure separately, different interface
 
-Choosing the wrong mode leads to:
-- **200K+ tokens consumed** for operations that should cost 2K
-- **Hallucination from context overload** when processing large datasets
-- **Slow, degraded UX** from multiple conversation rounds
+This means maintaining two codebases, two auth mechanisms, and two sets of bugs.
 
-### The Two Modes Explained
+### Architecture Difference
 
 ```
-Direct Tool Calling:
-User: "Get all leads from Salesforce"
-     |
-     v
-Agent calls: fetch_leads(page=1) --> Result flows to context (5K tokens)
-Agent calls: fetch_leads(page=2) --> Result flows to context (5K tokens)
-Agent calls: fetch_leads(page=3) --> Result flows to context (5K tokens)
-... 50+ calls later ...
-     |
-     v
-Context window: 200K+ tokens consumed
-Agent: Summarizes (possibly hallucinating from overload)
+Direct API - Separate Integrations:
+
+For Code (Scripts, Pipelines):          For AI Agents (MCP):
+           |                                     |
+           v                                     v
+pip install google-api-python-client    Set up gmail-mcp-server
+pip install slack-sdk                   Set up slack-mcp-server
+pip install linear-sdk                  Set up linear-mcp-server
+           |                                     |
+           v                                     v
+Write integration code                  Configure MCP auth
+Handle OAuth in code                    Different interface
+           |                                     |
+           v                                     v
+gmail.users().messages().send()         Agent calls: gmail_send_email
+slack_client.chat_postMessage()         Agent calls: slack_post_message
+
+TWO different integrations for the SAME functionality
 
 
-Code Execution Mode:
-User: "Get all leads from Salesforce"
-     |
-     v
-Agent writes Python code using SDK
-     |
-     v
-Code executes in sandbox:
-  - Fetches all pages in parallel
-  - Processes locally (no token cost)
-  - Returns summary only
-     |
-     v
-Context window: ~2K tokens
-Agent: Returns accurate summary
+DataGen - One Integration, Two Access Modes:
+
+                    DataGen SDK + MCP
+                           |
+           +---------------+---------------+
+           |                               |
+           v                               v
+    For Code (SDK):                 For AI Agents (MCP):
+    client.execute_tool(...)        executeTool MCP tool
+           |                               |
+           v                               v
+    Same tools                      Same tools
+    Same auth                       Same auth
+    Same behavior                   Same behavior
+
+ONE integration, accessible BOTH ways
 ```
 
-### Real-World Example: CRM Lead Export
-
-**The Problem**: A team's AI agent made 50+ sequential `fetch_leads` calls with pagination:
-- 200K+ tokens consumed
-- Multiple conversation rounds
-- Hallucination from context overload
-- Slow, degraded user experience
-
-**Direct Tool Calling (Problematic at Scale)**:
+### Code Comparison
 
 ```python
-# Agent calls tools sequentially - each result flows through context
-# MCP tools exposed: fetch_leads, fetch_opportunity, update_contact, etc.
+# ============================================================
+# DIRECT API: Two separate integrations
+# ============================================================
 
-# Agent's behavior:
-# Call 1: fetch_leads(page=1) -> 1000 leads in context
-# Call 2: fetch_leads(page=2) -> 1000 more leads in context
-# Call 3: fetch_leads(page=3) -> 1000 more leads in context
-# ... 50+ calls ...
-#
-# Result: 200K+ tokens, context overload, hallucination risk
-```
+# --- Integration 1: For code/scripts ---
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
+from slack_sdk import WebClient
 
-**Code Execution Mode (Efficient at Scale)**:
+# Gmail setup
+gmail_creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+gmail = build('gmail', 'v1', credentials=gmail_creds)
 
-```python
-# Instead of 50+ individual tool calls, agent writes code using DataGen SDK
-# Single MCP tool exposed: execute_code
+# Slack setup
+slack = WebClient(token=os.getenv("SLACK_TOKEN"))
 
-# Agent generates this code and passes to execute_code tool:
+# Use in code
+def send_welcome_email(user):
+    message = MIMEText(f"Welcome {user.name}!")
+    message['to'] = user.email
+    raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
+    gmail.users().messages().send(userId='me', body={'raw': raw}).execute()
+
+def notify_slack(channel, text):
+    slack.chat_postMessage(channel=channel, text=text)
+
+# --- Integration 2: For AI agents (separate MCP setup) ---
+# Install: npx @anthropic/gmail-mcp-server
+# Configure: Gmail OAuth in MCP config
+# Agent calls: gmail_send_email tool (different interface!)
+
+# TWO integrations to maintain!
+
+# ============================================================
+# DATAGEN SDK: One integration, both access modes
+# ============================================================
+
 from datagen_sdk import DatagenClient
-from concurrent.futures import ThreadPoolExecutor
-import json
 
 client = DatagenClient()
 
-def fetch_page(page_num):
-    """Fetch a single page of leads"""
-    return client.execute_tool("mcp_Salesforce_fetch_leads", {
-        "page": page_num,
-        "limit": 1000
+# --- Mode 1: Use as functions in code ---
+def send_welcome_email(user):
+    client.execute_tool("mcp_Gmail_gmail_send_email", {
+        "to": user.email,
+        "subject": "Welcome!",
+        "body": f"Welcome {user.name}!"
     })
 
-# Get total count from first page
-initial_batch = fetch_page(1)
-total_count = initial_batch['total_count']
-total_pages = (total_count + 999) // 1000
+def notify_slack(channel, text):
+    client.execute_tool("mcp_Slack_chat_postMessage", {
+        "channel": channel,
+        "text": text
+    })
 
-# Parallel fetch all pages - data stays in sandbox, not context
-all_leads = []
-with ThreadPoolExecutor(max_workers=10) as executor:
-    futures = [executor.submit(fetch_page, i) for i in range(1, total_pages + 1)]
-    for future in futures:
-        all_leads.extend(future.result()['leads'])
+# --- Mode 2: AI agent uses same tools via MCP ---
+# Agent calls: executeTool("mcp_Gmail_gmail_send_email", {...})
+# Same tool name, same parameters, same behavior!
 
-# Save to storage - large data never hits context window
-s3_url = client.execute_tool("mcp_S3_upload", {
-    "data": json.dumps(all_leads),
-    "filename": f"salesforce_leads_{len(all_leads)}_records.json"
-})
-
-# Only summary returns to agent context
-result = {
-    "status": "success",
-    "total_leads": len(all_leads),
-    "s3_url": s3_url,
-    "message": f"Exported {len(all_leads)} leads to S3"
-}
-
-# Result: ~2K tokens, no hallucination, fast response
+# ONE integration, works both ways
 ```
+
+### Why This Matters
+
+| Aspect | Direct API | DataGen SDK |
+|--------|------------|-------------|
+| **Integrations to maintain** | 2 (SDK code + MCP setup) | 1 |
+| **Auth mechanisms** | 2 (code OAuth + MCP auth) | 1 (DataGen API key) |
+| **Tool interface** | Different for code vs agent | Identical |
+| **Testing** | Test both integrations | Test once |
+| **Adding new service** | Update code AND MCP config | Add in dashboard, use everywhere |
+
+### Code Mode: When Agents Write Code
+
+The unified access enables a powerful pattern: **agents can write code that uses the same tools**.
+
+When tasks get complex (batch operations, large data, parallel execution), agents can switch from direct MCP tool calls to writing Python code using the SDK:
+
+```
+Simple Task: "Send email to john@example.com"
+     |
+     v
+Agent uses: Direct MCP tool call (executeTool)
+     |
+     v
+Done in 1 call
+
+
+Complex Task: "Export 50K leads, enrich each, update CRM"
+     |
+     v
+Agent writes Python code using DataGen SDK:
+
+from datagen_sdk import DatagenClient
+from concurrent.futures import ThreadPoolExecutor
+
+client = DatagenClient()
+
+# Parallel fetch - same tools, accessed programmatically
+with ThreadPoolExecutor(max_workers=10) as executor:
+    leads = executor.map(
+        lambda page: client.execute_tool("mcp_Salesforce_fetch_leads", {"page": page}),
+        range(1, 51)
+    )
+
+# Batch update with error handling
+for lead in all_leads:
+    enriched = client.execute_tool("mcp_LinkedIn_enrich", {"email": lead["email"]})
+    client.execute_tool("mcp_Supabase_run_sql", {
+        "params": {"sql": f"UPDATE leads SET data = '{enriched}' WHERE id = {lead['id']}"}
+    })
+```
+
+### The Token Efficiency Benefit
+
+This Code Mode approach delivers massive efficiency gains:
+
+| Approach | Token Usage | Why |
+|----------|-------------|-----|
+| **50+ direct MCP calls** | ~200K tokens | Each result flows through context |
+| **Code execution with SDK** | ~2K tokens | Data stays local, only summary returns |
+
+**Result**: 98% token savings for large operations, plus parallel execution, error handling, and complex logic.
 
 ### When to Use Each Mode
 
-| Scenario | Direct Tool Calling | Code Execution (SDK) |
-|----------|--------------------|--------------------|
-| **Simple queries** | "What's the weather?" | Overkill |
-| **Single record ops** | "Send email to john@example.com" | Overkill |
-| **Small data retrieval** | "Get my 5 recent Linear issues" | Overkill |
-| **Large data export** | Token explosion | "Export all 50K leads to S3" |
-| **Batch operations** | Slow, sequential | "Update status for 1000 contacts" |
-| **Complex workflows** | Error-prone | "Fetch, transform, filter, then notify" |
-| **Data transformations** | Context overload | "Aggregate sales by region" |
-| **Parallel operations** | Not possible | "Fetch from 5 APIs simultaneously" |
+| Scenario | Direct MCP Tool Call | Code with SDK |
+|----------|---------------------|---------------|
+| Simple queries | "What's the weather?" | Overkill |
+| Single operations | "Send email to john" | Overkill |
+| Batch operations | Slow, sequential | "Email 1000 contacts" |
+| Large data | Token explosion | "Export all leads to S3" |
+| Complex logic | Error-prone | "Fetch, filter, transform, notify" |
+| Parallel ops | Not possible | "Query 5 APIs simultaneously" |
 
 **Rule of thumb**:
-- **< 5 tool calls, small results** → Direct tool calling
-- **> 5 tool calls, large data, or complex logic** → Code execution
-
-### DataGen Supports Both Modes
-
-```python
-# MODE 1: Direct Tool Calling via MCP
-# Agent calls DataGen MCP tools directly
-# Good for: Simple, single operations
-
-# In Claude/Cursor, agent calls:
-# searchTools("send email") -> finds mcp_Gmail_gmail_send_email
-# executeTool("mcp_Gmail_gmail_send_email", {to, subject, body})
-
-# --------------------------------------------------------
-
-# MODE 2: Code Execution via SDK
-# Agent writes Python code using DataGen SDK
-# Good for: Complex workflows, batch ops, large data
-
-from datagen_sdk import DatagenClient
-
-client = DatagenClient()
-
-# Same tools, accessed programmatically
-# Agent writes this code, executes in sandbox:
-
-# Batch email send with error handling
-failed = []
-for contact in contacts_df.itertuples():
-    try:
-        client.execute_tool("mcp_Gmail_gmail_send_email", {
-            "to": contact.email,
-            "subject": f"Hi {contact.name}",
-            "body": personalized_body(contact)
-        })
-    except Exception as e:
-        failed.append({"email": contact.email, "error": str(e)})
-
-# Notify on failures
-if failed:
-    client.execute_tool("mcp_Slack_chat_postMessage", {
-        "channel": "#alerts",
-        "text": f"Email batch complete. {len(failed)} failures."
-    })
-```
-
-### Pros and Cons
-
-**Direct Tool Calling**:
-| Pros | Cons |
-|------|------|
-| Simple, no code needed | Each result consumes context tokens |
-| Good for small operations | Sequential execution only |
-| Easy to debug (structured calls) | Scales poorly (50+ calls = problems) |
-| Lower latency for single calls | No complex control flow |
-
-**Code Execution (SDK)**:
-| Pros | Cons |
-|------|------|
-| Massive token savings (98%+ for large ops) | More tokens for simple operations |
-| Parallel execution possible | Requires secure sandbox |
-| Complex logic (loops, conditionals, try/catch) | Harder to debug failures |
-| Data stays local, doesn't flood context | Security considerations for writes |
-| LLMs are better at writing code than chaining tools | Overkill for simple queries |
-
-### The DataGen Advantage
-
-With DataGen, you get **both modes through the same tool ecosystem**:
-
-1. **Direct MCP tools** (`executeTool`): For simple operations
-2. **SDK in code** (`client.execute_tool()`): For complex workflows
-
-Same authentication, same tools, same behavior - just different execution modes. The agent chooses the right mode based on task complexity.
-
-```
-Simple Task: "Send welcome email to new signup"
-     |
-     v
-Agent chooses: Direct tool call (executeTool MCP)
-     |
-     v
-Done in 1 call, ~500 tokens
-
-
-Complex Task: "Export all leads, enrich with LinkedIn, update CRM, notify Slack"
-     |
-     v
-Agent chooses: Write code using DataGen SDK
-     |
-     v
-Code executes: parallel fetches, batch updates, single notification
-     |
-     v
-Done efficiently, ~3K tokens instead of 100K+
-```
+- **< 5 tool calls, small results** → Direct MCP tool call
+- **> 5 calls, large data, complex logic** → Agent writes code using SDK
 
 ---
 
@@ -1142,7 +1105,7 @@ DataGen SDK fundamentally changes how you build multi-API integrations:
 | Manage credentials in every app and environment | One dashboard, zero code changes on rotation |
 | LLMs hallucinate API parameters | getToolDetails provides exact schemas |
 | Custom retry logic per service | Built-in exponential backoff, unified config |
-| 50+ sequential tool calls, 200K tokens, hallucination | Code execution mode: 98% savings, parallel ops |
+| 2 integrations: SDK for code + MCP for agents | Same tools work as functions in code AND MCP tools |
 | Install and configure MCP per service | One MCP, manage tools from UI |
 | Custom tools can't be tested in Claude Code subagents | Same MCP tools in dev, test, and prod |
 
