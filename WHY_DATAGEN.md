@@ -1,6 +1,6 @@
-# Why DataGen SDK? 6 Reasons It Beats Direct API Integration
+# Why DataGen SDK? 7 Reasons It Beats Direct API Integration
 
-For teams building AI-powered automation that touches multiple APIs (Gmail, Slack, databases, Linear, etc.), the DataGen SDK offers fundamental advantages over direct API integration. This document covers 6 key reasons with demonstrable code comparisons.
+For teams building AI-powered automation that touches multiple APIs (Gmail, Slack, databases, Linear, etc.), the DataGen SDK offers fundamental advantages over direct API integration. This document covers 7 key reasons with demonstrable code comparisons.
 
 ## TL;DR
 
@@ -10,8 +10,9 @@ For teams building AI-powered automation that touches multiple APIs (Gmail, Slac
 | **Credential Management** | Scattered across apps/envs | Single dashboard, zero code changes |
 | **Parameter Discovery** | Web search, hallucination | getToolDetails returns exact schema |
 | **Rate Limits/Retry** | Custom logic per service | Built-in exponential backoff |
-| **AI + Batch Operations** | Different code paths | Same execute_tool() interface |
+| **Direct vs Code Execution** | 50+ tool calls = 200K tokens, hallucination | Code mode: 98% token savings, parallel ops |
 | **Client Delivery** | Multiple MCPs, multiple auths | One MCP, UI-managed tools |
+| **Agent SDK DevOps** | Custom tools: in-memory only, separate test env | MCP tools: test in Claude Code, deploy with one config |
 
 ---
 
@@ -546,190 +547,235 @@ client.execute_tool("mcp_Linear_create_issue", {...})        # Same config
 
 ---
 
-## 5. Dual-Use: AI Agent Tools AND Batch Data Operations
+## 5. Direct Tool Calling vs Code Execution: Choose the Right Mode
 
 ### The Problem
 
-Many teams need both:
-- **Interactive AI tools**: Single operations triggered by agents
-- **Batch operations**: Process thousands of records in data pipelines
+AI agents interact with tools in two fundamentally different ways:
 
-With direct APIs, these often require different code paths (single-item methods vs. batch APIs).
+1. **Direct Tool Calling**: Agent calls MCP tools one at a time, results flow through context window
+2. **Code Execution**: Agent writes code that uses tools, executes in sandbox, data stays local
 
-### Architecture Difference
+Choosing the wrong mode leads to:
+- **200K+ tokens consumed** for operations that should cost 2K
+- **Hallucination from context overload** when processing large datasets
+- **Slow, degraded UX** from multiple conversation rounds
+
+### The Two Modes Explained
 
 ```
-Direct API - Split Implementation:
+Direct Tool Calling:
+User: "Get all leads from Salesforce"
+     |
+     v
+Agent calls: fetch_leads(page=1) --> Result flows to context (5K tokens)
+Agent calls: fetch_leads(page=2) --> Result flows to context (5K tokens)
+Agent calls: fetch_leads(page=3) --> Result flows to context (5K tokens)
+... 50+ calls later ...
+     |
+     v
+Context window: 200K+ tokens consumed
+Agent: Summarizes (possibly hallucinating from overload)
 
-AI Agent Tool                          Batch Pipeline
-     |                                       |
-     v                                       v
-send_single_email(to, subject, body)   batch_send_emails(recipients_list)
-     |                                       |
-     v                                       v
-gmail.users().messages().send()        gmail.new_batch_http_request()
 
-Two implementations, two sets of tests, two maintenance burdens
-
-
-DataGen - Unified Interface:
-
-AI Agent Tool                          Batch Pipeline
-     |                                       |
-     v                                       v
-client.execute_tool(...)               for row in df: client.execute_tool(...)
-     |                                       |
-     v                                       v
-           Same execute_tool() method
-           Same error handling
-           Same retry logic
+Code Execution Mode:
+User: "Get all leads from Salesforce"
+     |
+     v
+Agent writes Python code using SDK
+     |
+     v
+Code executes in sandbox:
+  - Fetches all pages in parallel
+  - Processes locally (no token cost)
+  - Returns summary only
+     |
+     v
+Context window: ~2K tokens
+Agent: Returns accurate summary
 ```
 
-### Code Comparison
+### Real-World Example: CRM Lead Export
+
+**The Problem**: A team's AI agent made 50+ sequential `fetch_leads` calls with pagination:
+- 200K+ tokens consumed
+- Multiple conversation rounds
+- Hallucination from context overload
+- Slow, degraded user experience
+
+**Direct Tool Calling (Problematic at Scale)**:
 
 ```python
-# Direct API: Different implementations for single vs batch
+# Agent calls tools sequentially - each result flows through context
+# MCP tools exposed: fetch_leads, fetch_opportunity, update_contact, etc.
 
-# AI Agent tool definition (LangChain/similar):
-from langchain.tools import tool
+# Agent's behavior:
+# Call 1: fetch_leads(page=1) -> 1000 leads in context
+# Call 2: fetch_leads(page=2) -> 1000 more leads in context
+# Call 3: fetch_leads(page=3) -> 1000 more leads in context
+# ... 50+ calls ...
+#
+# Result: 200K+ tokens, context overload, hallucination risk
+```
 
-@tool
-def send_email_tool(to: str, subject: str, body: str) -> str:
-    """Send a single email - used by AI agent"""
-    message = MIMEText(body)
-    message['to'] = to
-    message['subject'] = subject
-    raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
+**Code Execution Mode (Efficient at Scale)**:
 
-    gmail.users().messages().send(userId='me', body={'raw': raw}).execute()
-    return f"Email sent to {to}"
+```python
+# Instead of 50+ individual tool calls, agent writes code using DataGen SDK
+# Single MCP tool exposed: execute_code
 
+# Agent generates this code and passes to execute_code tool:
+from datagen_sdk import DatagenClient
+from concurrent.futures import ThreadPoolExecutor
+import json
 
-# Batch pipeline (different code):
-def batch_send_emails(recipients_df):
-    """Send emails to thousands of recipients - batch job"""
-    batch = gmail.new_batch_http_request()
+client = DatagenClient()
 
-    for idx, row in recipients_df.iterrows():
-        message = MIMEText(row['body'])
-        message['to'] = row['email']
-        message['subject'] = row['subject']
-        raw = base64.urlsafe_b64encode(message.as_bytes()).decode()
+def fetch_page(page_num):
+    """Fetch a single page of leads"""
+    return client.execute_tool("mcp_Salesforce_fetch_leads", {
+        "page": page_num,
+        "limit": 1000
+    })
 
-        batch.add(
-            gmail.users().messages().send(userId='me', body={'raw': raw}),
-            callback=handle_response
-        )
+# Get total count from first page
+initial_batch = fetch_page(1)
+total_count = initial_batch['total_count']
+total_pages = (total_count + 999) // 1000
 
-        # Gmail batch limit: 100 requests per batch
-        if (idx + 1) % 100 == 0:
-            batch.execute()
-            batch = gmail.new_batch_http_request()
+# Parallel fetch all pages - data stays in sandbox, not context
+all_leads = []
+with ThreadPoolExecutor(max_workers=10) as executor:
+    futures = [executor.submit(fetch_page, i) for i in range(1, total_pages + 1)]
+    for future in futures:
+        all_leads.extend(future.result()['leads'])
 
-    # Execute remaining
-    if batch._requests:
-        batch.execute()
+# Save to storage - large data never hits context window
+s3_url = client.execute_tool("mcp_S3_upload", {
+    "data": json.dumps(all_leads),
+    "filename": f"salesforce_leads_{len(all_leads)}_records.json"
+})
 
-# Two completely different implementations!
-# - Different error handling
-# - Different rate limit handling
-# - Different testing requirements
+# Only summary returns to agent context
+result = {
+    "status": "success",
+    "total_leads": len(all_leads),
+    "s3_url": s3_url,
+    "message": f"Exported {len(all_leads)} leads to S3"
+}
+
+# Result: ~2K tokens, no hallucination, fast response
+```
+
+### When to Use Each Mode
+
+| Scenario | Direct Tool Calling | Code Execution (SDK) |
+|----------|--------------------|--------------------|
+| **Simple queries** | "What's the weather?" | Overkill |
+| **Single record ops** | "Send email to john@example.com" | Overkill |
+| **Small data retrieval** | "Get my 5 recent Linear issues" | Overkill |
+| **Large data export** | Token explosion | "Export all 50K leads to S3" |
+| **Batch operations** | Slow, sequential | "Update status for 1000 contacts" |
+| **Complex workflows** | Error-prone | "Fetch, transform, filter, then notify" |
+| **Data transformations** | Context overload | "Aggregate sales by region" |
+| **Parallel operations** | Not possible | "Fetch from 5 APIs simultaneously" |
+
+**Rule of thumb**:
+- **< 5 tool calls, small results** → Direct tool calling
+- **> 5 tool calls, large data, or complex logic** → Code execution
+
+### DataGen Supports Both Modes
+
+```python
+# MODE 1: Direct Tool Calling via MCP
+# Agent calls DataGen MCP tools directly
+# Good for: Simple, single operations
+
+# In Claude/Cursor, agent calls:
+# searchTools("send email") -> finds mcp_Gmail_gmail_send_email
+# executeTool("mcp_Gmail_gmail_send_email", {to, subject, body})
 
 # --------------------------------------------------------
 
-# DataGen SDK: Same interface for both use cases
+# MODE 2: Code Execution via SDK
+# Agent writes Python code using DataGen SDK
+# Good for: Complex workflows, batch ops, large data
 
 from datagen_sdk import DatagenClient
 
-client = DatagenClient(retries=3, backoff_seconds=0.5)
+client = DatagenClient()
 
-# AI Agent single operation:
-def send_email_tool(to: str, subject: str, body: str) -> str:
-    """AI agent tool - single email"""
-    client.execute_tool("mcp_Gmail_gmail_send_email", {
-        "to": to,
-        "subject": subject,
-        "body": body
-    })
-    return f"Email sent to {to}"
+# Same tools, accessed programmatically
+# Agent writes this code, executes in sandbox:
 
-
-# Batch pipeline - exact same execute_tool pattern:
-def batch_send_emails(recipients_df):
-    """Batch job - same interface, works at scale"""
-    for _, row in recipients_df.iterrows():
+# Batch email send with error handling
+failed = []
+for contact in contacts_df.itertuples():
+    try:
         client.execute_tool("mcp_Gmail_gmail_send_email", {
-            "to": row['email'],
-            "subject": row['subject'],
-            "body": row['body']
+            "to": contact.email,
+            "subject": f"Hi {contact.name}",
+            "body": personalized_body(contact)
         })
-        # Retry logic built-in
-        # Rate limiting handled by gateway
+    except Exception as e:
+        failed.append({"email": contact.email, "error": str(e)})
 
-# One implementation pattern
-# Same error handling
-# Same retry behavior
-# Test once, use everywhere
+# Notify on failures
+if failed:
+    client.execute_tool("mcp_Slack_chat_postMessage", {
+        "channel": "#alerts",
+        "text": f"Email batch complete. {len(failed)} failures."
+    })
 ```
 
-### Real-World Example: CRM Update Pipeline
+### Pros and Cons
 
-```python
-# DataGen SDK handles both interactive and batch seamlessly
+**Direct Tool Calling**:
+| Pros | Cons |
+|------|------|
+| Simple, no code needed | Each result consumes context tokens |
+| Good for small operations | Sequential execution only |
+| Easy to debug (structured calls) | Scales poorly (50+ calls = problems) |
+| Lower latency for single calls | No complex control flow |
 
-from datagen_sdk import DatagenClient
-import pandas as pd
+**Code Execution (SDK)**:
+| Pros | Cons |
+|------|------|
+| Massive token savings (98%+ for large ops) | More tokens for simple operations |
+| Parallel execution possible | Requires secure sandbox |
+| Complex logic (loops, conditionals, try/catch) | Harder to debug failures |
+| Data stays local, doesn't flood context | Security considerations for writes |
+| LLMs are better at writing code than chaining tools | Overkill for simple queries |
 
-client = DatagenClient(retries=3)
+### The DataGen Advantage
 
-# === Interactive: AI agent updates single contact ===
-def update_contact_tool(email: str, status: str, notes: str):
-    """Used by AI agent during conversation"""
-    client.execute_tool("mcp_Supabase_run_sql", {
-        "params": {
-            "sql": f"""
-                UPDATE contacts
-                SET status = '{status}', notes = '{notes}', updated_at = NOW()
-                WHERE email = '{email}'
-            """,
-            "projectId": "crm-project",
-            "databaseName": "main"
-        }
-    })
+With DataGen, you get **both modes through the same tool ecosystem**:
 
-    # Also notify on Slack
-    client.execute_tool("mcp_Slack_chat_postMessage", {
-        "channel": "#sales-updates",
-        "text": f"Contact {email} updated to {status}"
-    })
+1. **Direct MCP tools** (`executeTool`): For simple operations
+2. **SDK in code** (`client.execute_tool()`): For complex workflows
+
+Same authentication, same tools, same behavior - just different execution modes. The agent chooses the right mode based on task complexity.
+
+```
+Simple Task: "Send welcome email to new signup"
+     |
+     v
+Agent chooses: Direct tool call (executeTool MCP)
+     |
+     v
+Done in 1 call, ~500 tokens
 
 
-# === Batch: Nightly data pipeline ===
-def nightly_crm_sync(updates_df: pd.DataFrame):
-    """Runs as cron job - processes thousands of records"""
-    for _, row in updates_df.iterrows():
-        # Same execute_tool pattern as interactive
-        client.execute_tool("mcp_Supabase_run_sql", {
-            "params": {
-                "sql": f"""
-                    UPDATE contacts
-                    SET status = '{row['status']}',
-                        enrichment_data = '{row['enrichment']}'
-                    WHERE email = '{row['email']}'
-                """,
-                "projectId": "crm-project",
-                "databaseName": "main"
-            }
-        })
-
-    # Summary notification
-    client.execute_tool("mcp_Slack_chat_postMessage", {
-        "channel": "#data-ops",
-        "text": f"Nightly sync complete: {len(updates_df)} contacts updated"
-    })
-
-# AI agent and batch pipeline share the same code patterns
-# Same testing, same error handling, same monitoring
+Complex Task: "Export all leads, enrich with LinkedIn, update CRM, notify Slack"
+     |
+     v
+Agent chooses: Write code using DataGen SDK
+     |
+     v
+Code executes: parallel fetches, batch updates, single notification
+     |
+     v
+Done efficiently, ~3K tokens instead of 100K+
 ```
 
 ---
@@ -915,6 +961,177 @@ Maintenance: None (auth managed in dashboard)
 
 ---
 
+## 7. Much Faster Agent DevOps with Claude Agent SDK
+
+### The Problem
+
+When building AI agents with Claude Agent SDK, you need to give Claude access to tools. There are two approaches:
+
+1. **Custom Tools**: Define tools in your code as in-process MCP servers
+2. **External MCP Tools**: Connect to MCP servers like DataGen
+
+The critical difference: **Custom tools only exist in memory at runtime**. You can't test them in Claude Code's subagent environment because they're not available as external MCP servers.
+
+### Architecture Difference
+
+```
+Custom Tools Workflow (Fragmented):
+
+Development (Claude Code)              Production (Agent SDK)
+        |                                       |
+        v                                       v
+No access to custom tools              Custom tools defined in code
+Can't test tool behavior               Tools only exist at runtime
+        |                                       |
+        v                                       v
+Must build separate test               Deploy and hope it works
+environment to load tools              Debug in production
+```
+
+```
+MCP Tools Workflow (Unified):
+
+Development (Claude Code)              Production (Agent SDK)
+        |                                       |
+        v                                       v
+Connect DataGen MCP server -----> Same DataGen MCP server
+Test with real tools         |    Same tools, same behavior
+Same prompt, same context    |    One config: DATAGEN_API_KEY
+        |                    |            |
+        v                    |            v
+Iterate in Claude Code       |    Deploy with confidence
+subagent (same environment) -+    Already tested, same tools
+```
+
+### Code Comparison
+
+```python
+# Custom Tools: In-memory only, can't test in Claude Code subagent
+
+from claude_agent_sdk import tool, create_sdk_mcp_server, ClaudeSDKClient
+
+@tool("send_email", "Send an email", {"to": str, "subject": str, "body": str})
+async def send_email(args):
+    # Your email sending logic
+    return {"content": [{"type": "text", "text": "Email sent"}]}
+
+custom_server = create_sdk_mcp_server(
+    name="my-tools",
+    version="1.0.0",
+    tools=[send_email]
+)
+
+# Problem: This tool ONLY exists when your Agent SDK code runs
+# - Can't use it in Claude Code for development/testing
+# - Can't test it in Claude Code subagents
+# - Different environment between dev and prod
+
+# --------------------------------------------------------
+
+# MCP Tools: Same tools in Claude Code AND Agent SDK
+
+from datagen_sdk import DatagenClient
+
+client = DatagenClient()
+
+# This works identically in:
+# 1. Claude Code (your development environment)
+# 2. Claude Code subagents (Task tool calls)
+# 3. Agent SDK deployments (production)
+
+client.execute_tool("mcp_Gmail_gmail_send_email", {
+    "to": "user@example.com",
+    "subject": "Hello",
+    "body": "Test email"
+})
+
+# Same tool, same behavior, same environment everywhere
+```
+
+### The Subagent Testing Advantage
+
+Claude Code's Task tool spawns subagents that inherit MCP server connections. This means:
+
+```python
+# In Claude Code, when you call a subagent via Task tool:
+# - Subagent gets same MCP servers (including DataGen)
+# - Subagent can execute the exact same tools
+# - You test real tool behavior, not mocks
+
+# Development workflow with DataGen:
+# 1. Connect DataGen MCP in Claude Code
+# 2. Write your agent logic
+# 3. Test via Task tool subagent (same tools, same context)
+# 4. Deploy to Agent SDK with same DATAGEN_API_KEY
+# 5. Production uses identical tool behavior
+
+# Development workflow with Custom Tools:
+# 1. Write custom tools in code
+# 2. Can't test in Claude Code (tools don't exist yet)
+# 3. Build separate test harness to load tools
+# 4. Deploy to Agent SDK
+# 5. Pray it works the same way
+```
+
+### Deployment Simplification
+
+```python
+# Custom Tools: Configure auth for each service in your code
+
+import os
+from claude_agent_sdk import tool, create_sdk_mcp_server
+
+# Gmail OAuth setup
+gmail_creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+
+# Slack setup
+slack_token = os.getenv("SLACK_TOKEN")
+
+# Linear setup
+linear_key = os.getenv("LINEAR_API_KEY")
+
+# Supabase setup
+supabase_url = os.getenv("SUPABASE_URL")
+supabase_key = os.getenv("SUPABASE_KEY")
+
+# Now define custom tools that use each of these...
+# 5 different auth mechanisms, 5 sets of credentials to manage
+
+# --------------------------------------------------------
+
+# DataGen MCP: One config for everything
+
+from datagen_sdk import DatagenClient
+
+client = DatagenClient()  # Uses DATAGEN_API_KEY
+
+# All services available through one authenticated client
+client.execute_tool("mcp_Gmail_gmail_send_email", {...})
+client.execute_tool("mcp_Slack_chat_postMessage", {...})
+client.execute_tool("mcp_Linear_create_issue", {...})
+client.execute_tool("mcp_Supabase_run_sql", {...})
+
+# One API key, one config, zero auth code
+```
+
+### Why This Matters for Agent SDK Development
+
+The Claude Agent SDK is essentially a deployable Claude Code. When developing agents:
+
+| Aspect | Custom Tools | DataGen MCP |
+|--------|--------------|-------------|
+| **Dev environment** | Different from prod | Same as prod |
+| **Testing** | Separate test harness needed | Test directly in Claude Code |
+| **Subagent testing** | Tools not available | Same tools in subagents |
+| **Auth management** | Per-service in code | One config, dashboard-managed |
+| **Iteration speed** | Slow (rebuild, redeploy) | Fast (test in Claude Code, deploy) |
+
+**References:**
+- [Claude Agent SDK Custom Tools](https://platform.claude.com/docs/en/agent-sdk/custom-tools) - In-memory tools defined in code
+- [Claude Code Sub-agents](https://code.claude.com/docs/en/sub-agents) - How subagents inherit MCP servers
+
+---
+
 ## Summary
 
 DataGen SDK fundamentally changes how you build multi-API integrations:
@@ -925,8 +1142,9 @@ DataGen SDK fundamentally changes how you build multi-API integrations:
 | Manage credentials in every app and environment | One dashboard, zero code changes on rotation |
 | LLMs hallucinate API parameters | getToolDetails provides exact schemas |
 | Custom retry logic per service | Built-in exponential backoff, unified config |
-| Different code for AI tools vs batch jobs | Same execute_tool() pattern everywhere |
+| 50+ sequential tool calls, 200K tokens, hallucination | Code execution mode: 98% savings, parallel ops |
 | Install and configure MCP per service | One MCP, manage tools from UI |
+| Custom tools can't be tested in Claude Code subagents | Same MCP tools in dev, test, and prod |
 
 **The result**: Ship integrations faster, reduce security risk, and spend time on business logic instead of integration plumbing.
 
