@@ -36,3 +36,6 @@ dev = [
 Homepage = "https://datagen.dev"
 Repository = "https://github.com/datagen/datagen-python-sdk"
 Issues = "https://github.com/datagen/datagen-python-sdk/issues"
+
+[tool.setuptools.packages.find]
+include = ["datagen_sdk*"]

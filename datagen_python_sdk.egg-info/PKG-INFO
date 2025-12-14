@@ -38,13 +38,15 @@ Built for AI coding assistants and developers. DataGen's MCP server lets AI agen
 - **Skip Integration Hell**: No Gmail SDK, no LinkedIn API wrappers, no OAuth configuration code
 - **One Client for Everything**: Access Gmail, Linear, Supabase, Slack - same simple pattern
 - **MCP Gateway**: Unified authentication for all connected MCP servers. You don't need to handle auth during the code generation process.
-- **MCP Middleware**: Built-in retry logic and rate-limit handling across all your API calls 
+- **MCP Middleware**: Built-in retry logic and rate-limit handling across all your API calls
+
+> **Deep Dive**: See [WHY_DATAGEN.md](WHY_DATAGEN.md) for a detailed comparison of DataGen SDK vs direct API integration, including security benefits, credential management, and code examples. 
 
 ## AI Agent-First Design
 
 DataGen is built for AI coding assistants (Claude, Cursor, Copilot, etc.) to discover and use tools without hardcoded knowledge.
 
-![DataGen Workflow Diagram](datagen_workflow_flowchart.png)
+![DataGen Workflow Diagram](assets/datagen_workflow_flowchart.png)
 *DataGen's MCP Gateway architecture - one client handles auth and routing to Gmail, Supabase, LinkedIn. Write simple execute_tool() calls, skip all SDK setup*
 
 ### The Agent Discovery Workflow
@@ -296,7 +298,7 @@ Your AI will use `searchTools` and `getToolDetails` MCP tools to discover and ex
 
 Connect the MCP servers you want to use (Gmail, Linear, Supabase, Slack, etc.):
 
-![Add MCP Server](add-mcp.png)
+![Add MCP Server](assets/add-mcp.png)
 
 1. Go to https://datagen.dev
 2. Navigate to **MCP Servers** section
