@@ -16,7 +16,7 @@ Built for AI coding assistants and developers. DataGen's MCP server lets AI agen
 
 DataGen is built for AI coding assistants (Claude, Cursor, Copilot, etc.) to discover and use tools without hardcoded knowledge.
 
-![DataGen Workflow Diagram](https://raw.githubusercontent.com/datagen/datagen-python-sdk/main/assets/datagen_workflow_flowchart.png)
+![DataGen Workflow Diagram](assets/datagen_workflow_flowchart.png)
 *DataGen's MCP Gateway architecture - one client handles auth and routing to Gmail, Supabase, LinkedIn. Write simple execute_tool() calls, skip all SDK setup*
 
 ### The Agent Discovery Workflow
@@ -268,7 +268,7 @@ Your AI will use `searchTools` and `getToolDetails` MCP tools to discover and ex
 
 Connect the MCP servers you want to use (Gmail, Linear, Supabase, Slack, etc.):
 
-![Add MCP Server](https://raw.githubusercontent.com/datagen/datagen-python-sdk/main/assets/add-mcp.png)
+![Add MCP Server](assets/add-mcp.png)
 
 1. Go to https://datagen.dev
 2. Navigate to **MCP Servers** section
