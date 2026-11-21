@@ -250,3 +250,80 @@ class TestExceptions:
 
         tool_error = DatagenToolError("Tool failed")
         assert str(tool_error) == "Tool failed"
+
+
+class TestDecide:
+    """Tests for the decide method (POST /api/tools/decide)."""
+
+    URL = "https://api.datagen.dev/api/tools/decide"
+    QUESTIONS = {"urgent": {"type": "noul", "instructions": "Needs an answer today?"}}
+
+    @responses.activate
+    def test_decide_success(self):
+        result = {
+            "provider": {"key": "jev", "model": "jev-1.14.0"},
+            "answers": {"urgent": {"type": "noul", "answer": "yes", "confidence": 0.9}},
+            "usage": {"input_tokens": 100, "output_tokens": 10},
+            "latency_ms": 150,
+        }
+        responses.add(responses.POST, self.URL, json={"ok": True, "result": result}, status=200)
+        client = DatagenClient(api_key="test_key")
+        out = client.decide("Please refund invoice 4471", self.QUESTIONS, provider="jev", vault_id="v-1")
+        assert out == result
+        sent = responses.calls[0].request
+        assert sent.headers["X-API-Key"] == "test_key"
+        import json as _json
+
+        assert _json.loads(sent.body) == {
+            "state": "Please refund invoice 4471",
+            "questions": self.QUESTIONS,
+            "provider": "jev",
+            "vault_id": "v-1",
+        }
+
+    @responses.activate
+    def test_decide_refusal_carries_the_code(self):
+        from datagen_sdk import DatagenDecisionError
+
+        responses.add(
+            responses.POST,
+            self.URL,
+            json={"ok": False, "error": {"code": "no_decision_provider", "message": "none", "status": 409}},
+            status=409,
+        )
+        client = DatagenClient(api_key="test_key")
+        with pytest.raises(DatagenDecisionError) as exc:
+            client.decide("text", self.QUESTIONS)
+        assert exc.value.code == "no_decision_provider"
+        assert exc.value.status == 409
+        assert isinstance(exc.value, DatagenToolError)
+
+    @responses.activate
+    def test_decide_does_not_retry_a_provider_error(self):
+        from datagen_sdk import DatagenDecisionError
+
+        responses.add(
+            responses.POST,
+            self.URL,
+            json={"ok": False, "error": {"code": "decision_provider_error", "message": "HTTP 503", "status": 502}},
+            status=502,
+        )
+        client = DatagenClient(api_key="test_key", retries=2, backoff_seconds=0)
+        with pytest.raises(DatagenDecisionError):
+            client.decide("text", self.QUESTIONS)
+        assert len(responses.calls) == 1
+
+    @responses.activate
+    def test_decide_retries_a_rate_limit(self):
+        responses.add(responses.POST, self.URL, json={"success": False, "error": "Rate limit"}, status=429)
+        responses.add(responses.POST, self.URL, json={"ok": True, "result": {"answers": {}}}, status=200)
+        client = DatagenClient(api_key="test_key", retries=1, backoff_seconds=0)
+        assert client.decide("text", self.QUESTIONS) == {"answers": {}}
+        assert len(responses.calls) == 2
+
+    def test_decide_validates_input(self):
+        client = DatagenClient(api_key="test_key")
+        with pytest.raises(ValueError):
+            client.decide("", self.QUESTIONS)
+        with pytest.raises(ValueError):
+            client.decide("text", {})

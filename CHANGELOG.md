@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-11-21
+
+### Added
+- `DatagenClient.decide(state, questions, provider=None, vault_id=None)`: asks
+  the vault's decision model (TypeSafe Jev, vLLM d3) fixed-option questions via
+  `POST /api/tools/decide`. Refusals raise `DatagenDecisionError` with the
+  server's `code` and `status`. Retries only on a 429 or a connection error,
+  never on a call the provider may already have answered (each call is billed).
+
 ## [0.1.1] - 2025-01-XX
 
 ### Fixed

@@ -4,6 +4,7 @@ from .client import (
     DatagenAuthError,
     DatagenToolError,
     DatagenHttpError,
+    DatagenDecisionError,
 )
 
 __all__ = [
@@ -12,4 +13,5 @@ __all__ = [
     "DatagenAuthError",
     "DatagenToolError",
     "DatagenHttpError",
+    "DatagenDecisionError",
 ]
