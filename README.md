@@ -412,6 +412,36 @@ if st.button("Send Follow-up"):
 **Key Benefits:** No database connection setup, no Gmail OAuth, no SDK installation. Same `execute_tool()` pattern for all services.
 
 
+### Example 3: Classify Rows with a Decision Model
+
+`decide()` asks the vault's decision model (for example TypeSafe Jev, or a
+self-hosted vLLM d3) fixed-option questions about a text and returns a
+probability for every answer. Set up the decision model on the vault's
+**LLM providers** tab first. Each call is billed by the model's provider.
+
+```python
+from datagen_sdk import DatagenClient, DatagenDecisionError
+
+client = DatagenClient()
+questions = {
+    "department": {
+        "type": "choice",
+        "instructions": "Which team should handle this message?",
+        "criteria": {"billing": "Payments, refunds", "support": "How-to, bugs", "sales": "Pricing"},
+    },
+    "refund_request": {"type": "noul", "instructions": "Is the sender asking for money back?"},
+}
+
+for row in rows:
+    try:
+        result = client.decide(row["text"], questions)
+    except DatagenDecisionError as err:
+        print(row["id"], "failed:", err.code)
+        continue
+    answers = result["answers"]
+    print(row["id"], answers["department"]["answer"], answers["refund_request"]["probabilities"]["yes"])
+```
+
 ## Requirements
 
 - Python >= 3.10
